@@ -8,9 +8,13 @@ public class MoveMultipleLineRenderers : MonoBehaviour
     public float speed = 0.1f;
     public float period = 1f;
 
+    void Start()
+    {
+        lineRenderers = new List<LineRenderer>(FindObjectsOfType<LineRenderer>());
+    }
+
     void Update()
     {
-        // 현재 시간을 계산
         float time = Time.time;
 
         foreach (LineRenderer lineRenderer in lineRenderers)
