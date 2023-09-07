@@ -1,48 +1,89 @@
-1,And,Andromeda,?�ン?�ロ?��?,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-2,Ant,Antlia,?�ン??3,Aps,Apus,?�う?�ょ??4,Aql,Aquila,?�し,,,,,,,,,,,,,,,,,,,,,,,,,,,
-5,Aqr,Aquarius,?�ず?�め,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-6,Ara,Ara,?�い?�ん,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-7,Ari,Aries,?�ひ?�じ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-8,Aur,Auriga,?�ょ?�ゃ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-9,Boo,Bootes,?�し?�い,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-10,Cae,Caelum,?�ょ?�こ?�ぐ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-11,Cam,Camelopardalis,?�り??12,Cap,Capricornus,?�ぎ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-13,Car,Carina,?�ゅ?�こ??14,Cas,Cassiopeia,?�シ?�ペ??15,Cen,Centaurus,?�ン?�ウ?�ス,,,,,,,,,,,,,,,,,,,,,,,,,,,
-16,Cep,Cepheus,?�フ?�ウ??17,Cet,Cetus,?�じ??18,Cha,Chamaeleon,?�メ?�オ??19,Cir,Circinus,?�ン?�ス,,,,,,,,,,,,,,,,,,,,,,,,
-20,CMa,Canis Major,?�お?�ぬ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-21,CMi,Canis Minor,?�い??22,Cnc,Cancer,?�に,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-23,Col,Columba,??��,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-24,Com,Coma Berenices,?�み??��,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-25,CrA,Corona Australis,?�な?�の?�ん?�??26,CrB,Corona Borealis,?�ん?�??27,Crt,Crater,?�ッ??28,Cru,Crux,?�な?�じ?�う??29,Crv,Corvus,?�ら??30,CVn,Canes Venatici,?�ょ?�け??31,Cyg,Cygnus,??��?�ょ??32,Del,Delphinus,?�る??33,Dor,Dorado,?�じ??34,Dra,Draco,?�ゅ??35,Equ,Equuleus,?�う??36,Eri,Eridanus,?�リ?�?�ス
-37,For,Fornax,??38,Gem,Gemini,?�た??39,Gru,Grus,?�る,,,,,,,,,,,,,,,,,,,,,,,,,,,
-40,Her,Hercules,?�ル??��??41,Hor,Horologium,?�け??42,Hya,Hydra,?�み?�び,,,,,,,,,,,,,,,,,,,,,,,,,,,
-43,Hyi,Hydrus,?�ず?�び,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-44,Ind,Indus,?�ン?�ィ?�ン,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-45,Lac,Lacerta,?�か??46,Leo,Leo,?�し,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-47,Lep,Lepus,?�さ??48,Lib,Libra,?�ん?�ん,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-49,LMi,Leo Minor,?�じ??50,Lup,Lupus,?�お?�み,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-51,Lyn,Lynx,?�ま??��,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-52,Lyr,Lyra,?�と,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-53,Men,Mensa,?�ー?�ル?�ん,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-54,Mic,Microscopium,?�ん?�き?�う,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-55,Mon,Monoceros,?�っ?�く?�ゅ??56,Mus,Musca,??��,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-57,Nor,Norma,?�ょ?�ぎ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-58,Oct,Octans,??��?�ん??59,Oph,Ophiuchus,?�び?�か??60,Ori,Orion,?�リ?�ン,,,,,,,,,,,,,,,,,,,,,,,,,,,
-61,Pav,Pavo,?�じ?�く,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-62,Peg,Pegasus,?�ガ?�ス,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-63,Per,Perseus,?�ル?�ウ??64,Phe,Phoenix,?�う?�う,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-65,Pic,Pictor,?�か,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-66,PsA,Piscis Austrinus,?�な?�の?�お,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-67,Psc,Pisces,?�お,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-68,Pup,Puppis,?�も,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-69,Pyx,Pyxis,?�し?�ば??70,Ret,Reticulum,?�チ??��,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-71,Scl,Sculptor,?�ょ?�こ?�し??72,Sco,Scorpius,?�そ??73,Sct,Scutum,?�て,,,,,,,,,,,,,,,,,,,,,,,,,,,
-74,Ser,Serpens(Caput),?�び(??,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-75,Ser,Serpens(Cauda),?�び(�?,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-76,Sex,Sextans,?�く?�ん??77,Sge,Sagitta,??78,Sgr,Sagittarius,?�て,,,,,,,,,,,,,,,,,,,,,,,,,,,
-79,Tau,Taurus,?�う??80,Tel,Telescopium,?�う?�ん?�ょ??81,TrA,Triangulum Australe,?�な?�の?�ん?�く,,,,,,,,,,,,,,,,,,,,,,,,,,,
-82,Tri,Triangulum,?�ん?�く,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-83,Tuc,Tucana,?�ょ?�ち?�う,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-84,UMa,Ursa Major,?�お?�ま,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-85,UMi,Ursa Minor,?�ぐ??86,Vel,Vela,??87,Vir,Virgo,?�と??88,Vol,Volans,?�び?�お,,,,,,,,,,,,,,,,,,,,,,,,
-89,Vul,Vulpecula,?�ぎ?�ね,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+﻿1,And,Andromeda,안드로메다
+2,Ant,Antlia,공기펌프
+3,Aps,Apus,극락조
+4,Aql,Aquila,물병
+5,Aqr,Aquarius,독수리
+6,Ara,Ara,제단
+7,Ari,Aries,양
+8,Aur,Auriga,마차부
+9,Boo,Bootes,목동
+10,Cae,Caelum,조각칼
+11,Cam,Camelopardalis,기린
+12,Cnc,Cancer,게
+13,CVn,Canes Venatici,사냥개
+14,CMa,Canis Major,큰개
+15,CMi,Canis Minor,작은개
+16,Cap,Capricornus,염소
+17,Car,Carina,용골
+18,Cas,Cassiopeia,카시오페이아
+19,Cen,Centaurus,센타우루스
+20,Cep,Cepheus,세페우스
+21,Cet,Cetus,고래
+22,Cha,Chamaeleon,카멜레온
+23,Cir,Circinus,컴퍼스
+24,Col,Columba,비둘기
+25,Com,Coma Berenices,머리털
+26,CrA,Corona Australis,남쪽왕관
+27,CrB,Corona Borealis,북쪽왕관
+28,Crv,Corvus,까마귀
+29,Crt,Crater,컵
+30,Cru,Crux,남십자
+31,Cyg,Cygnus,백조
+32,Del,Delphinus,돌고래
+33,Dor,Dorado,황새치
+34,Dra,Draco,용
+35,Equ,Equuleus,조랑말
+36,Eri,Eridanus,에리다누스
+37,For,Fornax,화로
+38,Gem,Gemini,쌍둥이
+39,Gru,Grus,두루미
+40,Her,Hercules,헤라클레스
+41,Hor,Horologium,시계
+42,Hya,Hydra,히드라
+43,Hyi,Hydrus,물뱀
+44,Ind,Indus,인디언
+45,Lac,Lacerta,도마뱀
+46,Leo,Leo,사자
+47,LMi,Leo Minor,작은사자
+48,Lep,Lepus,토끼
+49,Lib,Libra,천칭
+50,Lup,Lupus,이리
+51,Lyn,Lynx,살쾡이
+52,Lyr,Lyra,거문고
+53,Men,Mensa,테이블산
+54,Mic,Microscopium,현미경
+55,Mon,Monoceros,외뿔소
+56,Mus,Muscaa,파리
+57,Nor,Norma,직각자
+58,Oct,Octans,팔분의
+59,Oph,Ophiuchus,뱀주인
+60,Ori,Orion,오리온
+61,Pav,Pavo,공작
+62,Peg,Pegasus,페가수스
+63,Per,Perseus,페르세우스
+64,Phe,Phoenix,불사조
+65,Pic,Pictor,화가
+66,Psc,Pisces,물고기
+67,PsA,Piscis Austrinus,남쪽물고기
+68,Pup,Puppis,고물
+69,Pyx,Pyxis,나침반
+70,Ret,Reticulum,그물
+71,Sge,Sagitta,화살
+72,Sgr,Sagittarius,궁수
+73,Sco,Scorpius,전갈
+74,Scl,Sculptor,조각가
+75,Sct,Scutum,방패
+76,Ser,Serpens,뱀
+77,Ser,Serpens,뱀
+78,Sex,Sextans,육분의
+79,Tau,Taurus,황소
+80,Tel,Telescopium,망원경
+81,Tri,Triangulum,삼각형
+82,TrA,Triangulum Australe,남쪽삼각형
+83,Tuc,Tucana,큰부리새
+84,UMa,Ursa Major,큰곰
+85,UMi,Ursa Minor,작은곰
+86,Vel,Vela,돛
+87,Vir,Virgo,처녀
+88,Vol,Volans,날치
+89,Vul,Vulpecula,여우
