@@ -9,7 +9,8 @@ public class DrawCircle : MonoBehaviour
     [SerializeField]
     Color color = Color.white;  // 라인의 색
     [SerializeField]
-    float radius = 1500.0f;     // 원의 반경
+    float radius = 1000.0f;     // 원의 반경
+    public float rotationSpeed = 30f;
 
     Material lineMaterial;      // 라인의 머터리얼
 
@@ -83,4 +84,9 @@ public class DrawCircle : MonoBehaviour
         GL.PopMatrix();
     }
 
+    void Update()
+    {
+        // Y축을 중심으로 회전
+        transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
+    }
 }
