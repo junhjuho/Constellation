@@ -350,7 +350,7 @@ GameObject:
   - component: {fileID: 147424797}
   - component: {fileID: 147424798}
   m_Layer: 0
-  m_Name: Rotation
+  m_Name: RotationManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
