@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class DrawConstellation : MonoBehaviour
 {
+    public float boxSize = 3.0f;
     static float SpaceSize = 1000.0f; // 별자리 구의 반경
     static float StarBaseSize = 8.0f; // 별의 크기 기준
 
@@ -67,7 +68,7 @@ public class DrawConstellation : MonoBehaviour
         if(ConstellationData.Name != null)
         {
             // 별자리 이름을 작성
-            var nameObject = CreateName(ConstellationData.Name, ConstellationData.Position);
+            var nameObject = CreateName(ConstellationData.Name, ConstellationData.Position, ConstellationData.Des);
             // 자신의 자식에게 접속
             nameObject.transform.SetParent(transform, false);
         }
@@ -163,7 +164,7 @@ public class DrawConstellation : MonoBehaviour
     }
 
     // 별자리 이름의 작성
-    GameObject CreateName(ConstellationNameData nameData, ConstellationPositionData positionData)
+    GameObject CreateName(ConstellationNameData nameData, ConstellationPositionData positionData, ConstellationDesData desData)
     {
         // 별자리 이름의 프리팹으로부터 인스턴스 작성
         var text = Instantiate(namePrefab);
@@ -174,25 +175,35 @@ public class DrawConstellation : MonoBehaviour
         text.name = nameData.Name;
 
         // 자식의 3D text 위치를 천구의 위치로 이동시킨다
-        var child = textTrans.GetChild(0);
-        child.transform.localPosition = new Vector3(0.0f, 0.0f, SpaceSize);
+        var child1 = textTrans.GetChild(0);
+        //var child2 = textTrans.GetChild(1);
+
+        child1.transform.localPosition = new Vector3(0.0f, 0.0f, SpaceSize);
+        //child2.transform.localPosition = new Vector3(0.0f, -1f, SpaceSize);
 
         // TextMesh를 취득하고 별자리 이름으로 변경한다
-        var textMesh = child.GetComponent<TextMesh>();
-        textMesh.text = string.Format("{0}자리", nameData.KoreanName);
+        var textMesh1 = child1.GetComponent<TextMesh>();
+        //var textMesh2 = child2.GetComponent<TextMesh>();
+        textMesh1.text = string.Format("{0}자리", nameData.KoreanName);
+        //textMesh2.text = string.Format("{0}", desData.Description);
+
 
         textTrans.localScale = new Vector3(15.0f, 15.0f, 1f);
+        textMesh1.anchor = TextAnchor.MiddleCenter;
+        
+               
+        //textMesh2.anchor = TextAnchor.MiddleCenter;
+        
+        var boxCollider = text.AddComponent<BoxCollider>();
 
-        /*var boxCollider = text.AddComponent<BoxCollider>();
-
-        boxCollider.size = new Vector3(textMesh.GetComponent<Renderer>().bounds.size.x, textMesh.GetComponent<Renderer>().bounds.size.y, 0.1f);
+        boxCollider.size = new Vector3(10f, 4f, 0.1f);
 
         // Set the position of the Box Collider to match the text position
-        boxCollider.center = child.localPosition;
+        boxCollider.center = child1.localPosition;
         
         // Enable the Box Collider
-        boxCollider.enabled = true;
-        */
+        boxCollider.enabled = true;              
+
         return text;
     }
 }

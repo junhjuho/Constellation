@@ -473,7 +473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentObject: {fileID: 1908405497}
-  rotationSpeed: 1
+  rotationSpeed: 0.1
 --- !u!4 &85403777
 Transform:
   m_ObjectHideFlags: 0
@@ -2545,6 +2545,7 @@ MonoBehaviour:
   constellationNameDataCSV: {fileID: 4900000, guid: 6310baa0da5a3d545bf498d10b7cb7ac, type: 3}
   constellationPositionDataCSV: {fileID: 4900000, guid: ea9cc4b951a6b0e4c975a884c67c4e9e, type: 3}
   constellationLineDataCSV: {fileID: 4900000, guid: 9259de31d4fac0e4ebc1da61b1225ab2, type: 3}
+  constellationDesDataCSV: {fileID: 4900000, guid: ccb173954514f9942bd44170494037fb, type: 3}
   constellationPrefab: {fileID: 4138371421454879199, guid: 2446127240b08bb4da56ee9454c1e42b, type: 3}
 --- !u!4 &1908405499
 Transform:
