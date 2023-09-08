@@ -183,6 +183,16 @@ public class DrawConstellation : MonoBehaviour
 
         textTrans.localScale = new Vector3(15.0f, 15.0f, 1f);
 
+        /*var boxCollider = text.AddComponent<BoxCollider>();
+
+        boxCollider.size = new Vector3(textMesh.GetComponent<Renderer>().bounds.size.x, textMesh.GetComponent<Renderer>().bounds.size.y, 0.1f);
+
+        // Set the position of the Box Collider to match the text position
+        boxCollider.center = child.localPosition;
+        
+        // Enable the Box Collider
+        boxCollider.enabled = true;
+        */
         return text;
     }
 }
