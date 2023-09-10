@@ -190,7 +190,8 @@ public class DrawConstellation : MonoBehaviour
 
         textTrans.localScale = new Vector3(15.0f, 15.0f, 1f);
         textMesh1.anchor = TextAnchor.MiddleCenter;
-   
+
+        child2.gameObject.SetActive(false);
         var boxCollider = text.AddComponent<BoxCollider>();
 
         boxCollider.size = new Vector3(10f, 4f, 0.1f);

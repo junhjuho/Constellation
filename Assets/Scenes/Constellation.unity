@@ -1277,13 +1277,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalRotation: {x: 0.42057943, y: -0.24831508, z: -0.039884668, w: 0.8717006}
+  m_LocalPosition: {x: 0, y: 9.58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 45.515, y: -41.735, z: -23.41}
 --- !u!1 &853969044
 GameObject:
   m_ObjectHideFlags: 0
@@ -2545,7 +2545,6 @@ MonoBehaviour:
   constellationNameDataCSV: {fileID: 4900000, guid: 6310baa0da5a3d545bf498d10b7cb7ac, type: 3}
   constellationPositionDataCSV: {fileID: 4900000, guid: ea9cc4b951a6b0e4c975a884c67c4e9e, type: 3}
   constellationLineDataCSV: {fileID: 4900000, guid: 9259de31d4fac0e4ebc1da61b1225ab2, type: 3}
-  constellationDesDataCSV: {fileID: 4900000, guid: ccb173954514f9942bd44170494037fb, type: 3}
   constellationPrefab: {fileID: 4138371421454879199, guid: 2446127240b08bb4da56ee9454c1e42b, type: 3}
 --- !u!4 &1908405499
 Transform:
