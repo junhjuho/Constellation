@@ -16,8 +16,6 @@ public class ConstellationViewer : MonoBehaviour
     TextAsset constellationPositionDataCSV;
     [SerializeField]
     TextAsset constellationLineDataCSV;
-    [SerializeField]
-    TextAsset constellationDesDataCSV;
 
     [SerializeField]
     GameObject constellationPrefab; // 별자리의 프리팹
@@ -28,7 +26,6 @@ public class ConstellationViewer : MonoBehaviour
     List<ConstellationNameData> constellationNameData;
     List<ConstellationPositionData> constellationPositionData;
     List<ConstellationLineData> constellationLineData;
-    List<ConstellationDesData> constellationDesData;
 
     // 정리한 별자리의 데이터
     List<ConstellationData> constellationData;
@@ -55,7 +52,6 @@ public class ConstellationViewer : MonoBehaviour
         constellationNameData = CsvLoader<ConstellationNameData>.LoadData(constellationNameDataCSV);
         constellationPositionData = CsvLoader<ConstellationPositionData>.LoadData(constellationPositionDataCSV);
         constellationLineData = CsvLoader<ConstellationLineData>.LoadData(constellationLineDataCSV);
-        constellationDesData = CsvLoader<ConstellationDesData>.LoadData(constellationDesDataCSV);
     }
 
     // 별자리 데이터의 정리

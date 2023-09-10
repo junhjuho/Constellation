@@ -69,7 +69,7 @@ public class DrawConstellation : MonoBehaviour
         if(ConstellationData.Name != null)
         {
             // 별자리 이름을 작성
-            var nameObject = CreateName(ConstellationData.Name, ConstellationData.Position, ConstellationData.Des);
+            var nameObject = CreateName(ConstellationData.Name, ConstellationData.Position);
             // 자신의 자식에게 접속
             nameObject.transform.SetParent(transform, false);
         }
@@ -165,7 +165,7 @@ public class DrawConstellation : MonoBehaviour
     }
 
     // 별자리 이름의 작성
-    GameObject CreateName(ConstellationNameData nameData, ConstellationPositionData positionData, ConstellationDesData desData)
+    GameObject CreateName(ConstellationNameData nameData, ConstellationPositionData positionData)
     {
         // 별자리 이름의 프리팹으로부터 인스턴스 작성
         var text = Instantiate(namePrefab);
