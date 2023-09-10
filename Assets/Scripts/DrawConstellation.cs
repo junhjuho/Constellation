@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public class DrawConstellation : MonoBehaviour
@@ -176,24 +177,20 @@ public class DrawConstellation : MonoBehaviour
 
         // 자식의 3D text 위치를 천구의 위치로 이동시킨다
         var child1 = textTrans.GetChild(0);
-        //var child2 = textTrans.GetChild(1);
+        var child2 = child1.GetChild(0);
 
         child1.transform.localPosition = new Vector3(0.0f, 0.0f, SpaceSize);
-        //child2.transform.localPosition = new Vector3(0.0f, -1f, SpaceSize);
 
         // TextMesh를 취득하고 별자리 이름으로 변경한다
         var textMesh1 = child1.GetComponent<TextMesh>();
-        //var textMesh2 = child2.GetComponent<TextMesh>();
-        textMesh1.text = string.Format("{0}자리", nameData.KoreanName);
-        //textMesh2.text = string.Format("{0}", desData.Description);
+        var textMesh2 = child2.GetComponent<TextMeshPro>();
 
+        textMesh1.text = string.Format("{0}자리", nameData.KoreanName);
+        textMesh2.text = string.Format("{0}", nameData.Des);
 
         textTrans.localScale = new Vector3(15.0f, 15.0f, 1f);
         textMesh1.anchor = TextAnchor.MiddleCenter;
-        
-               
-        //textMesh2.anchor = TextAnchor.MiddleCenter;
-        
+   
         var boxCollider = text.AddComponent<BoxCollider>();
 
         boxCollider.size = new Vector3(10f, 4f, 0.1f);

@@ -4,6 +4,7 @@ public class ConstellationNameData : CsvData
     public string Summary { get; set; } // 약칭  
     public string Name { get; set; } // 영어명
     public string KoreanName { get; set; } // 한글명
+    public string Des { get; set; } // 한글명
                                            
     public override void SetData(string[] data)
     {
@@ -11,5 +12,6 @@ public class ConstellationNameData : CsvData
         Summary = data[1];
         Name = data[2];
         KoreanName = data[3];
+        Des = data[4];
     }
 }
