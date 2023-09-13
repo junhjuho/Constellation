@@ -7,201 +7,202 @@ using UnityEngine;
 public class DrawConstellation : MonoBehaviour
 {
     public float boxSize = 3.0f;
-    static float SpaceSize = 1000.0f; // º°ÀÚ¸® ±¸ÀÇ ¹İ°æ
-    static float StarBaseSize = 8.0f; // º°ÀÇ Å©±â ±âÁØ
+    static float SpaceSize = 1500.0f; // ë³„ìë¦¬ êµ¬ì˜ ë°˜ê²½
+    static float StarBaseSize = 8.0f; // ë³„ì˜ í¬ê¸° ê¸°ì¤€
 
     [SerializeField]
-    GameObject starPrefab; // º°ÀÇ ÇÁ¸®ÆÕ
+    GameObject starPrefab; // ë³„ì˜ í”„ë¦¬íŒ¹
     [SerializeField]
-    GameObject linePrefab; // º°ÀÚ¸® ¼±ÀÇ ÇÁ¸®ÆÕ
+    GameObject linePrefab; // ë³„ìë¦¬ ì„ ì˜ í”„ë¦¬íŒ¹
     [SerializeField]
-    GameObject namePrefab; // º°ÀÚ¸® ÀÌ¸§ÀÇ ÇÁ¸®ÆÕ
+    GameObject namePrefab; // ë³„ìë¦¬ ì´ë¦„ì˜ í”„ë¦¬íŒ¹
 
-    public ConstellationData ConstellationData { get; set; } // ±×¸®´Â º°ÀÚ¸® µ¥ÀÌÅÍ
+    public ConstellationData ConstellationData { get; set; } // ê·¸ë¦¬ëŠ” ë³„ìë¦¬ ë°ì´í„°
 
-    GameObject linesParent;  // ¶óÀÎÀ» ÇÕÇÏ´Â °ÔÀÓ ¿ÀºêÁ§Æ®
+    GameObject linesParent;  // ë¼ì¸ì„ í•©í•˜ëŠ” ê²Œì„ ì˜¤ë¸Œì íŠ¸
 
-    //¶óÀÎÀ» ÇÕÇÏ´Â °ÔÀÓ ¿ÀºêÁ§Æ®ÀÇ ÇÁ·ÎÆÛÆ¼
+    // ë¼ì¸ì„ í•©í•˜ëŠ” ê²Œì„ ì˜¤ë¸Œì íŠ¸ì˜ í”„ë¡œí¼í‹°
     public GameObject Linesparent { get { return linesParent; } }
 
     void Start()
     {
-        // GameObjectÀÇ ÀÌ¸§À» º°ÀÚ¸® ÀÌ¸§À¸·Î º¯°æ
-        if(ConstellationData.Name != null)
+        // GameObjectì˜ ì´ë¦„ì„ ë³„ìë¦¬ ì´ë¦„ìœ¼ë¡œ ë³€ê²½
+        if (ConstellationData.Name != null)
         {
             gameObject.name = ConstellationData.Name.Name;
         }
 
-        // µ¥ÀÌÅÍ·ÎºÎÅÍ º°ÀÚ¸®¸¦ ÀÛ¼º
+        // ë°ì´í„°ë¡œë¶€í„° ë³„ìë¦¬ë¥¼ ì‘ì„±
         CreateConstellation();
     }
 
-    // º°ÀÚ¸®ÀÇ ÀÛ¼º
+    // ë³„ìë¦¬ì˜ ì‘ì„±
     void CreateConstellation()
     {
-        // ¸®½ºÆ®·ÎºÎÅÍ º°À» ÀÛ¼º
-        foreach(var star in ConstellationData.Stars)
+        // ë¦¬ìŠ¤íŠ¸ë¡œë¶€í„° ë³„ì„ ì‘ì„±
+        foreach (var star in ConstellationData.Stars)
         {
-            //º°ÀÇ ÀÛ¼º
+            // ë³„ì˜ ì‘ì„±
             var starObject = CreateStar(star);
-            // ÀÚ½ÅÀÇ ÀÚ½Ä¿¡°Ô Á¢¼Ó
+            // ìì‹ ì˜ ìì‹ì—ê²Œ ì ‘ì†
             starObject.transform.SetParent(transform, false);
         }
 
-        if(ConstellationData.Lines != null)
+        if (ConstellationData.Lines != null)
         {
-            // º°ÀÚ¸® ¼±ÀÇ ºÎ¸ğ¸¦ ÀÛ¼º
+            // ë³„ìë¦¬ ì„ ì˜ ë¶€ëª¨ë¥¼ ì‘ì„±
             linesParent = new GameObject("Lines");
-            // ÀÚ½ÅÀÇ ÀÚ½Ä¿¡°Ô Á¢¼Ó
+            // ìì‹ ì˜ ìì‹ì—ê²Œ ì ‘ì†
             linesParent.transform.SetParent(transform, false);
             var parent = linesParent.transform;
 
-            // ¸®½ºÆ®·ÎºÎÅÍ º°ÀÚ¸® ¼±À» ÀÛ¼º
-            foreach(var line in ConstellationData.Lines)
+            // ë¦¬ìŠ¤íŠ¸ë¡œë¶€í„° ë³„ìë¦¬ ì„ ì„ ì‘ì„±
+            foreach (var line in ConstellationData.Lines)
             {
-                // º°ÀÚ¸® ¼±ÀÇ ÀÛ¼º
+                // ë³„ìë¦¬ ì„ ì˜ ì‘ì„±
                 var lineObject = CreateLine(line);
-                // º°ÀÚ¸® ¼±ÀÇ ºÎ¸ğÀÇ ÀÚ½Ä¿¡°Ô Á¢¼Ó
+                // ë³„ìë¦¬ ì„ ì˜ ë¶€ëª¨ì˜ ìì‹ì—ê²Œ ì ‘ì†
                 lineObject.transform.SetParent(parent, false);
             }
         }
 
-        if(ConstellationData.Name != null)
+        if (ConstellationData.Name != null)
         {
-            // º°ÀÚ¸® ÀÌ¸§À» ÀÛ¼º
+            // ë³„ìë¦¬ ì´ë¦„ì„ ì‘ì„±
             var nameObject = CreateName(ConstellationData.Name, ConstellationData.Position);
-            // ÀÚ½ÅÀÇ ÀÚ½Ä¿¡°Ô Á¢¼Ó
+            // ìì‹ ì˜ ìì‹ì—ê²Œ ì ‘ì†
             nameObject.transform.SetParent(transform, false);
         }
     }
 
-    // º°ÀÇ ÀÛ¼º
+    // ë³„ì˜ ì‘ì„±
     GameObject CreateStar(StarData starData)
     {
-        // º°ÀÇ ÇÁ¸®ÆÕÀ¸·ÎºÎÅÍ ÀÎ½ºÅÏ½º ÀÛ¼º
+        // ë³„ì˜ í”„ë¦¬íŒ¹ìœ¼ë¡œë¶€í„° ì¸ìŠ¤í„´ìŠ¤ ì‘ì„±
         var star = Instantiate(starPrefab);
         var starTrans = star.transform;
 
-        // º°ÀÌ º¸ÀÌ´Â ¹æÇâÀ¸·Î È¸Àü½ÃÅ²´Ù
+        // ë³„ì´ ë³´ì´ëŠ” ë°©í–¥ìœ¼ë¡œ íšŒì „ì‹œí‚¨ë‹¤
         starTrans.localRotation = Quaternion.Euler(starData.Declination, starData.RightAscension, 0.0f);
-        // º°ÀÇ ÀÌ¸§À» HIP ¹øÈ£·Î ÇÑ´Ù
+        // ë³„ì˜ ì´ë¦„ì„ HIP ë²ˆí˜¸ë¡œ í•œë‹¤
         star.name = string.Format("{0}", starData.Hip);
 
         var child = starTrans.GetChild(0);
-        // ÀÚ½ÄÀÇ ±¸ÀÇ À§Ä¡¸¦ Ãµ±¸ÀÇ À§Ä¡·Î ÀÌµ¿½ÃÅ²´Ù
+        // ìì‹ì˜ êµ¬ì˜ ìœ„ì¹˜ë¥¼ ì²œêµ¬ì˜ ìœ„ì¹˜ë¡œ ì´ë™ì‹œí‚¨ë‹¤
         child.transform.localPosition = new Vector3(0.0f, 0.0f, SpaceSize);
 
-        // ½Ãµî±ŞÀ» º°ÀÇ Å©±â·Î ÇÑ´Ù
+        // ì‹œë“±ê¸‰ì„ ë³„ì˜ í¬ê¸°ë¡œ í•œë‹¤
         var size = StarBaseSize - starData.ApparentMagnitude;
         child.transform.localScale = new Vector3(size, size, size);
 
-        // Renderer Ãëµæ
+        // Renderer ì·¨ë“
         var meshRenderer = child.GetComponent<Renderer>();
         var color = Color.white;
 
-        // º°ÀÇ ÄÃ·¯ Å¸ÀÔ¿¡ µû¶ó »öÀ» ¼³Á¤ÇÑ´Ù
+        // ë³„ì˜ ì»¬ëŸ¬ íƒ€ì…ì— ë”°ë¼ ìƒ‰ì„ ì„¤ì •í•œë‹¤
         switch (starData.ColorType)
         {
-            case "O":  // ÆÄ¶û
+            case "O":  // íŒŒë‘
                 color = Color.blue;
                 break;
 
-            case "B": // Ã»¹é
+            case "B": // ì²­ë°±
                 color = Color.Lerp(Color.blue, Color.white, 0.5f);
                 break;
-            
+
             default:
-            case "A": // Èò»ö
+            case "A": // í°ìƒ‰
                 color = Color.white;
                 break;
 
-            case "F": // È²¹é
+            case "F": // í™©ë°±
                 color = Color.Lerp(Color.white, Color.yellow, 0.5f);
                 break;
 
-            case "G": // ³ë¶û
+            case "G": // ë…¸ë‘
                 color = Color.yellow;
                 break;
 
-            case "K":  // ÁÖÈ²
+            case "K":  // ì£¼í™©
                 color = new Color(243.0f / 255.0f, 152.0f / 255.0f, 0.0f);
                 break;
 
-            case "M":
+            case "M": // ë¹¨ê°•
                 color = new Color(200.0f / 255.0f, 10.0f / 255.0f, 0.0f);
                 break;
         }
 
-        // ¸ÓÅÍ¸®¾ó¿¡ »öÀ» ¼³Á¤ÇÑ´Ù
+        // ë¨¸í„°ë¦¬ì–¼ì— ìƒ‰ì„ ì„¤ì •í•œë‹¤
         meshRenderer.material.SetColor("_Color", color);
 
         return star;
     }
 
-    // º°ÀÚ¸® ¼±ÀÇ ÀÛ¼º
+    // ë³„ìë¦¬ ì„ ì˜ ì‘ì„±
     GameObject CreateLine(ConstellationLineData lineData)
     {
-        // ½ÃÀÛÁ¡ÀÇ º°ÀÇ Á¤º¸¸¦ Ãëµæ
+        // ì‹œì‘ì ì˜ ë³„ì˜ ì •ë³´ë¥¼ ì·¨ë“
         var start = GetStar(lineData.StartHip);
-        // ³¡Á¡ÀÇ º°ÀÇ Á¤º¸¸¦ Ãëµæ
+        // ëì ì˜ ë³„ì˜ ì •ë³´ë¥¼ ì·¨ë“
         var end = GetStar(lineData.EndHip);
-        // º°ÀÚ¸® ¼±ÀÇ ÇÁ¸®ÆÕÀ¸·ÎºÎÅÍ ÀÎ½ºÅÏ½º ÀÛ¼º
+        // ë³„ìë¦¬ ì„ ì˜ í”„ë¦¬íŒ¹ìœ¼ë¡œë¶€í„° ì¸ìŠ¤í„´ìŠ¤ ì‘ì„±
         var line = Instantiate(linePrefab);
-        // LineRendererÀÇ Ãëµæ
+        // LineRendererì˜ ì·¨ë“
         var lineRenderer = line.GetComponent<LineRenderer>();
 
-        // LineRenderer ÀÇ ½ÃÀÛÁ¡°ú ³¡Á¡ÀÇ À§Ä¡¸¦ µî·Ï(º°ÀÌ º¸ÀÌ´Â ¹æÇâÀ¸·Î È¸Àü½ÃÅ² ÈÄ, Ãµ±¸ÀÇ À§Ä¡±îÁö ÀÌµ¿½ÃÅ²´Ù)
+        // LineRendererì˜ ì‹œì‘ì ê³¼ ëì ì˜ ìœ„ì¹˜ë¥¼ ë“±ë¡(ë³„ì´ ë³´ì´ëŠ” ë°©í–¥ìœ¼ë¡œ íšŒì „ì‹œí‚¨ í›„, ì²œêµ¬ì˜ ìœ„ì¹˜ê¹Œì§€ ì´ë™ì‹œí‚¨ë‹¤)
         lineRenderer.SetPosition(0, Quaternion.Euler(start.Declination, start.RightAscension, 0.0f) * new Vector3(0.0f, 0.0f, SpaceSize));
         lineRenderer.SetPosition(1, Quaternion.Euler(end.Declination, end.RightAscension, 0.0f) * new Vector3(0.0f, 0.0f, SpaceSize));
 
         return line;
     }
 
-    // StarDataÀÇ µ¥ÀÌÅÍ °Ë»ö
+    // StarDataì˜ ë°ì´í„° ê²€ìƒ‰
     StarData GetStar(int hip)
     {
-        // °°Àº HIP ¹øÈ£¸¦ °Ë»ö
+        // ê°™ì€ HIP ë²ˆí˜¸ë¥¼ ê²€ìƒ‰
         return ConstellationData.Stars.FirstOrDefault(s => hip == s.Hip);
     }
 
-    // º°ÀÚ¸® ÀÌ¸§ÀÇ ÀÛ¼º
+    // ë³„ìë¦¬ ì´ë¦„ì˜ ì‘ì„±
     GameObject CreateName(ConstellationNameData nameData, ConstellationPositionData positionData)
     {
-        // º°ÀÚ¸® ÀÌ¸§ÀÇ ÇÁ¸®ÆÕÀ¸·ÎºÎÅÍ ÀÎ½ºÅÏ½º ÀÛ¼º
+        // ë³„ìë¦¬ ì´ë¦„ì˜ í”„ë¦¬íŒ¹ìœ¼ë¡œë¶€í„° ì¸ìŠ¤í„´ìŠ¤ ì‘ì„±
         var text = Instantiate(namePrefab);
         var textTrans = text.transform;
 
-        // º°ÀÌ º¸ÀÌ´Â ¹æÇâÀ¸·Î È¸Àü½ÃÅ²´Ù
+        // ë³„ì´ ë³´ì´ëŠ” ë°©í–¥ìœ¼ë¡œ íšŒì „ì‹œí‚¨ë‹¤
         textTrans.localRotation = Quaternion.Euler(positionData.Declination, positionData.RightAscension, 0.0f);
         text.name = nameData.Name;
 
-        // ÀÚ½ÄÀÇ 3D text À§Ä¡¸¦ Ãµ±¸ÀÇ À§Ä¡·Î ÀÌµ¿½ÃÅ²´Ù
+        // ìì‹ì˜ 3D Text ìœ„ì¹˜ë¥¼ ì²œêµ¬ì˜ ìœ„ì¹˜ë¡œ ì´ë™ì‹œí‚¨ë‹¤
         var child1 = textTrans.GetChild(0);
         var child2 = child1.GetChild(0);
 
         child1.transform.localPosition = new Vector3(0.0f, 0.0f, SpaceSize);
 
-        // TextMesh¸¦ ÃëµæÇÏ°í º°ÀÚ¸® ÀÌ¸§À¸·Î º¯°æÇÑ´Ù
+        // TextMeshë¥¼ ì·¨ë“í•˜ê³  ë³„ìë¦¬ ì´ë¦„ìœ¼ë¡œ ë³€ê²½í•œë‹¤
         var textMesh1 = child1.GetComponent<TextMesh>();
         var textMesh2 = child2.GetComponent<TextMeshPro>();
 
-        textMesh1.text = string.Format("{0}ÀÚ¸®", nameData.KoreanName);
+        textMesh1.text = string.Format("{0}ìë¦¬", nameData.KoreanName);
         textMesh2.text = string.Format("{0}", nameData.Des);
 
         textTrans.localScale = new Vector3(15.0f, 15.0f, 1f);
         textMesh1.anchor = TextAnchor.MiddleCenter;
 
-        child2.gameObject.SetActive(false);
+        //child2.gameObject.SetActive(false);
         var boxCollider = text.AddComponent<BoxCollider>();
 
         boxCollider.size = new Vector3(10f, 4f, 0.1f);
 
         // Set the position of the Box Collider to match the text position
         boxCollider.center = child1.localPosition;
-        
-        // Enable the Box Collider
-        boxCollider.enabled = true;              
 
+        // Enable the Box Collider
+        boxCollider.enabled = true;
+        
         return text;
     }
+    
 }
