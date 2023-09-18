@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DrawConstellation : MonoBehaviour
 {
@@ -17,12 +18,17 @@ public class DrawConstellation : MonoBehaviour
     [SerializeField]
     GameObject namePrefab; // 별자리 이름의 프리팹
 
+    //[Header("UI Components")]
+    //public Button toggleConstellationButton;
+
     public ConstellationData ConstellationData { get; set; } // 그리는 별자리 데이터
 
     GameObject linesParent;  // 라인을 합하는 게임 오브젝트
 
     // 라인을 합하는 게임 오브젝트의 프로퍼티
     public GameObject Linesparent { get { return linesParent; } }
+
+    private bool isConstellationVisible = false;
 
     void Start()
     {
@@ -34,6 +40,8 @@ public class DrawConstellation : MonoBehaviour
 
         // 데이터로부터 별자리를 작성
         CreateConstellation();
+
+       //toggleConstellationButton.onClick.AddListener(ToggleConstellationVisibility);
     }
 
     // 별자리의 작성
@@ -190,5 +198,29 @@ public class DrawConstellation : MonoBehaviour
 
         return text;
     }
-    
+
+    public void ToggleConstellationVisibility()
+    {
+        Debug.Log("Toggling constellation visibility.");
+
+        isConstellationVisible = !isConstellationVisible;
+        foreach (Transform child in transform)
+        {
+            child.gameObject.SetActive(isConstellationVisible);
+            Debug.Log($"Setting {child.gameObject.name} to {isConstellationVisible}");
+        }
+    }
+
+    void SetActiveForAllChildren(Transform parent, bool value)
+    {
+        foreach(Transform child in parent)
+        {
+            child.gameObject.SetActive(value);
+
+            if (child.childCount > 0)
+            {
+                SetActiveForAllChildren(child, value);
+            }
+        }
+    }
 }

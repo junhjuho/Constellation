@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ConstellationViewer : MonoBehaviour
 {
-    // º°ÀÚ¸® CSV µ¥ÀÌÅÍ
+    // ï¿½ï¿½ï¿½Ú¸ï¿½ CSV ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     [SerializeField]
     TextAsset starDataCSV;
     [SerializeField]
@@ -18,32 +18,32 @@ public class ConstellationViewer : MonoBehaviour
     TextAsset constellationLineDataCSV;
 
     [SerializeField]
-    GameObject constellationPrefab; // º°ÀÚ¸®ÀÇ ÇÁ¸®ÆÕ
+    GameObject constellationPrefab; // ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-    // º°ÀÚ¸® µ¥ÀÌÅÍ
+    // ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     List<StarData> starData;
     List<StarMajorData> starMajorData;
     List<ConstellationNameData> constellationNameData;
     List<ConstellationPositionData> constellationPositionData;
     List<ConstellationLineData> constellationLineData;
 
-    // Á¤¸®ÇÑ º°ÀÚ¸®ÀÇ µ¥ÀÌÅÍ
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     List<ConstellationData> constellationData;
 
     void Start()
     {
 
-        // CSV µ¥ÀÌÅÍ ÀÐ±â
+        // CSV ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ð±ï¿½
         LoadCSV();
 
-        // º°ÀÚ¸® µ¥ÀÌÅÍÀÇ Á¤¸®
+        // ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         ArrangementData();
 
-        // º°ÀÚ¸®ÀÇ ÀÛ¼º
+        // ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½ï¿½ ï¿½Û¼ï¿½
         CreateConstellation();
     }
 
-    // CSV µ¥ÀÌÅÍ ÀÐ±â
+    // CSV ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ð±ï¿½
 
     void LoadCSV()
     {
@@ -54,43 +54,43 @@ public class ConstellationViewer : MonoBehaviour
         constellationLineData = CsvLoader<ConstellationLineData>.LoadData(constellationLineDataCSV);
     }
 
-    // º°ÀÚ¸® µ¥ÀÌÅÍÀÇ Á¤¸®
+    // ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     void ArrangementData()
     {
-        // º° µ¥ÀÌÅÍ¸¦ ÅëÇÕ
+        // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½
         MergeStarData();
 
         constellationData = new List<ConstellationData>();
         
-        // º°ÀÚ¸® ÀÌ¸§À¸·ÎºÎÅÍ º°ÀÚ¸®¿¡ ÇÊ¿äÇÑ µ¥ÀÌÅÍ¸¦ ¼öÁý
+        // ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½Îºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½
         foreach(var name in constellationNameData)
         {
             constellationData.Add(CollectConstellationData(name));
         }
 
-        // º°ÀÚ¸®¿¡ »ç¿ëµÇÁö ¾Ê´Â º°ÀÇ ¼öÁý
+        // ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         var data = new ConstellationData();
         data.Stars = starData.Where(s => s.UseConstellation == false).ToList();
         constellationData.Add(data);
     }
 
-    // º° µ¥ÀÌÅÍ¸¦ ÅëÇÕ
+    // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½
     void MergeStarData()
     {
-        //ÀÌ¹ø¿¡ »ç¿ëÇÒ ÇÊ¿äÇÑ º°À» ÆÇº°ÇÑ´Ù
+        //ï¿½Ì¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Çºï¿½ï¿½Ñ´ï¿½
         foreach(var star in starMajorData)
         {
-            // °°Àº µ¥ÀÌÅÍ°¡ ÀÖ´Â°¡?
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í°ï¿½ ï¿½Ö´Â°ï¿½?
             var data = starData.FirstOrDefault(s => star.Hip == s.Hip);
             if(data != null)
             {
-                // °°Àº µ¥ÀÌÅÍ°¡ ÀÖÀ¸¸é, À§Ä¡ µ¥ÀÌÅÍ¸¦ °»½ÅÇÑ´Ù
+                // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½
                 data.RightAscension = star.RightAscension;
                 data.Declination = star.Declination;
             }
             else
             {
-                // °°Àº µ¥ÀÌÅÍ°¡ ¾ø´Â °æ¿ì, 5µî¼ºº¸´Ù ¹àÀ¸¸é ¸®½ºÆ® ¸ñ·Ï¿¡ Ãß°¡
+                // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½, 5ï¿½î¼ºï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½Ï¿ï¿½ ï¿½ß°ï¿½
                 if (star.ApparentMagnitude <= 5.0f)
                 {
                     starData.Add(star);
@@ -99,21 +99,21 @@ public class ConstellationViewer : MonoBehaviour
         }
     }
 
-    // º°ÀÚ¸® µ¥ÀÌÅÍÀÇ ¼öÁý
+    // ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     ConstellationData CollectConstellationData(ConstellationNameData name)
     {
         var data = new ConstellationData();
 
-        // º°ÀÚ¸®ÀÇ ÀÌ¸§ µî·Ï
+        // ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½
         data.Name = name;
 
-        // º°ÀÚ¸® ID°¡ °°Àº °ÍÀ» µî·Ï
+        // ï¿½ï¿½ï¿½Ú¸ï¿½ IDï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
         data.Position = constellationPositionData.FirstOrDefault(s => name.Id == s.Id);
 
-        // º°ÀÚ¸® ¾àÄªÀÌ °°Àº °ÍÀ» µî·Ï
+        // ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½Äªï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
         data.Lines = constellationLineData.Where(s => name.Summary == s.Name).ToList();
 
-        // º°ÀÚ¸® ¼±ÀÌ »ç¿ëÇÏ°í ÀÖ´Â º°À» µî·Ï
+        // ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
         data.Stars = new List<StarData>();
         foreach(var line in data.Lines)
         {
@@ -122,17 +122,17 @@ public class ConstellationViewer : MonoBehaviour
             var end = starData.FirstOrDefault(s => s.Hip == line.EndHip);
             data.Stars.Add(end);
 
-            // º°ÀÚ¸®·Î »ç¿ëµÇ´Â º°
+            // ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ç´ï¿½ ï¿½ï¿½
             start.UseConstellation = end.UseConstellation = true;
         }
 
         return data;
     }
 
-    // º°ÀÚ¸®ÀÇ ÀÛ¼º
+    // ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½ï¿½ ï¿½Û¼ï¿½
     void CreateConstellation()
     {
-        // °¢ º°ÀÚ¸®¸¦ ÀÛ¼º
+        // ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½ï¿½ ï¿½Û¼ï¿½
         foreach(var data in constellationData)
         {
             var constellation = Instantiate(constellationPrefab);
@@ -140,7 +140,7 @@ public class ConstellationViewer : MonoBehaviour
 
             drawConstellation.ConstellationData = data;
 
-            // ÀÚ½ÅÀÇ ÀÚ½ÄÀ¸·Î ÇÑ´Ù
+            // ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½Ú½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½
             constellation.transform.SetParent(transform, false);
         }
     }
