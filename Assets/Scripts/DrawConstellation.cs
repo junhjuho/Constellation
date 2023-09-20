@@ -93,7 +93,7 @@ public class DrawConstellation : MonoBehaviour
 
         // 시등급을 별의 크기로 한다
         var size = StarBaseSize - starData.ApparentMagnitude;
-        child.transform.localScale = new Vector3(size, size, size);
+        child.transform.localScale = new Vector3(size*2, size*2, size*2);
 
         // Renderer 취득
         var meshRenderer = child.GetComponent<Renderer>();
