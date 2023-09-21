@@ -34,6 +34,7 @@ public class UIimageManager : MonoBehaviour
     public GameObject ursamajor;
     public GameObject ursaminor;
     public GameObject andromeda;
+    public GameObject ground;
 
     public Transform g;
     
@@ -46,39 +47,69 @@ public class UIimageManager : MonoBehaviour
     Vector3 summerRot;
     Vector3 autumnRot;
     Vector3 winterRot;
+    Vector3 southRot;
+    Vector3 northRot;
 
     Quaternion startRot;
     Quaternion spring;
     Quaternion summer;
     Quaternion autumn;
     Quaternion winter;
+    Quaternion south;
+    Quaternion north;
 
     bool obj = false;
     bool springRotating = false;
     bool summerRotating = false;
     bool autumnRotating = false;
     bool winterRotating = false;
+    bool southRotating = false;
+    bool northRotating = false;
 
     void Start()
     {
         viewer = GameObject.Find("ConstellationViewer");
-        springRot = new Vector3(52.542f, -79.593f, 8.294f);
-        summerRot = new Vector3(-16.927f, 13.258f, 51.018f);
-        autumnRot = new Vector3(-51.793f, 106.792f, -13.339f);
+        springRot = new Vector3(51.412f, -70.8f, 15.227f);
+        summerRot = new Vector3(-22.14f, 17.86f, 49.477f);
+        autumnRot = new Vector3(-52.95f, 86.797f, 2.558f);
         winterRot = new Vector3(8.628f, 186.566f, -52.504f);
+        southRot = new Vector3(0f, 0f, 125f);
+        northRot = new Vector3(0f, 0f, 53f);
 
         startRot = g.rotation;
         spring = Quaternion.Euler(springRot);
         summer = Quaternion.Euler(summerRot);
         autumn = Quaternion.Euler(autumnRot);
         winter = Quaternion.Euler(winterRot);
+        south = Quaternion.Euler(southRot);
+        north = Quaternion.Euler(northRot);
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (springRotating)
+        if (southRotating)
+        {
+            float step = rotSpeed * Time.deltaTime;
+            g.rotation = Quaternion.Lerp(g.rotation, south, step);
+
+            if (Quaternion.Angle(g.rotation, south) < 0.1f)
+            {
+                southRotating = false;
+            }
+        }
+        else if (northRotating)
+        {
+            float step = rotSpeed * Time.deltaTime;
+            g.rotation = Quaternion.Lerp(g.rotation, north, step);
+
+            if (Quaternion.Angle(g.rotation, north) < 0.1f)
+            {
+                northRotating = false;
+            }
+        }
+        else if (springRotating)
         {
             float step = rotSpeed * Time.deltaTime;
             g.rotation = Quaternion.Lerp(g.rotation, spring, step);
@@ -118,6 +149,27 @@ public class UIimageManager : MonoBehaviour
                 winterRotating = false;
             }
         }
+    }
+    public void RemoveGround()
+    {
+        if (!obj)
+        {
+            ground.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            ground.SetActive(false);
+            obj = false;
+        }
+    }
+    public void SouthernRot()
+    {
+        southRotating = true;
+    }
+    public void northernRot()
+    {
+        northRotating = true;
     }
 
     public void NorthernImage() // 전체 이미지
