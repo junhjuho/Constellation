@@ -5,6 +5,8 @@
     using System.Linq;
     using System.Collections.Generic;
     using UnityEngine;
+    using JetBrains.Annotations;
+    using static echo17.EndlessBook.Page;
 
     /// <summary>
     /// State change event sent after a state change has completed.
@@ -16,7 +18,6 @@
     public delegate void StateChangedDelegate(EndlessBook.StateEnum fromState,
                                                 EndlessBook.StateEnum toState,
                                                 int pageNumber);
-
     /// <summary>
     /// Page turn event sent at and after each page turn occurs.
     /// This allows you to handle updating your scene if necessary.
@@ -46,6 +47,9 @@
     /// </summary>
     public class EndlessBook : MonoBehaviour
     {
+        public Page[] page;  // This array should contain references to all the pages in your book.
+        public float animationTime = 1.0f;  // You can adjust this in the Unity Inspector if needed.
+
         /// <summary>
         /// Mappings set up on the animated book and all static standins.
         /// These mappings are used to update the materials on all meshes
@@ -1752,6 +1756,26 @@
             SetPageNumber(CurrentPageNumber);
         }
 
+        public void TurnToPage(int targetPageNumber, TurnDirectionEnum direction)
+        { 
+            Page targetPage = page[targetPageNumber - 1];  // Access the correct page from the array
+
+            Material frontMaterial = targetPage.PageFrontMaterial;  // Assuming there's a property or method to get the front material
+            Material backMaterial = targetPage.PageBackMaterial;   // Assuming there's a property or method to get the back material
+
+            targetPage.Turn(direction, animationTime, frontMaterial, backMaterial);
+        }
+
+        //private int GetCurrentPageNumber()
+        //{
+        //    // Adjust this logic based on the correct way to determine the currently visible page in the EndlessBook asset
+        //    for (int i = 0; i < page.Length; i++)
+        //    {
+        //        if (page[i].isActiveAndEnabled)  // This is placeholder logic and might need adjustment
+        //            return i + 1;
+        //    }
+        //    return 0;
+        //}
         #endregion
     }
 }
