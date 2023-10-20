@@ -34,6 +34,24 @@ public class UIimageManager : MonoBehaviour
     public GameObject ursamajor;
     public GameObject ursaminor;
     public GameObject andromeda;
+    public GameObject antila;
+    public GameObject apus;
+    public GameObject ara;
+    public GameObject caelum;
+    public GameObject camelopardalis;
+    public GameObject canesvenatici;
+    public GameObject carina;
+    public GameObject centaurus;
+    public GameObject cepheus;
+    public GameObject cetus;
+    public GameObject chamaeleon;
+    public GameObject circinus;
+    public GameObject columba;
+    public GameObject comaberenices;
+    public GameObject coronaAustralis;
+    public GameObject coronaBorealis;
+
+
     public GameObject ground;
 
     public Transform g;
@@ -676,4 +694,212 @@ public class UIimageManager : MonoBehaviour
             obj = false;
         }
     } // 작은곰자리
+    public void Antila() // 공기펌프자리
+    {
+        if (!obj)
+        {
+            antila.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            antila.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Apus() // 극락조자리
+    {
+        if (!obj)
+        {
+            apus.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            apus.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Ara() // 제단자리
+    {
+        if (!obj)
+        {
+            ara.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            ara.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Caelum() // 조각칼자리
+    {
+        if (!obj)
+        {
+            caelum.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            caelum.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Camelopardalis() // 기린자리
+    {
+        if (!obj)
+        {
+            camelopardalis.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            camelopardalis.SetActive(false);
+            obj = false;
+        }
+    }
+    public void CanesVenatici() // 사냥개자리
+    {
+        if (!obj)
+        {
+            canesvenatici.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            canesvenatici.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Carina() // 용골자리
+    {
+        if (!obj)
+        {
+            carina.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            carina.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Centaurus() // 센타우루스자리
+    {
+        if (!obj)
+        {
+            centaurus.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            centaurus.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Cepheus() // 세페우스자리
+    {
+        if (!obj)
+        {
+            cepheus.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            cepheus.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Cetus() // 고래자리
+    {
+        if (!obj)
+        {
+            cetus.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            cetus.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Chamaeleon() // 카멜레온자리
+    {
+        if (!obj)
+        {
+            chamaeleon.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            chamaeleon.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Circinus() // 컴퍼스자리
+    {
+        if (!obj)
+        {
+            circinus.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            circinus.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Columba() // 비둘기자리
+    {
+        if (!obj)
+        {
+            columba.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            columba.SetActive(false);
+            obj = false;
+        }
+    }
+    public void ComaBerenices() // 머리털자리
+    {
+        if (!obj)
+        {
+            comaberenices.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            comaberenices.SetActive(false);
+            obj = false;
+        }
+    }
+    public void CoronaAustralis() // 남쪽왕관자리
+    {
+        if (!obj)
+        {
+            coronaAustralis.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            coronaAustralis.SetActive(false);
+            obj = false;
+        }
+    }
+    public void CoronaBorealis() // 북쪽왕관자리
+    {
+        if (!obj)
+        {
+            coronaBorealis.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            coronaBorealis.SetActive(false);
+            obj = false;
+        }
+    }
 }
