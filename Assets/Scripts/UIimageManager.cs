@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class UIimageManager : MonoBehaviour
 {
-    
     public GameObject constellationViewer;
     public GameObject stellaImage;
     public GameObject virgo;
@@ -50,6 +49,17 @@ public class UIimageManager : MonoBehaviour
     public GameObject comaberenices;
     public GameObject coronaAustralis;
     public GameObject coronaBorealis;
+    public GameObject corvus;
+    public GameObject crater;
+    public GameObject crux;
+    public GameObject delphinus;
+    public GameObject dorado;
+    public GameObject draco;
+    public GameObject equuleus;
+    public GameObject eridanus;
+    public GameObject fornax;
+    public GameObject grus;
+    public GameObject hercules;
 
 
     public GameObject ground;
@@ -899,6 +909,149 @@ public class UIimageManager : MonoBehaviour
         else
         {
             coronaBorealis.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Corvus() // 까마귀자리
+    {
+        if (!obj)
+        {
+            corvus.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            corvus.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Crater() // 컵자리
+    {
+        if (!obj)
+        {
+            crater.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            crater.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Crux() // 남십자자리
+    {
+        if (!obj)
+        {
+            crux.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            crux.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Delphinus() // 돌고래자리
+    {
+        if (!obj)
+        {
+            delphinus.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            delphinus.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Dorado() // 황새치자리
+    {
+        if (!obj)
+        {
+            dorado.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            dorado.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Draco() // 용자리
+    {
+        if (!obj)
+        {
+            draco.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            draco.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Equuleus() // 조랑말자리
+    {
+        if (!obj)
+        {
+            equuleus.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            equuleus.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Eridanus() // 에리다누스자리
+    {
+        if (!obj)
+        {
+            eridanus.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            eridanus.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Fornax() // 화로자리
+    {
+        if (!obj)
+        {
+            fornax.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            fornax.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Grus() // 두루미자리
+    {
+        if (!obj)
+        {
+            grus.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            grus.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Hercules() // 헤라클레스자리
+    {
+        if (!obj)
+        {
+            hercules.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            hercules.SetActive(false);
             obj = false;
         }
     }
