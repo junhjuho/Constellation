@@ -3430,9 +3430,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   book: {fileID: 149537879}
-  stateAnimationTime: 1
+  stateAnimationTime: 0.3
   turnTimeType: 1
-  turnTime: 1
+  turnTime: 0.7
 --- !u!1001 &289677745
 PrefabInstance:
   m_ObjectHideFlags: 0
