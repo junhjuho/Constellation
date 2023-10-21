@@ -1783,18 +1783,18 @@ PrefabInstance:
     - target: {fileID: 429402244596140050, guid: fe2638d7e8cea724fa67bcdc269d6eb3, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2100000, guid: 0372d979f94d9614ba2199de69f9dd76, type: 2}
     - target: {fileID: 429402244596140050, guid: fe2638d7e8cea724fa67bcdc269d6eb3, type: 3}
       propertyPath: m_Materials.Array.data[3]
       value: 
-      objectReference: {fileID: 2100000, guid: 994cb9cc3369e7046a93b91ab44ddfbb, type: 2}
+      objectReference: {fileID: 2100000, guid: 0a5ab3db3cf8c014085abb57151988c3, type: 2}
     - target: {fileID: 717176657374044303, guid: fe2638d7e8cea724fa67bcdc269d6eb3, type: 3}
       propertyPath: m_Name
       value: Book
       objectReference: {fileID: 0}
     - target: {fileID: 2802540170484608036, guid: fe2638d7e8cea724fa67bcdc269d6eb3, type: 3}
       propertyPath: pageData.Array.size
-      value: 180
+      value: 182
       objectReference: {fileID: 0}
     - target: {fileID: 6624144713029194801, guid: fe2638d7e8cea724fa67bcdc269d6eb3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1839,11 +1839,11 @@ PrefabInstance:
     - target: {fileID: 7327675554172362594, guid: fe2638d7e8cea724fa67bcdc269d6eb3, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2100000, guid: 0372d979f94d9614ba2199de69f9dd76, type: 2}
     - target: {fileID: 7327675554172362594, guid: fe2638d7e8cea724fa67bcdc269d6eb3, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
-      objectReference: {fileID: 2100000, guid: 994cb9cc3369e7046a93b91ab44ddfbb, type: 2}
+      objectReference: {fileID: 2100000, guid: 0a5ab3db3cf8c014085abb57151988c3, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3931,7 +3931,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 7
+          m_IntArgument: 23
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -19144,14 +19144,14 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 287974365}
+        m_TargetAssemblyTypeName: echo17.EndlessBook.Demo01.BookManager, Assembly-CSharp
+        m_MethodName: OnPageButtonClicked
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 27
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
