@@ -60,6 +60,41 @@ public class UIimageManager : MonoBehaviour
     public GameObject fornax;
     public GameObject grus;
     public GameObject hercules;
+    public GameObject horologium;
+    public GameObject hydra;
+    public GameObject hydrus;
+    public GameObject indus;
+    public GameObject lacerta;
+    public GameObject leominor;
+    public GameObject lepus;
+    public GameObject lupus;
+    public GameObject lynx;
+    public GameObject mensa;
+    public GameObject microscopium;
+    public GameObject monoceros;
+    public GameObject musca;
+    public GameObject norma;
+    public GameObject octans;
+    public GameObject ophiuchus;
+    public GameObject pavo;
+    public GameObject phoenix;
+    public GameObject pictor;
+    public GameObject vela;
+    public GameObject volans;
+    public GameObject vulpecula;
+    public GameObject piscisaustrinus;
+    public GameObject puppis;
+    public GameObject pyxis;
+    public GameObject reticulum;
+    public GameObject sagitta;
+    public GameObject sculptor;
+    public GameObject scutum;
+    public GameObject serpens;
+    public GameObject sextans;
+    public GameObject telescopium;
+    public GameObject triangulumaustrale;
+    public GameObject triangulum;
+    public GameObject tucana;
 
 
     public GameObject ground;
@@ -1055,4 +1090,450 @@ public class UIimageManager : MonoBehaviour
             obj = false;
         }
     }
+    public void Horologium() // 시계자리
+    {
+        if (!obj)
+        {
+            horologium.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            horologium.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Hydra() // 바다뱀자리
+
+    {
+        if (!obj)
+        {
+            hydra.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            hydra.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Hydrus() // 물뱀자리
+    {
+        if (!obj)
+        {
+            hydrus.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            hydrus.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Indus() // 인디언자리
+
+    {
+        if (!obj)
+        {
+            indus.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            indus.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Lacerta() // 도마뱀자리
+    {
+        if (!obj)
+        {
+            lacerta.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            lacerta.SetActive(false);
+            obj = false;
+        }
+    }
+    public void LeoMinor() // 작은사자자리
+
+    {
+        if (!obj)
+        {
+            leominor.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            leominor.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Lepus() // 토끼자리
+    {
+        if (!obj)
+        {
+            lepus.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            lepus.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Lupus() // 이리자리
+    {
+        if (!obj)
+        {
+            lupus.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            lupus.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Lynx() // 살쾡이자리
+    {
+        if (!obj)
+        {
+            lynx.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            lynx.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Mensa() // 테이블산자리
+    {
+        if (!obj)
+        {
+            mensa.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            mensa.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Microscopium() // 현미경자리
+    {
+        if (!obj)
+        {
+            microscopium.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            microscopium.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Monoceros() // 외뿔소자리
+    {
+        if (!obj)
+        {
+            monoceros.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            monoceros.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Musca() // 파리자리
+    {
+        if (!obj)
+        {
+            musca.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            musca.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Norma() // 직각자자리
+    {
+        if (!obj)
+        {
+            norma.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            norma.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Octans() // 팔분의자리
+    {
+        if (!obj)
+        {
+            octans.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            octans.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Ophiuchus() // 뱀주인자리
+    {
+        if (!obj)
+        {
+            ophiuchus.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            ophiuchus.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Pavo() // 공작자리
+    {
+        if (!obj)
+        {
+            pavo.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            pavo.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Phoenix() // 불사조자리
+    {
+        if (!obj)
+        {
+            phoenix.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            phoenix.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Pictor() // 조각가자리
+    {
+        if (!obj)
+        {
+            pictor.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            pictor.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Vela() // 돛자리
+    {
+        if (!obj)
+        {
+            vela.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            vela.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Vulpecula() // 작은여우자리
+    {
+        if (!obj)
+        {
+            vulpecula.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            vulpecula.SetActive(false);
+            obj = false;
+        }
+    }
+    public void PiscisAustrinus() // 남쪽물고기자리
+    {
+        if (!obj)
+        {
+            piscisaustrinus.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            piscisaustrinus.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Puppis() // 고물자리
+    {
+        if (!obj)
+        {
+            puppis.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            puppis.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Pyxis() // 나침반자리
+    {
+        if (!obj)
+        {
+            pyxis.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            pyxis.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Reticulum() // 그물자리
+    {
+        if (!obj)
+        {
+            reticulum.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            reticulum.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Sagitta() // 화살자리
+    {
+        if (!obj)
+        {
+            sagitta.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            sagitta.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Sculptor() // 조각가자리
+    {
+        if (!obj)
+        {
+            sculptor.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            sculptor.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Scutum() // 방패자리
+    {
+        if (!obj)
+        {
+            scutum.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            scutum.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Serpens() // 뱀자리
+    {
+        if (!obj)
+        {
+            serpens.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            serpens.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Sextans() // 육분의자리
+    {
+        if (!obj)
+        {
+            sextans.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            sextans.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Telescopium() // 망원경자리
+    {
+        if (!obj)
+        {
+            telescopium.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            telescopium.SetActive(false);
+            obj = false;
+        }
+    }
+    public void TriangulumAustrale() // 남쪽삼각형자리
+    {
+        if (!obj)
+        {
+            triangulumaustrale.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            triangulumaustrale.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Triangulum() // 삼각형자리
+    {
+        if (!obj)
+        {
+            triangulum.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            triangulum.SetActive(false);
+            obj = false;
+        }
+    }
+    public void Tucana() // 큰부리새자리
+    {
+        if (!obj)
+        {
+            tucana.SetActive(true);
+            obj = true;
+        }
+        else
+        {
+            tucana.SetActive(false);
+            obj = false;
+        }
+    }
+
 }
