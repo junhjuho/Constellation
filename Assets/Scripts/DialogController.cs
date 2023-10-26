@@ -28,7 +28,7 @@ public class DialogController : MonoBehaviour
         foreach (char letter in text.ToCharArray())
         {
             dialogText.text += letter;
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.01f);
         }
     }
 }
