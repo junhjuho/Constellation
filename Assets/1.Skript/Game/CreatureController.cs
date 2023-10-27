@@ -14,6 +14,13 @@ public abstract class CreatureController : MonoBehaviour
     [SerializeField]
     protected GameObject _lockTarget;
 
+    protected Animator anim;
+
+    private void Start()
+    {
+        Init();
+    }
+
     public enum State
     {
         Idle,
@@ -30,7 +37,7 @@ public abstract class CreatureController : MonoBehaviour
         {
             _state = value;
 
-            Animator anim = GetComponent<Animator>();
+            
             switch (_state)
             {
                 case State.Die:
@@ -44,7 +51,7 @@ public abstract class CreatureController : MonoBehaviour
 
                     break;
                 case State.Attack:
-                    anim.CrossFade("Attack", 0.05f, -1, 0);
+
                     break;
                 case State.Damaged:
                     
@@ -54,10 +61,6 @@ public abstract class CreatureController : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        //Init();
-    }
 
     public void Update()
     {
@@ -74,16 +77,18 @@ public abstract class CreatureController : MonoBehaviour
             case State.Idle:
                 UpdateIdle();
                 break;
+
             case State.Attack:
                 UpdateAttack();
                 break;
+
             case State.Damaged:
                 UpdateDamaged();
                 break;
         }
     }
 
-    //public abstract void Init();
+    public abstract void Init();
     protected virtual void UpdateDie() { }
     protected virtual void UpdateMoving() { }
     protected virtual void UpdateIdle() { }

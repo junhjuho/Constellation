@@ -3,6 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class Monster : CreatureController
 {
@@ -18,27 +19,27 @@ public class Monster : CreatureController
     float moveSpeed = 10f;
 
 
-
     CapsuleCollider bodyCol;
     SphereCollider headCol;
-    Animator anim;
     bool isDamaged = false;
     bool isDead = false;
+    bool isAttack = false;
     NavMeshAgent agent;
 
     //public AudioClip hitAudio;
     AudioSource audioSource;
     ParticleSystem hitPaticle;
 
-   
 
-    void Start()
+
+    public override void Init()
     {
         bodyCol = GetComponentInChildren<CapsuleCollider>();
         headCol = GetComponentInChildren<SphereCollider>();
         audioSource = GetComponent<AudioSource>();
         hitPaticle = GetComponent<ParticleSystem>();
         agent = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
     }
 
     protected override void UpdateIdle()
@@ -60,14 +61,13 @@ public class Monster : CreatureController
     {
         if (_lockTarget != null)
         {
-            Debug.Log($" {_lockTarget.name} in Moving");
             _destPos = _lockTarget.transform.position; 
-            Debug.Log($" {_lockTarget.name} after 64");
             float distance = (_destPos - transform.position).magnitude;
             if (distance <= _attackRange)
             {
                 agent.SetDestination(transform.position);
                 state = State.Attack;
+                
                 return;
             }
         }
@@ -89,15 +89,30 @@ public class Monster : CreatureController
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 20 * Time.deltaTime);
         }
     }
+ 
 
     protected override void UpdateAttack()
     {
         if(_lockTarget == null) return;
 
+        if (!isAttack) // 공격 중이 아닐 때만 코루틴을 시작
+        {
+            StartCoroutine(AttackRoutine());
+        }
+        Debug.DrawRay(new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), transform.forward * (_attackRange-0.5f), Color.red);
         Vector3 dir = _lockTarget.transform.position - transform.position;
         Quaternion quat = Quaternion.LookRotation(dir);
         transform.rotation = Quaternion.Lerp(transform.rotation, quat, 20 * Time.deltaTime);
     }
+
+    IEnumerator AttackRoutine()
+    {
+        isAttack = true;
+        anim.CrossFade("Attack", 0.05f, -1, 0);
+        yield return new WaitForSeconds(2.0f);
+        isAttack = false;
+    }
+
 
     public void OnHitEvent()
     {
@@ -116,6 +131,26 @@ public class Monster : CreatureController
             else
             {
                 state = State.Moving;
+            }
+        }
+
+        RaycastHit hit;
+        Vector3 rayOrigin = new Vector3(transform.position.x, transform.position.y + 0.8f, transform.position.z);
+        Vector3 rayDirection = transform.forward * 10f;  // 앞쪽 방향으로 10 유닛
+
+        Physics.Raycast(rayOrigin, rayDirection, out hit, _attackRange + 1f);
+        if (hit.collider == null) return;
+        Debug.Log(hit.collider);
+        if (hit.collider.CompareTag("Player"))
+        {
+            AnimationController _player = hit.collider.GetComponent<AnimationController>();
+            Debug.Log("레이가 " + hit.collider.name + "에 충돌했습니다.");
+
+            if (_player != null)
+            {
+                _player._hp -= 20;
+                Debug.Log($"_hp {_hp}");
+
             }
         }
     }
@@ -167,6 +202,8 @@ public class Monster : CreatureController
         hitBox.enabled = true;
         ResetDamageFlag();
     }
+
+   
 
     #endregion
 }
