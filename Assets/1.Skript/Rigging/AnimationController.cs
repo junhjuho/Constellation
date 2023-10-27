@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Animations.Rigging;
 using UnityEngine.InputSystem;
 
 public class AnimationController : MonoBehaviour
@@ -9,11 +10,13 @@ public class AnimationController : MonoBehaviour
 
     private Animator anim;
     bool isDead = false;
+    RigBuilder rigBuilder;
 
 
     private void Start()
     {
         anim = GetComponent<Animator>();
+        rigBuilder = GetComponent<RigBuilder>();
         move.action.started += AnimateLegs;
         move.action.canceled += StopAnimation;
     }
@@ -57,8 +60,10 @@ public class AnimationController : MonoBehaviour
     public void Die()
     {
 
-        if (_hp < 0 && !isDead)
+        if (_hp <= 0 && !isDead)
         {
+            isDead = true;
+            rigBuilder.enabled = false;
             anim.SetTrigger("isDead");
         }
     }

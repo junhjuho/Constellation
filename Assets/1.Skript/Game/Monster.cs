@@ -9,6 +9,8 @@ public class Monster : CreatureController
 {
     public GameObject target;
     [SerializeField]
+    int _attack = 50;
+    [SerializeField]
     public float _hp = 100;
     [SerializeField]
     float _scanRange = 10f;
@@ -16,7 +18,14 @@ public class Monster : CreatureController
     float _attackRange = 5f;
 
     [SerializeField]
-    float moveSpeed = 10f;
+    float _moveSpeed = 10f;
+
+    [SerializeField]
+    float _xValue = 1.5f;
+    [SerializeField]
+    float _yValue = 1.1f;
+    [SerializeField]
+    float _lenth = 0.5f;
 
 
     CapsuleCollider bodyCol;
@@ -82,8 +91,8 @@ public class Monster : CreatureController
         else
         {
             agent.SetDestination(_destPos);
-            agent.speed = moveSpeed;
-            agent.acceleration = moveSpeed * 2f;
+            agent.speed = _moveSpeed;
+            agent.acceleration = _moveSpeed * 2f;
             agent.angularSpeed = 300f;
 
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 20 * Time.deltaTime);
@@ -99,7 +108,7 @@ public class Monster : CreatureController
         {
             StartCoroutine(AttackRoutine());
         }
-        Debug.DrawRay(new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), transform.forward * (_attackRange-0.5f), Color.red);
+        Debug.DrawRay(new Vector3(transform.position.x + _xValue, transform.position.y + _yValue, transform.position.z), transform.forward, Color.red);
         Vector3 dir = _lockTarget.transform.position - transform.position;
         Quaternion quat = Quaternion.LookRotation(dir);
         transform.rotation = Quaternion.Lerp(transform.rotation, quat, 20 * Time.deltaTime);
@@ -135,10 +144,10 @@ public class Monster : CreatureController
         }
 
         RaycastHit hit;
-        Vector3 rayOrigin = new Vector3(transform.position.x, transform.position.y + 0.8f, transform.position.z);
+        Vector3 rayOrigin = new Vector3(transform.position.x + _xValue, transform.position.y + _yValue, transform.position.z);
         Vector3 rayDirection = transform.forward * 10f;  // 앞쪽 방향으로 10 유닛
 
-        Physics.Raycast(rayOrigin, rayDirection, out hit, _attackRange + 1f);
+        Physics.Raycast(rayOrigin, rayDirection, out hit, _lenth);
         if (hit.collider == null) return;
         Debug.Log(hit.collider);
         if (hit.collider.CompareTag("Player"))
@@ -148,8 +157,8 @@ public class Monster : CreatureController
 
             if (_player != null)
             {
-                _player._hp -= 20;
-                Debug.Log($"_hp {_hp}");
+                _player._hp -= _attack;
+                Debug.Log($"Player's hp: {_player._hp}");
 
             }
         }
