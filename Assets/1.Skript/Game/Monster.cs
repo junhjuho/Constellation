@@ -146,8 +146,9 @@ public class Monster : CreatureController
         RaycastHit hit;
         Vector3 rayOrigin = new Vector3(transform.position.x + _xValue, transform.position.y + _yValue, transform.position.z);
         Vector3 rayDirection = transform.forward * 10f;  // 앞쪽 방향으로 10 유닛
+        LayerMask mask = ~((1 << 8) | (1 << 9));
 
-        Physics.Raycast(rayOrigin, rayDirection, out hit, _lenth);
+        Physics.Raycast(rayOrigin, rayDirection, out hit, _lenth,mask);
         if (hit.collider == null) return;
         Debug.Log(hit.collider);
         if (hit.collider.CompareTag("Player"))

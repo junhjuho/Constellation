@@ -11,6 +11,8 @@ public class AnimationController : MonoBehaviour
     private Animator anim;
     bool isDead = false;
     RigBuilder rigBuilder;
+    LowerBodyAnimation lowerBodyAnimation;
+    Rigidbody rigidBody;
 
 
     private void Start()
@@ -19,6 +21,8 @@ public class AnimationController : MonoBehaviour
         rigBuilder = GetComponent<RigBuilder>();
         move.action.started += AnimateLegs;
         move.action.canceled += StopAnimation;
+        lowerBodyAnimation = GetComponent<LowerBodyAnimation>();
+        rigidBody = GetComponent<Rigidbody>();
     }
     public void Update()
     {
@@ -63,6 +67,7 @@ public class AnimationController : MonoBehaviour
         if (_hp <= 0 && !isDead)
         {
             isDead = true;
+            lowerBodyAnimation.enabled = false;
             rigBuilder.enabled = false;
             anim.SetTrigger("isDead");
         }

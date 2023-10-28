@@ -3980,6 +3980,7 @@ GameObject:
   - component: {fileID: 4089200959162802455}
   - component: {fileID: 4498909164921996693}
   - component: {fileID: 7263855481220782338}
+  - component: {fileID: 7892865357823929992}
   m_Layer: 6
   m_Name: Achilles
   m_TagString: Player
@@ -6879,8 +6880,8 @@ MonoBehaviour:
   animator: {fileID: 7892865357823929991}
   leftFootPositionWeight: 1
   rightFootPositionWeight: 1
-  leftFootRotationWeight: 0.911
-  rightFootRotationWeight: 0.86
+  leftFootRotationWeight: 0.9
+  rightFootRotationWeight: 0.9
   footOffset: {x: 0, y: 0.1, z: 0}
   raycastLeftOffset: {x: -0.05, y: 0.5, z: 0}
   raycastRightOffset: {x: 0.05, y: 0.5, z: 0}
@@ -14142,7 +14143,7 @@ MonoBehaviour:
   _scanRange: 20
   _attackRange: 3
   _moveSpeed: 10
-  _xValue: 1.5
+  _xValue: 2
   _yValue: 1
   _lenth: 2
 --- !u!137 &6760213945136671332
@@ -15445,6 +15446,33 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!54 &7892865357823929992
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092747472018398461}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7897756204928340966
 GameObject:
   m_ObjectHideFlags: 0
