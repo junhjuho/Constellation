@@ -1,6 +1,14 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 using UnityEngine.InputSystem;
+
+[System.Serializable]
+public class AnimationInput
+{
+    public string animationPropertyName;
+    public InputActionProperty action;
+}
 
 public class AnimationController : MonoBehaviour
 {
@@ -8,6 +16,7 @@ public class AnimationController : MonoBehaviour
     [SerializeField] private InputActionReference move;
     public int _hp = 100;
 
+    public List<AnimationInput> animationInputs;
     private Animator anim;
     bool isDead = false;
     RigBuilder rigBuilder;
@@ -27,6 +36,11 @@ public class AnimationController : MonoBehaviour
     public void Update()
     {
         Die();
+        foreach (var item in animationInputs)
+        {
+            float actionValue = item.action.action.ReadValue<float>();
+            anim.SetFloat(item.animationPropertyName, actionValue);
+        }
     }
 
     private void AnimateLegs(InputAction.CallbackContext obj)
