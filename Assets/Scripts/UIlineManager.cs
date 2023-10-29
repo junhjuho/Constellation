@@ -16,7 +16,7 @@ public class UIlineManager : MonoBehaviour
     }
     void Update()
     {
-
+        
     }
     public void Viewer() // 전체 별자리
     {

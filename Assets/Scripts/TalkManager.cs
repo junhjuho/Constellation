@@ -12,8 +12,8 @@ public class TalkManager : MonoBehaviour
     public GameObject prevBtn;
     public GameObject ExitBtn;
 
-    private bool isTyping = false;
-    private string[] sentences = {
+    bool isTyping = false;
+    string[] sentences = {
         "Hello, nice to meet you! I'm Zeus, the 12 gods of Olympus and the king of the gods! Welcome to stellamyth",
         "This is the second timedfewaf",
         "This is the third timeggg",
