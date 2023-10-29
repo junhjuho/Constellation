@@ -41,14 +41,14 @@ public class Monster : CreatureController
 
 
 
-    public override void Init()
+    private void Awake()
     {
         bodyCol = GetComponentInChildren<CapsuleCollider>();
         headCol = GetComponentInChildren<SphereCollider>();
         audioSource = GetComponent<AudioSource>();
         hitPaticle = GetComponent<ParticleSystem>();
         agent = GetComponent<NavMeshAgent>();
-        anim = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
     }
 
     protected override void UpdateIdle()
@@ -61,7 +61,7 @@ public class Monster : CreatureController
         {
             _lockTarget = target;
             Debug.Log($" {_lockTarget.name} in Idle");
-            state = State.Moving;
+            //state = States.Moving;
             return;
         }
     }
@@ -75,7 +75,7 @@ public class Monster : CreatureController
             if (distance <= _attackRange)
             {
                 agent.SetDestination(transform.position);
-                state = State.Attack;
+                //state = States.Attack;
                 
                 return;
             }
@@ -86,7 +86,7 @@ public class Monster : CreatureController
         Vector3 dir = _destPos - transform.position;
         if (dir.magnitude < 0.1f)
         {
-            state = State.Idle;
+            //state = States.Idle;
         }
         else
         {
@@ -117,7 +117,7 @@ public class Monster : CreatureController
     IEnumerator AttackRoutine()
     {
         isAttack = true;
-        anim.CrossFade("Attack", 0.05f, -1, 0);
+        //animator.CrossFade("Attack", 0.05f, -1, 0);
         yield return new WaitForSeconds(2.0f);
         isAttack = false;
     }
@@ -127,19 +127,19 @@ public class Monster : CreatureController
     {
         if (_lockTarget == null)
         {
-            state = State.Idle;
+            //state = States.Idle;
         }
         else
         {
             float distance = (_lockTarget.transform.position - transform.position).magnitude;
             if (distance <= _attackRange)
             {
-                state = State.Attack;
+               // state = States.Attack;
             }
 
             else
             {
-                state = State.Moving;
+               //state = States.Moving;
             }
         }
 
@@ -186,7 +186,7 @@ public class Monster : CreatureController
 
         if (_hp <= 0 && !isDead)
         {
-            state = State.Die;
+            //state = States.Die;
         }
 
 
@@ -212,8 +212,6 @@ public class Monster : CreatureController
         hitBox.enabled = true;
         ResetDamageFlag();
     }
-
-   
 
     #endregion
 }

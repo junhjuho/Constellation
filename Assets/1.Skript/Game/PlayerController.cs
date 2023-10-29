@@ -9,7 +9,7 @@ public class PlayerController : CreatureController
 
     CapsuleCollider capsulCol;
 
-    public override void Init()
+    private void Awake()
     {
         capsulCol = new CapsuleCollider();
     }
