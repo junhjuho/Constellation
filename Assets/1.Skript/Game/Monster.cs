@@ -153,15 +153,7 @@ public class Monster : CreatureController
         Debug.Log(hit.collider);
         if (hit.collider.CompareTag("Player"))
         {
-            AnimationController _player = hit.collider.GetComponent<AnimationController>();
-            Debug.Log("레이가 " + hit.collider.name + "에 충돌했습니다.");
-
-            if (_player != null)
-            {
-                _player._hp -= _attack;
-                Debug.Log($"Player's hp: {_player._hp}");
-
-            }
+            
         }
     }
 
