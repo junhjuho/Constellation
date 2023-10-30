@@ -31791,7 +31791,7 @@ MonoBehaviour:
   fieldOfView: 50
   viewDistance: 10
   patrolSpeed: 3
-  targetEntity: {fileID: 0}
+  PlayertargetEntity: {fileID: 7703688780664503170}
   whatIsTarget:
     serializedVersion: 2
     m_Bits: 64

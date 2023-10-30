@@ -45,8 +45,11 @@ public class Enemy : CreatureController
     public float fieldOfView = 50f;
     public float viewDistance = 10f;
     public float patrolSpeed = 3f;
-    
-    public CreatureController targetEntity; // 추적할 대상
+    public CreatureController PlayertargetEntity; // 추적할 대상
+
+
+    CreatureController targetEntity; // 추적할 대상
+
     public LayerMask whatIsTarget; // 추적 대상 레이어
 
 
@@ -195,7 +198,6 @@ public class Enemy : CreatureController
                     state = State.Tracking;
                     agent.speed = runSpeed;
                 }
-
                 // 추적 대상 존재 : 경로를 갱신하고 AI 이동을 계속 진행
                 agent.SetDestination(targetEntity.transform.position);
             }
@@ -248,17 +250,21 @@ public class Enemy : CreatureController
     {
         if (!base.ApplyDamage(damageMessage)) return false;
 
+        //피격되었는데 타겟이 없으면
         if (targetEntity == null)
         {
-            targetEntity = damageMessage.damager.GetComponent<CreatureController>();
+            targetEntity = PlayertargetEntity;
         }
             
         EffectManager.Instance.PlayHitEffect(damageMessage.hitPoint, damageMessage.hitNormal, transform, EffectManager.EffectType.Flesh);
         audioPlayer.PlayOneShot(hitClip);
-        State previousState = state; // 피격 상태 전의 상태를 저장하는 변수
-        state = State.Hit;
+        if (state == State.AttackBegin || state == State.Attacking)
+        {
+            anim.ResetTrigger("Attack");
+        }
         // 피격 애니메이션 재생
         anim.SetTrigger("Hit");
+        state = State.Hit;
         // 피격 상태 지속 시간 동안 대기하는 코루틴 시작
         StartCoroutine(RecoverFromHit());
 
@@ -268,30 +274,18 @@ public class Enemy : CreatureController
     private IEnumerator RecoverFromHit()
     {
         // 피격 상태에서 잠시 대기
-        yield return new WaitForSeconds(0.3f); // 1초 동안 대기, 필요에 따라 시간 조정
+        yield return new WaitForSeconds(0.6f); // 피격 상태 지속 시간
 
         // 피격 상태에서 회복 후 이전 상태로 돌아가기
-        if(state == State.Dead)
+        if (hasTarget)
         {
-            anim.SetTrigger("Die");
+            state = State.Tracking;
         }
         else
         {
-            switch (previousState)
-            {
-                case State.Patrol:
-                    state = State.Patrol;
-                    anim.SetTrigger("Idle");
-                    break;
-                case State.Tracking:
-                case State.Attacking:
-                case State.AttackBegin:
-                    state = State.Tracking;
-                    anim.SetTrigger("Move");
-                    break;
-            }
+            state = State.Patrol;
         }
-        
+
     }
 
     public void BeginAttack()
