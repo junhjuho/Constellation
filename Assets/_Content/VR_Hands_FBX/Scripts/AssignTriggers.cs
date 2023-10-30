@@ -6,18 +6,18 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class AssignTriggers : MonoBehaviour
 {
     public XRBaseController controller;
-    public HandAnimation handAnimation;
+    public ArcheryHandAnimation handAnimation;
 
     private void Start()
     {
-        handAnimation = GetComponentInChildren<HandAnimation>();
+        handAnimation = GetComponentInChildren<ArcheryHandAnimation>();
     }
 
     // Update is called once per frame
     void Update()
     {
         if(handAnimation == null)
-            handAnimation = GetComponentInChildren<HandAnimation>();
+            handAnimation = GetComponentInChildren<ArcheryHandAnimation>();
         if (handAnimation == null)
             return;
         if (controller.selectInteractionState.activatedThisFrame)
