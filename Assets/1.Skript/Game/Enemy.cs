@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using System.Data.SqlTypes;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -69,8 +70,7 @@ public class Enemy : CreatureController
             var leftRayDirection = leftRayRotation * transform.forward;
             Handles.color = new Color(1f, 1f, 1f, 0.2f);
             Handles.DrawSolidArc(eyeTransform.position, Vector3.up, leftRayDirection, fieldOfView, viewDistance);
-        }
-        
+        } 
     }
 
 #endif
@@ -84,8 +84,7 @@ public class Enemy : CreatureController
 
         var attackPivot = attackRoot.position;
         attackPivot.y = transform.position.y;
-        attackDistance = Vector3.Distance(attackRoot.position, attackPivot) + attackRadius;
-
+        attackDistance = Vector3.Distance(attackRoot.position, attackPivot) + attackRadius * 2.0f;
         agent.stoppingDistance = attackDistance;
         agent.speed = patrolSpeed;
     }
@@ -122,6 +121,7 @@ public class Enemy : CreatureController
             var distance = Vector3.Distance(targetEntity.transform.position, transform.position);
             if (distance <= attackDistance)
             {
+                agent.velocity = Vector3.zero;
                 BeginAttack();
             }
         }
@@ -237,7 +237,7 @@ public class Enemy : CreatureController
             }
 
             // 0.2 초 주기로 처리 반복
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.1f);
         }
     }
 
@@ -253,9 +253,18 @@ public class Enemy : CreatureController
             
         EffectManager.Instance.PlayHitEffect(damageMessage.hitPoint, damageMessage.hitNormal, transform, EffectManager.EffectType.Flesh);
         audioPlayer.PlayOneShot(hitClip);
+        anim.SetTrigger("Hit");
+        //agent.isStopped = true;
+        //StartCoroutine(Recovery());
 
         return true;
     }
+
+   /* IEnumerator Recovery()
+    {
+        yield return new WaitForSeconds(0.6f);
+        agent.isStopped = false;
+    }*/
 
     public void BeginAttack()
     {
