@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Line
   - Demeter UI
+  - Monster
+  - RightHand
+  - LeftHand
   layers:
   - Default
   - TransparentFX
@@ -13,10 +16,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Interactable
+  - XRRig
+  - Monster
   - 
   - 
   - 
