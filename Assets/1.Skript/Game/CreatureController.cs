@@ -26,12 +26,6 @@ public class CreatureController : MonoBehaviour
 
     }
 
-    protected virtual void UpdateDie() { }
-    protected virtual void UpdateMoving() { }
-    protected virtual void UpdateIdle() { }
-    protected virtual void UpdateAttack() { }
-    protected virtual void UpdateDamaged() { }
-
     protected bool IsInvulnerable
     {
         get

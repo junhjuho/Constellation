@@ -15,7 +15,9 @@ public class Enemy : CreatureController
         Patrol,
         Tracking,
         AttackBegin,
-        Attacking
+        Attacking,
+        Hit,
+        Dead,
     }
     
     private State state;
@@ -52,7 +54,7 @@ public class Enemy : CreatureController
     private List<CreatureController> lastAttackedTargets = new List<CreatureController>();
     
     private bool hasTarget => targetEntity != null && !targetEntity.dead;
-    
+    private State previousState; // 피격 상태 전의 상태를 저장하는 변수
 
 #if UNITY_EDITOR
 
@@ -253,18 +255,44 @@ public class Enemy : CreatureController
             
         EffectManager.Instance.PlayHitEffect(damageMessage.hitPoint, damageMessage.hitNormal, transform, EffectManager.EffectType.Flesh);
         audioPlayer.PlayOneShot(hitClip);
+        State previousState = state; // 피격 상태 전의 상태를 저장하는 변수
+        state = State.Hit;
+        // 피격 애니메이션 재생
         anim.SetTrigger("Hit");
-        //agent.isStopped = true;
-        //StartCoroutine(Recovery());
+        // 피격 상태 지속 시간 동안 대기하는 코루틴 시작
+        StartCoroutine(RecoverFromHit());
 
         return true;
     }
 
-   /* IEnumerator Recovery()
+    private IEnumerator RecoverFromHit()
     {
-        yield return new WaitForSeconds(0.6f);
-        agent.isStopped = false;
-    }*/
+        // 피격 상태에서 잠시 대기
+        yield return new WaitForSeconds(0.3f); // 1초 동안 대기, 필요에 따라 시간 조정
+
+        // 피격 상태에서 회복 후 이전 상태로 돌아가기
+        if(state == State.Dead)
+        {
+            anim.SetTrigger("Die");
+        }
+        else
+        {
+            switch (previousState)
+            {
+                case State.Patrol:
+                    state = State.Patrol;
+                    anim.SetTrigger("Idle");
+                    break;
+                case State.Tracking:
+                case State.Attacking:
+                case State.AttackBegin:
+                    state = State.Tracking;
+                    anim.SetTrigger("Move");
+                    break;
+            }
+        }
+        
+    }
 
     public void BeginAttack()
     {
@@ -292,7 +320,11 @@ public class Enemy : CreatureController
             state = State.Patrol;
         }
 
-        agent.isStopped = false;
+        if(agent != null)
+        {
+            agent.isStopped = false;
+        }
+            
     }
 
     private bool IsTargetOnSight(Transform target)
@@ -322,6 +354,7 @@ public class Enemy : CreatureController
     {
         // LivingEntity의 Die()를 실행하여 기본 사망 처리 실행
         base.Die();
+        state = State.Dead;
 
         // 다른 AI들을 방해하지 않도록 자신의 모든 콜라이더들을 비활성화
         GetComponent<Collider>().enabled = false;
