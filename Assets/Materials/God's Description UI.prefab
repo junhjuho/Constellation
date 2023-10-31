@@ -216,6 +216,7 @@ GameObject:
   - component: {fileID: 6105242840877538906}
   - component: {fileID: 875833783956443536}
   - component: {fileID: 2471703764499036455}
+  - component: {fileID: 3012035752422740676}
   m_Layer: 5
   m_Name: God's Description UI
   m_TagString: Untagged
@@ -241,7 +242,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 4.5029907, y: 15.710007}
+  m_AnchoredPosition: {x: 4.5029907, y: 15.710022}
   m_SizeDelta: {x: 730, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &6105242840877538906
@@ -307,6 +308,25 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &3012035752422740676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2811397152926237395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7951c64acb0fa62458bf30a60089fe2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 0
+  m_CheckFor2DOcclusion: 0
+  m_CheckFor3DOcclusion: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RaycastTriggerInteraction: 1
 --- !u!1 &3807532495541318312
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,6 +417,7 @@ GameObject:
   - component: {fileID: 2585298139646471023}
   - component: {fileID: 2372217608748230198}
   - component: {fileID: 2166087189915663407}
+  - component: {fileID: 894522014942873861}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -464,6 +485,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &894522014942873861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6400614494014146659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54ecc2da2f74c584191162beabe5b474, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6709789594421905237
 GameObject:
   m_ObjectHideFlags: 0
