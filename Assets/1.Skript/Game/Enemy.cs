@@ -255,38 +255,59 @@ public class Enemy : CreatureController
         {
             targetEntity = PlayertargetEntity;
         }
-            
+        //previousState = state;
+        //state = State.Hit;
+
         EffectManager.Instance.PlayHitEffect(damageMessage.hitPoint, damageMessage.hitNormal, transform, EffectManager.EffectType.Flesh);
         audioPlayer.PlayOneShot(hitClip);
-        if (state == State.AttackBegin || state == State.Attacking)
-        {
-            anim.ResetTrigger("Attack");
-        }
+        
         // 피격 애니메이션 재생
-        anim.SetTrigger("Hit");
-        state = State.Hit;
+        //anim.SetTrigger("Hit");
         // 피격 상태 지속 시간 동안 대기하는 코루틴 시작
-        StartCoroutine(RecoverFromHit());
+        //StartCoroutine(RecoverFromHit());
 
         return true;
     }
 
-    private IEnumerator RecoverFromHit()
+   /* private IEnumerator RecoverFromHit()
     {
         // 피격 상태에서 잠시 대기
-        yield return new WaitForSeconds(0.6f); // 피격 상태 지속 시간
+        yield return new WaitForSeconds(0.5f); // 피격 상태 지속 시간
 
         // 피격 상태에서 회복 후 이전 상태로 돌아가기
-        if (hasTarget)
+        if(state == State.Dead)
+        {
+            anim.SetTrigger("Die");
+        }
+        else
+        {
+            switch (previousState)
+            {
+                case State.Tracking:
+                    state = State.Tracking;
+                    anim.SetTrigger("Move");
+                    break;
+                case State.Patrol:
+                    state = State.Patrol;
+                    anim.SetTrigger("Idle");
+                    break;
+                case State.AttackBegin:
+                    state = State.AttackBegin;
+                    anim.SetTrigger("Attack");
+                    break;
+            }
+        }
+        
+        *//*if (hasTarget)
         {
             state = State.Tracking;
         }
         else
         {
             state = State.Patrol;
-        }
+        }*//*
 
-    }
+    }*/
 
     public void BeginAttack()
     {
@@ -348,6 +369,8 @@ public class Enemy : CreatureController
     {
         // LivingEntity의 Die()를 실행하여 기본 사망 처리 실행
         base.Die();
+        
+       
         state = State.Dead;
 
         // 다른 AI들을 방해하지 않도록 자신의 모든 콜라이더들을 비활성화
@@ -355,10 +378,11 @@ public class Enemy : CreatureController
 
         // AI 추적을 중지하고 내비메쉬 컴포넌트를 비활성화
         agent.enabled = false;
+        anim.SetTrigger("Die");
 
         // 사망 애니메이션 재생
         anim.applyRootMotion = true;
-        anim.SetTrigger("Die");
+       
         
         // 사망 효과음 재생
         if (deathClip != null) audioPlayer.PlayOneShot(deathClip);

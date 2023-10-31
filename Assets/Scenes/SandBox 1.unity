@@ -28324,7 +28324,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1866460752184297507
 Transform:
   m_ObjectHideFlags: 0
@@ -31791,7 +31791,7 @@ MonoBehaviour:
   fieldOfView: 50
   viewDistance: 10
   patrolSpeed: 3
-  targetEntity: {fileID: 0}
+  PlayertargetEntity: {fileID: 0}
   whatIsTarget:
     serializedVersion: 2
     m_Bits: 64
@@ -58033,7 +58033,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &3635659268559775443
 GameObject:
   m_ObjectHideFlags: 0
