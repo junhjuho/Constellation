@@ -9,9 +9,9 @@ public class CameraTracking : MonoBehaviour
     void Update()
     {
         // 이 오브젝트의 위치를 카메라 위치로 설정
-        transform.position = cameraTransform.position;
+        transform.position = cameraTransform.position + cameraTransform.forward * 5f;
 
         // 이 오브젝트의 회전을 카메라 회전으로 설정
-        transform.rotation = Quaternion.Euler(0, cameraTransform.rotation.eulerAngles.y, 0);
+        //transform.rotation = Quaternion.Euler(0, cameraTransform.rotation.eulerAngles.y, 0);
     }
 }
