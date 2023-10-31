@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class DialogController : MonoBehaviour
 {
     public Text dialogText;
-    public bool isAction;
+    public GameObject ExitBtn;
+    bool isTyping = false;
 
     // Start is called before the first frame update
 
@@ -20,15 +21,24 @@ public class DialogController : MonoBehaviour
     // Update is called once per frame
     void Update() 
     {
-
+        if (isTyping)
+        {
+            ExitBtn.SetActive(false);
+        }
+        else
+        {
+            ExitBtn.SetActive(true);
+        }
     }
 
     IEnumerator Typing(string text)
     {
+        isTyping = true;
         foreach (char letter in text.ToCharArray())
         {
             dialogText.text += letter;
             yield return new WaitForSeconds(0.01f);
         }
+        isTyping=false;
     }
 }
