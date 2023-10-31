@@ -13,8 +13,6 @@ public class TutorialManager : MonoBehaviour
     public GameObject ExitBtn;
     public GameObject HandMenu;
     public GameObject ReduceBtn;
-    public GameObject DesBtn;
-
 
     bool isTyping = false;
     string[] sentences = {
@@ -65,15 +63,14 @@ public class TutorialManager : MonoBehaviour
             {
                 prevBtn.SetActive(false);
             }
-            if (clickCount > 5)
+            if (clickCount > 3)
             {
                 HandMenu.SetActive(true);
             }
-            if(clickCount > 11)
+            if(clickCount > 10)
             {
                 ReduceBtn.SetActive(true);
                 nextBtn.SetActive(false);
-                DesBtn.SetActive(true);
             }
         }
     }
