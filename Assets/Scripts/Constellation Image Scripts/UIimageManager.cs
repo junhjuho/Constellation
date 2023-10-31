@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR.WindowsMR.Input;
 
 public class UIimageManager : MonoBehaviour
 {
@@ -265,6 +266,36 @@ public class UIimageManager : MonoBehaviour
             ursamajor.SetActive(true);
             ursaminor.SetActive(true);
             andromeda.SetActive(true);
+            cepheus.SetActive(true);
+            draco.SetActive(true);
+            camelopardalis.SetActive(true);
+            aquarius.SetActive(true);
+            aquila.SetActive (true);
+            canesvenatici.SetActive(true);
+            capricornus.SetActive(true);
+            cetus.SetActive(true);
+            comaberenices.SetActive(true);
+            coronaBorealis.SetActive(true);
+            corvus.SetActive(true);
+            crater.SetActive(true);
+            delphinus.SetActive(true);
+            equuleus.SetActive(true);
+            eridanus.SetActive(true);
+            hercules.SetActive(true);
+            hydra.SetActive(true);
+            lacerta.SetActive(true);
+            leominor.SetActive (true);
+            lepus.SetActive(true);
+            lynx.SetActive(true);
+            monoceros.SetActive(true);
+            ophiuchus.SetActive(true);
+            piscisaustrinus.SetActive(true);
+            sagitta.SetActive(true);
+            scutum.SetActive(true);
+            serpens.SetActive(true);
+            sextans.SetActive(true);
+            triangulum.SetActive(true);
+            vulpecula.SetActive(true);
 
             obj = true;
         }
@@ -296,8 +327,112 @@ public class UIimageManager : MonoBehaviour
             ursamajor.SetActive(false);
             ursaminor.SetActive(false);
             andromeda.SetActive(false);
+            cepheus.SetActive(false);
+            draco.SetActive(false);
+            camelopardalis.SetActive(false);
+            aquarius.SetActive(false);
+            aquila.SetActive(false);
+            canesvenatici.SetActive(false);
+            capricornus.SetActive(false);
+            cetus.SetActive(false);
+            comaberenices.SetActive(false);
+            coronaBorealis.SetActive(false);
+            corvus.SetActive(false);
+            crater.SetActive(false);
+            delphinus.SetActive(false);
+            equuleus.SetActive(false);
+            eridanus.SetActive(false);
+            hercules.SetActive(false);
+            hydra.SetActive(false);
+            lacerta.SetActive(false);
+            leominor.SetActive(false);
+            lepus.SetActive(false);
+            lynx.SetActive(false);
+            monoceros.SetActive(false);
+            ophiuchus.SetActive(false);
+            piscisaustrinus.SetActive(false);
+            sagitta.SetActive(false);
+            scutum.SetActive(false);
+            serpens.SetActive(false);
+            sextans.SetActive(false);
+            triangulum.SetActive(false);
+            vulpecula.SetActive(false);
 
             obj = false;
+        }
+    }
+
+    public void SouthernImage()
+    {
+        if (!obj)
+        {
+            antila.SetActive(true);
+            apus.SetActive(true);
+            ara.SetActive(true);
+            caelum.SetActive(true);
+            carina.SetActive(true);
+            centaurus.SetActive(true);
+            chamaeleon.SetActive(true);
+            circinus.SetActive(true);
+            columba.SetActive(true);
+            coronaAustralis.SetActive(true);
+            crux.SetActive(true);
+            horologium.SetActive(true);
+            hydrus.SetActive(true);
+            indus.SetActive(true);
+            lupus.SetActive(true);
+            mensa.SetActive(true);
+            microscopium.SetActive(true);
+            musca.SetActive(true);
+            norma.SetActive(true);
+            octans.SetActive(true);
+            pavo.SetActive(true);
+            phoenix.SetActive(true);
+            pictor.SetActive(true);
+            puppis.SetActive(true);
+            pyxis.SetActive(true);
+            reticulum.SetActive(true);
+            sculptor.SetActive(true);
+            telescopium.SetActive(true);
+            triangulumaustrale.SetActive(true);
+            tucana.SetActive(true);
+            vela.SetActive(true);
+            volans.SetActive(true);
+        }
+        else
+        {
+            antila.SetActive(false);
+            apus.SetActive(false);
+            ara.SetActive(false);
+            caelum.SetActive(false);
+            carina.SetActive(false);
+            centaurus.SetActive(false);
+            chamaeleon.SetActive(false);
+            circinus.SetActive(false);
+            columba.SetActive(false);
+            coronaAustralis.SetActive(false);
+            crux.SetActive(false);
+            horologium.SetActive(false);
+            hydrus.SetActive(false);
+            indus.SetActive(false);
+            lupus.SetActive(false);
+            mensa.SetActive(false);
+            microscopium.SetActive(false);
+            musca.SetActive(false);
+            norma.SetActive(false);
+            octans.SetActive(false);
+            pavo.SetActive(false);
+            phoenix.SetActive(false);
+            pictor.SetActive(false);
+            puppis.SetActive(false);
+            pyxis.SetActive(false);
+            reticulum.SetActive(false);
+            sculptor.SetActive(false);
+            telescopium.SetActive(false);
+            triangulumaustrale.SetActive(false);
+            tucana.SetActive(false);
+            vela.SetActive(false);
+            volans.SetActive(false);
         }
     }
     public void SpringImage() // 봄 별자리 이미지
