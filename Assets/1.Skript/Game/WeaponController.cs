@@ -12,6 +12,7 @@ public class WeaponController : MonoBehaviour
 {
     public LayerMask layer;
     public float damage = 10f; // 기본 데미지
+    public float adjustDamage = 10f; // 기본 데미지
     public float distanceMultiplier = 2f; // 거리에 따른 데미지 배율
     public Transform attackRoot;
     public float WeaponLenth;
@@ -38,7 +39,6 @@ public class WeaponController : MonoBehaviour
 
     private void Update()
     {
-        TrailRendererCheck();
         SwordRay();
     }
 
@@ -66,33 +66,6 @@ public class WeaponController : MonoBehaviour
         audioSource.PlayOneShot(hitAudio);
     }
 
-    public void SwordRay()
-    {
-        RaycastHit hit;
-
-        if (Physics.Raycast(attackRoot.position, transform.up, out hit, WeaponLenth, layer))
-        {
-            var attackTargetEntity = hit.collider.GetComponent<CreatureController>();
-
-            if (attackTargetEntity != null && !lastAttackedTargets.Contains(attackTargetEntity))
-            {
-                var message = new DamageMessage();
-                message.amount = damage;
-                message.damager = gameObject;
-                message.hitPoint = hit.point;
-                message.hitNormal = attackRoot.TransformDirection(hit.normal);
-                hapticController.Haptic(transform);
-                HitCreatureEffect();
-
-                attackTargetEntity.ApplyDamage(message);
-                lastAttackedTargets.Add(attackTargetEntity);
-
-                StartCoroutine(AccessInfoAfterDelay());
-            }
-        }
-
-        prevPos = transform.position;
-    }
 
     IEnumerator AccessInfoAfterDelay()
     {
@@ -100,13 +73,38 @@ public class WeaponController : MonoBehaviour
         lastAttackedTargets.Clear();
     }
 
-    void TrailRendererCheck()
+    void SwordRay()
     {
         float currentSpeed = (transform.position - prevPos).magnitude / Time.deltaTime;
 
         if (currentSpeed > 5.5f)
         {
             trailRenderer.enabled = true;
+            adjustDamage = damage * currentSpeed;
+            
+            RaycastHit hit;
+
+            if (Physics.Raycast(attackRoot.position, transform.up, out hit, WeaponLenth, layer))
+            {
+                var attackTargetEntity = hit.collider.GetComponent<CreatureController>();
+
+                if (attackTargetEntity != null && !lastAttackedTargets.Contains(attackTargetEntity))
+                {
+                    var message = new DamageMessage();
+                    message.amount = adjustDamage;
+                    Debug.Log(adjustDamage);
+                    message.damager = gameObject;
+                    message.hitPoint = hit.point;
+                    message.hitNormal = attackRoot.TransformDirection(hit.normal);
+                    hapticController.Haptic(transform);
+                    HitCreatureEffect();
+
+                    attackTargetEntity.ApplyDamage(message);
+                    lastAttackedTargets.Add(attackTargetEntity);
+
+                    StartCoroutine(AccessInfoAfterDelay());
+                }
+            }
         }
         else
         {

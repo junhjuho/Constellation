@@ -42,4 +42,10 @@ public class HapticController : MonoBehaviour
         }
         return new UnityEngine.XR.InputDevice();
     }
+
+    public void VibrateBothControllers()
+    {
+        VibrateController(0.3f, 0.2f, InputDeviceCharacteristics.Right);
+        VibrateController(0.3f, 0.2f, InputDeviceCharacteristics.Left);
+    }
 }

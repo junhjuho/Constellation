@@ -328,18 +328,18 @@ public class Enemy : CreatureController
     {
         if (hasTarget)
         {
-            state = State.Patrol;
+            state = State.Tracking;
         }
         else
         {
             state = State.Patrol;
         }
 
-        if(agent != null)
+        if (agent != null && agent.isOnNavMesh)
         {
             agent.isStopped = false;
         }
-            
+
     }
 
     private bool IsTargetOnSight(Transform target)
