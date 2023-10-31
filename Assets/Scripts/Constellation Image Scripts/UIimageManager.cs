@@ -6,6 +6,8 @@ using UnityEngine.XR.WindowsMR.Input;
 
 public class UIimageManager : MonoBehaviour
 {
+    public GameObject Arrow;
+
     public GameObject constellationViewer;
     public GameObject stellaImage;
     public GameObject virgo;
@@ -129,6 +131,8 @@ public class UIimageManager : MonoBehaviour
     bool winterRotating = false;
     bool southRotating = false;
     bool northRotating = false;
+
+    Transform Arrowposition;
 
     void Start()
     {
@@ -542,6 +546,7 @@ public class UIimageManager : MonoBehaviour
         {
             virgo.SetActive(true);
             obj = true;
+            Arrow.transform.LookAt(virgo.transform.position);
         }
         else
         {
