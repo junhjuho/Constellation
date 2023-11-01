@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 
-public class HapticController : MonoBehaviour
+public class HapticController
 {
     public static float objectStrength = 0.2f;
     public static float objectDuration = 0.1f;

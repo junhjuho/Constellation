@@ -119,7 +119,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 4ecd3f24879b0402c92f21617e3db5e1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -354,7 +354,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &550135011470490885
 Transform:
   m_ObjectHideFlags: 0
@@ -398,7 +398,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: ff33c7fce672541f095331a057da80f0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -813,7 +813,6 @@ GameObject:
   - component: {fileID: 3385293039445970559}
   - component: {fileID: 7853556686139040568}
   - component: {fileID: 5576966971657389644}
-  - component: {fileID: 2504579912697403050}
   m_Layer: 7
   m_Name: Bow
   m_TagString: Untagged
@@ -829,8 +828,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4320345741196649046}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00000009636813, y: 0.38268322, z: -0.000000039916966, w: 0.9238797}
-  m_LocalPosition: {x: 1.5017806, y: 0.242, z: -0.22096813}
+  m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -911,7 +910,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.3, y: 0.05, z: 1}
+  m_Size: {x: 0.1, y: 0.05, z: 0.7}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &285818748063554888
 Rigidbody:
@@ -1006,6 +1005,7 @@ MonoBehaviour:
   arrowSpawnPoint: {fileID: 7308187866275869616}
   arrowMaxSpeed: 15
   bowReleaseAudioSource: {fileID: 5014651813257772633}
+  bowRigidbody: {fileID: 285818748063554888}
 --- !u!114 &5576966971657389644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1154,18 +1154,6 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &2504579912697403050
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4320345741196649046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89ded95b74b8ba5498fcf0d195d6f0b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4649348327495153681
 GameObject:
   m_ObjectHideFlags: 0

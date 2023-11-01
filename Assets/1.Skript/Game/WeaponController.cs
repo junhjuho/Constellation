@@ -94,7 +94,7 @@ public class WeaponController : MonoBehaviour
                     message.damager = gameObject;
                     message.hitPoint = hit.point;
                     message.hitNormal = attackRoot.TransformDirection(hit.normal);
-                    Manager.haptic.Haptic(transform);
+                    Manager.Haptic.Haptic(transform);
                     HitCreatureEffect();
 
                     attackTargetEntity.ApplyDamage(message);

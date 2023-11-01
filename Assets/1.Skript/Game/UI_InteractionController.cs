@@ -17,8 +17,6 @@ public class UI_InteractionController : MonoBehaviour
     [SerializeField]
     InputActionReference inputActionReference_UISwitcher;
 
-    bool isUICanvasActive = false;
-
     [SerializeField]
     GameObject UICanvasGameobject;
 

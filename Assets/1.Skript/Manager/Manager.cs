@@ -14,7 +14,8 @@ public class Manager : MonoBehaviour
     HapticController _haptic = new HapticController();
 
 
-    public static HapticController haptic { get { return Instance._haptic; } }
+    public static HapticController Haptic { get { return Instance._haptic; } }
+
 
     #endregion
 
@@ -36,10 +37,6 @@ public class Manager : MonoBehaviour
 
             DontDestroyOnLoad(go);//씬이 바뀌어도 파괴하지 않고
             s_instance = go.GetComponent<Manager>();//인스텁스는 매니저 대입
-
-            /*s_instance._data.Init();
-            s_instance._pool.Init();
-            s_instance._sound.Init();*/
         }
     }
     public static void Clear()

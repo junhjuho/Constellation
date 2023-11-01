@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2986325080379435916}
   - component: {fileID: 2687445169372352324}
   - component: {fileID: 3775534451361361631}
-  - component: {fileID: 783269226378459206}
   m_Layer: 6
   m_Name: ArrowParent 1
   m_TagString: Arrow
@@ -195,18 +194,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &783269226378459206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4052567086840677840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89ded95b74b8ba5498fcf0d195d6f0b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4510066058879793780
 GameObject:
   m_ObjectHideFlags: 0
