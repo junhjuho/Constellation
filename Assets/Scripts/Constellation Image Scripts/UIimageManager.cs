@@ -10,7 +10,6 @@ public class UIimageManager : MonoBehaviour
 
     public GameObject[] constellationImages;
 
-
     public GameObject ground;
 
     public Transform g;
@@ -167,7 +166,6 @@ public class UIimageManager : MonoBehaviour
                     Arrow.transform.rotation = 
                         Quaternion.LookRotation(Arrow.transform.position - constellationImages[i].transform.position);
                 }
-
             }
             else
             {
