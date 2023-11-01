@@ -5,6 +5,11 @@ using UnityEngine.XR;
 
 public class HapticController : MonoBehaviour
 {
+    public static float objectStrength = 0.2f;
+    public static float objectDuration = 0.1f;
+    public static float targerSterngth = 0.8f;
+    public static float targerDuration = 0.2f;
+
     public void Haptic(Transform transform)
     {
         foreach (Transform child in transform)
@@ -43,9 +48,9 @@ public class HapticController : MonoBehaviour
         return new UnityEngine.XR.InputDevice();
     }
 
-    public void VibrateBothControllers()
+    public void VibrateBothControllers(float strength, float duration)
     {
-        VibrateController(0.3f, 0.2f, InputDeviceCharacteristics.Right);
-        VibrateController(0.3f, 0.2f, InputDeviceCharacteristics.Left);
+        VibrateController(strength, duration, InputDeviceCharacteristics.Right);
+        VibrateController(strength, duration, InputDeviceCharacteristics.Left);
     }
 }

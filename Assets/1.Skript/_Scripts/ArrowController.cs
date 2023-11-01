@@ -7,12 +7,7 @@ public class ArrowController : MonoBehaviour
     [SerializeField] private GameObject midPointVisual, arrowPrefab, arrowSpawnPoint;
     [SerializeField] private float arrowMaxSpeed = 15f;
     [SerializeField] private AudioSource bowReleaseAudioSource;
-    HapticController hapticController;
-
-    private void Awake()
-    {
-        hapticController = GetComponent<HapticController>();
-    }
+    [SerializeField] Rigidbody bowRigidbody;
 
     public void PrepareArrow()
     {
@@ -24,11 +19,13 @@ public class ArrowController : MonoBehaviour
         bowReleaseAudioSource.Play();
         midPointVisual.SetActive(false);
 
-        hapticController.VibrateBothControllers();
+        Manager.haptic.VibrateBothControllers(HapticController.objectStrength, HapticController.objectDuration);
         GameObject arrow = Instantiate(arrowPrefab);
         arrow.transform.position = arrowSpawnPoint.transform.position;
         arrow.transform.rotation = midPointVisual.transform.rotation;
         Rigidbody rb = arrow.GetComponent<Rigidbody>();
-        rb.AddForce(midPointVisual.transform.forward * strength * arrowMaxSpeed, ForceMode.Impulse);
+
+        Vector3 combinedForce = (midPointVisual.transform.forward * strength * arrowMaxSpeed) + bowRigidbody.velocity;
+        rb.AddForce(combinedForce, ForceMode.Impulse);
     }
 }

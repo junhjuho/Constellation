@@ -21,12 +21,10 @@ public class StickingArrowToSurface : MonoBehaviour
 
     public AudioClip hitAudio;
     AudioSource audioSource;
-    HapticController hapticController;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        hapticController = GetComponent<HapticController>();
     }
 
 
@@ -43,6 +41,7 @@ public class StickingArrowToSurface : MonoBehaviour
         GameObject arrow = Instantiate(stickingArrow);
         arrow.transform.position = transform.position;
         arrow.transform.forward = transform.forward;
+        Manager.haptic.VibrateBothControllers(HapticController.objectStrength, HapticController.objectDuration);
 
         if (collision.collider.attachedRigidbody != null)
         {
@@ -56,7 +55,7 @@ public class StickingArrowToSurface : MonoBehaviour
                 message.damager = gameObject;
                 message.hitPoint = collision.contacts[0].point;
                 message.hitNormal = attackRoot.TransformDirection(collision.contacts[0].normal);
-                hapticController.VibrateBothControllers();
+                Manager.haptic.VibrateBothControllers(HapticController.targerSterngth, HapticController.targerDuration);
                 HitCreatureEffect();
 
                 attackTargetEntity.ApplyDamage(message);
@@ -65,6 +64,7 @@ public class StickingArrowToSurface : MonoBehaviour
         }
 
         Destroy(gameObject);
+        Destroy(arrow, 5.0f);
     }
 
 #if UNITY_EDITOR

@@ -21,7 +21,6 @@ public class WeaponController : MonoBehaviour
     Rigidbody rb;
     public AudioClip hitAudio;
     AudioSource audioSource;
-    private HapticController hapticController;
     private RaycastHit[] hits = new RaycastHit[10];
 
     private List<CreatureController> lastAttackedTargets = new List<CreatureController>();
@@ -33,7 +32,6 @@ public class WeaponController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
-        hapticController = GetComponent<HapticController>();
         trailRenderer = GetComponentInChildren<TrailRenderer>();
     }
 
@@ -96,7 +94,7 @@ public class WeaponController : MonoBehaviour
                     message.damager = gameObject;
                     message.hitPoint = hit.point;
                     message.hitNormal = attackRoot.TransformDirection(hit.normal);
-                    hapticController.Haptic(transform);
+                    Manager.haptic.Haptic(transform);
                     HitCreatureEffect();
 
                     attackTargetEntity.ApplyDamage(message);
