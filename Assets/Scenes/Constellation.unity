@@ -1157,13 +1157,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 917283126}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: Cygnus
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 40
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1426,13 +1426,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 917283126}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: Pegasus
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 61
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1841,13 +1841,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 917283126}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: Perseus
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 62
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2050,13 +2050,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 917283126}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: Bootes
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 8
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2921,14 +2921,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 917283125}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 917283126}
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 86
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3587,13 +3587,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 917283126}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: Gemini
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 60
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3988,13 +3988,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 917283126}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: Gemini
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 37
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4646,14 +4646,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 917283125}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 917283126}
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 50
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4836,12 +4836,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 917283126}
         m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
-        m_MethodName: CoronaAustralis
-        m_Mode: 1
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 25
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6674,12 +6674,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 917283126}
         m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
-        m_MethodName: Carina
-        m_Mode: 1
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 16
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6905,12 +6905,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 917283126}
         m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
-        m_MethodName: Grus
-        m_Mode: 1
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 38
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7134,14 +7134,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 917283125}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 917283126}
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 80
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7655,13 +7655,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 917283126}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: Sagittarius
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 71
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8113,14 +8113,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 917283125}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 917283126}
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 58
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8934,14 +8934,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 917283125}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 917283126}
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 42
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -9399,12 +9399,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 917283126}
         m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
-        m_MethodName: Crux
-        m_Mode: 1
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 29
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -9715,13 +9715,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 917283126}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: UrsaMinor
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 81
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -9865,13 +9865,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 917283126}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: Aries
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -11343,14 +11343,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 917283125}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 917283126}
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 44
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -11490,12 +11490,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 917283126}
         m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
-        m_MethodName: Hercules
-        m_Mode: 1
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 39
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -11926,12 +11926,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 917283126}
         m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
-        m_MethodName: Caelum
-        m_Mode: 1
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 9
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -12150,12 +12150,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 917283126}
         m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
-        m_MethodName: CoronaBorealis
-        m_Mode: 1
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 26
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -12591,12 +12591,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 917283126}
         m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
-        m_MethodName: Antila
-        m_Mode: 1
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -12906,13 +12906,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 917283126}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: CanisMinor
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 80
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -13440,13 +13440,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 917283126}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: Aquila
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -13662,14 +13662,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 917283125}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 917283126}
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 87
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -14692,13 +14692,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 917283126}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: Scorpius
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 72
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -14961,7 +14961,7 @@ GameObject:
   - component: {fileID: 733879002}
   - component: {fileID: 733879001}
   m_Layer: 5
-  m_Name: Eqquleus
+  m_Name: Equuleus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15033,12 +15033,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 917283126}
         m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
-        m_MethodName: Equuleus
-        m_Mode: 1
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 34
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -15556,13 +15556,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 917283126}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: Aries
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 64
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -16808,14 +16808,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 917283125}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 917283126}
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 84
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -17503,13 +17503,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 917283126}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: Taurus
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 77
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -17677,14 +17677,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 917283125}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 917283126}
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 67
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -17822,14 +17822,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 917283125}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 917283126}
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 69
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -18348,13 +18348,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 917283126}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: Leo
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 53
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -18492,14 +18492,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 917283125}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 917283126}
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 52
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -19530,13 +19530,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 917283126}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: CanisMajor
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 13
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -19925,12 +19925,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 917283126}
         m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
-        m_MethodName: Crater
-        m_Mode: 1
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 28
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -20068,14 +20068,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 917283125}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 917283126}
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 47
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -20577,12 +20577,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 917283126}
         m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
-        m_MethodName: Chamaeleon
-        m_Mode: 1
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 21
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -21126,12 +21126,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 917283126}
         m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
-        m_MethodName: Corvus
-        m_Mode: 1
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 27
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -22129,13 +22129,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 917283126}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: Orion
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 59
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -22306,9 +22306,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 917283126}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: Andromeda
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -22325,18 +22325,6 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 11768253}
-        m_TargetAssemblyTypeName: ImageFade, Assembly-CSharp
-        m_MethodName: OnQuadClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -22505,13 +22493,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 917283126}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: CanisMinor
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 14
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -22953,13 +22941,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 917283126}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: Andromeda
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 63
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -23231,13 +23219,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 917283126}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: Virgo
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 85
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -23618,14 +23606,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 917283125}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 917283126}
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 75
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -24506,13 +24494,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 917283126}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: Cassiopeia
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 17
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -24746,14 +24734,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 917283125}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 917283126}
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 46
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -25640,12 +25628,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 917283126}
         m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
-        m_MethodName: Cetus
-        m_Mode: 1
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 20
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -26515,13 +26503,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 917283126}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: Libra
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 48
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -26661,12 +26649,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 917283126}
         m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
-        m_MethodName: Cepheus
-        m_Mode: 1
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 19
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -26890,12 +26878,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 917283126}
         m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
-        m_MethodName: Eridanus
-        m_Mode: 1
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 35
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -27114,12 +27102,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 917283126}
         m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
-        m_MethodName: Circinus
-        m_Mode: 1
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 22
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -27269,12 +27257,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 917283126}
         m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
-        m_MethodName: Ara
-        m_Mode: 1
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -29383,14 +29371,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 917283125}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 917283126}
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 76
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -29530,12 +29518,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 917283126}
         m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
-        m_MethodName: Apus
-        m_Mode: 1
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -29743,14 +29731,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 917283125}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 917283126}
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 54
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -30023,12 +30011,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 917283126}
         m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
-        m_MethodName: Columba
-        m_Mode: 1
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 23
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -30526,13 +30514,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 917283126}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: UrsaMinor
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 82
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -30925,14 +30913,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 917283125}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 917283126}
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 57
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -31647,14 +31635,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 917283125}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 917283126}
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 74
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -32260,14 +32248,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 917283125}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 917283126}
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 78
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -33931,12 +33919,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 917283126}
         m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
-        m_MethodName: Draco
-        m_Mode: 1
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 33
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -34192,14 +34180,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 917283125}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 917283126}
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 55
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -34711,12 +34699,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 917283126}
         m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
-        m_MethodName: Fornax
-        m_Mode: 1
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 36
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -34934,13 +34922,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 917283126}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: Capricornus
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 15
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -35656,13 +35644,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 917283126}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: UrsaMinor
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 83
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -36467,14 +36455,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 917283125}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 917283126}
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 66
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -37203,14 +37191,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 917283125}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 917283126}
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 73
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -37385,14 +37373,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 917283125}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 917283126}
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 43
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -37620,13 +37608,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 917283126}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: Pisces
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 65
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -38039,12 +38027,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 917283126}
         m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
-        m_MethodName: Dorado
-        m_Mode: 1
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 32
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -38648,14 +38636,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 917283125}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 917283126}
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 70
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -39162,14 +39150,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 917283125}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 917283126}
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 56
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -39347,12 +39335,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 917283126}
         m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
-        m_MethodName: Centaurus
-        m_Mode: 1
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 18
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -39492,12 +39480,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 917283126}
         m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
-        m_MethodName: Camelopardalis
-        m_Mode: 1
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 10
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -39636,13 +39624,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 917283126}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: Leo
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 45
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -39780,14 +39768,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 917283125}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 917283126}
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 49
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -40135,14 +40123,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 917283125}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 917283126}
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 41
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -40286,13 +40274,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 917283126}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: Orion
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 68
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -41005,13 +40993,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 917283126}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: Cygnus
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 30
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -41714,12 +41702,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 917283126}
         m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
-        m_MethodName: CanesVenatici
-        m_Mode: 1
+        m_MethodName: ConstellationImage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 12
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
