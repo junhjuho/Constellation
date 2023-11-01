@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using System.Data.SqlTypes;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -15,9 +14,7 @@ public class Enemy : CreatureController
         Patrol,
         Tracking,
         AttackBegin,
-        Attacking,
-        Hit,
-        Dead,
+        Attacking
     }
     
     private State state;
@@ -45,11 +42,8 @@ public class Enemy : CreatureController
     public float fieldOfView = 50f;
     public float viewDistance = 10f;
     public float patrolSpeed = 3f;
-    public CreatureController PlayertargetEntity; // 추적할 대상
-
-
-    CreatureController targetEntity; // 추적할 대상
-
+    
+    public CreatureController targetEntity; // 추적할 대상
     public LayerMask whatIsTarget; // 추적 대상 레이어
 
 
@@ -57,7 +51,7 @@ public class Enemy : CreatureController
     private List<CreatureController> lastAttackedTargets = new List<CreatureController>();
     
     private bool hasTarget => targetEntity != null && !targetEntity.dead;
-    private State previousState; // 피격 상태 전의 상태를 저장하는 변수
+    
 
 #if UNITY_EDITOR
 
@@ -75,7 +69,8 @@ public class Enemy : CreatureController
             var leftRayDirection = leftRayRotation * transform.forward;
             Handles.color = new Color(1f, 1f, 1f, 0.2f);
             Handles.DrawSolidArc(eyeTransform.position, Vector3.up, leftRayDirection, fieldOfView, viewDistance);
-        } 
+        }
+        
     }
 
 #endif
@@ -89,7 +84,8 @@ public class Enemy : CreatureController
 
         var attackPivot = attackRoot.position;
         attackPivot.y = transform.position.y;
-        attackDistance = Vector3.Distance(attackRoot.position, attackPivot) + attackRadius * 2.0f;
+        attackDistance = Vector3.Distance(attackRoot.position, attackPivot) + attackRadius;
+
         agent.stoppingDistance = attackDistance;
         agent.speed = patrolSpeed;
     }
@@ -126,7 +122,6 @@ public class Enemy : CreatureController
             var distance = Vector3.Distance(targetEntity.transform.position, transform.position);
             if (distance <= attackDistance)
             {
-                agent.velocity = Vector3.zero;
                 BeginAttack();
             }
         }
@@ -198,6 +193,7 @@ public class Enemy : CreatureController
                     state = State.Tracking;
                     agent.speed = runSpeed;
                 }
+
                 // 추적 대상 존재 : 경로를 갱신하고 AI 이동을 계속 진행
                 agent.SetDestination(targetEntity.transform.position);
             }
@@ -241,7 +237,7 @@ public class Enemy : CreatureController
             }
 
             // 0.2 초 주기로 처리 반복
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.05f);
         }
     }
 
@@ -250,64 +246,16 @@ public class Enemy : CreatureController
     {
         if (!base.ApplyDamage(damageMessage)) return false;
 
-        //피격되었는데 타겟이 없으면
         if (targetEntity == null)
         {
-            targetEntity = PlayertargetEntity;
+            targetEntity = damageMessage.damager.GetComponent<CreatureController>();
         }
-        //previousState = state;
-        //state = State.Hit;
-
+            
         EffectManager.Instance.PlayHitEffect(damageMessage.hitPoint, damageMessage.hitNormal, transform, EffectManager.EffectType.Flesh);
         audioPlayer.PlayOneShot(hitClip);
-        
-        // 피격 애니메이션 재생
-        //anim.SetTrigger("Hit");
-        // 피격 상태 지속 시간 동안 대기하는 코루틴 시작
-        //StartCoroutine(RecoverFromHit());
 
         return true;
     }
-
-   /* private IEnumerator RecoverFromHit()
-    {
-        // 피격 상태에서 잠시 대기
-        yield return new WaitForSeconds(0.5f); // 피격 상태 지속 시간
-
-        // 피격 상태에서 회복 후 이전 상태로 돌아가기
-        if(state == State.Dead)
-        {
-            anim.SetTrigger("Die");
-        }
-        else
-        {
-            switch (previousState)
-            {
-                case State.Tracking:
-                    state = State.Tracking;
-                    anim.SetTrigger("Move");
-                    break;
-                case State.Patrol:
-                    state = State.Patrol;
-                    anim.SetTrigger("Idle");
-                    break;
-                case State.AttackBegin:
-                    state = State.AttackBegin;
-                    anim.SetTrigger("Attack");
-                    break;
-            }
-        }
-        
-        *//*if (hasTarget)
-        {
-            state = State.Tracking;
-        }
-        else
-        {
-            state = State.Patrol;
-        }*//*
-
-    }*/
 
     public void BeginAttack()
     {
@@ -328,18 +276,14 @@ public class Enemy : CreatureController
     {
         if (hasTarget)
         {
-            state = State.Tracking;
+            state = State.Patrol;
         }
         else
         {
             state = State.Patrol;
         }
 
-        if (agent != null && agent.isOnNavMesh)
-        {
-            agent.isStopped = false;
-        }
-
+        agent.isStopped = false;
     }
 
     private bool IsTargetOnSight(Transform target)
@@ -369,20 +313,16 @@ public class Enemy : CreatureController
     {
         // LivingEntity의 Die()를 실행하여 기본 사망 처리 실행
         base.Die();
-        
-       
-        state = State.Dead;
 
         // 다른 AI들을 방해하지 않도록 자신의 모든 콜라이더들을 비활성화
         GetComponent<Collider>().enabled = false;
 
         // AI 추적을 중지하고 내비메쉬 컴포넌트를 비활성화
         agent.enabled = false;
-        anim.SetTrigger("Die");
 
         // 사망 애니메이션 재생
         anim.applyRootMotion = true;
-       
+        anim.SetTrigger("Die");
         
         // 사망 효과음 재생
         if (deathClip != null) audioPlayer.PlayOneShot(deathClip);
