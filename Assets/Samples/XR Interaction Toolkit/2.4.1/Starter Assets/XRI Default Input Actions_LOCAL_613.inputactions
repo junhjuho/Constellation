@@ -626,20 +626,12 @@
                 },
                 {
                     "name": "",
-<<<<<<< HEAD
                     "id": "23b4e5ed-1d50-417c-9e1a-eda993c43b7b",
-=======
-                    "id": "c659f31a-bfc2-4340-99eb-d61e237cd0cb",
->>>>>>> origin/main
                     "path": "<XRController>{LeftHand}/primaryButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-<<<<<<< HEAD
                     "action": "SwitchUI",
-=======
-                    "action": "Switch UI",
->>>>>>> origin/main
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

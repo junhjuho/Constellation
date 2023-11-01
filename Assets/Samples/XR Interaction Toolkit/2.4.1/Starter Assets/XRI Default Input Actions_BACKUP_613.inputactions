@@ -405,9 +405,15 @@
                     "initialStateCheck": true
                 },
                 {
+<<<<<<< HEAD
                     "name": "SwitchUI",
                     "type": "Button",
                     "id": "f36f52cc-cad0-4eca-8199-8ae4a8d77277",
+=======
+                    "name": "Switch UI",
+                    "type": "Button",
+                    "id": "95bebd09-ce2e-4843-8b50-86273e262adc",
+>>>>>>> origin/main
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
