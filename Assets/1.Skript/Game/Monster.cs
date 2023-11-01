@@ -51,7 +51,7 @@ public class Monster : CreatureController
         //animator = GetComponent<Animator>();
     }
 
-    protected override void UpdateIdle()
+    protected void UpdateIdle()
     {
         if (target == null)
             return;
@@ -66,7 +66,7 @@ public class Monster : CreatureController
         }
     }
 
-    protected override void UpdateMoving()
+    protected void UpdateMoving()
     {
         if (_lockTarget != null)
         {
@@ -100,7 +100,7 @@ public class Monster : CreatureController
     }
  
 
-    protected override void UpdateAttack()
+    protected void UpdateAttack()
     {
         if(_lockTarget == null) return;
 
@@ -188,7 +188,7 @@ public class Monster : CreatureController
 
     }
 
-    protected override void UpdateDie()
+    protected void UpdateDie()
     {
  
     }

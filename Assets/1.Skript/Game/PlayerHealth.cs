@@ -28,6 +28,8 @@ public class PlayerHealth : CreatureController
     CharacterController characterController;
     AvatarController avatarController;
     LocomotionSystem locomotionSystem;
+    ContinuousMoveProviderBase continuousMoveProvider;
+    ContinuousTurnProviderBase continuousTurnProvider;
 
 
     private void Awake()
@@ -42,16 +44,15 @@ public class PlayerHealth : CreatureController
         avatarController = GetComponent<AvatarController>();
         characterController = transform.parent.GetComponent<CharacterController>();
         locomotionSystem = transform.parent.GetComponent<LocomotionSystem>();
-        
+        continuousMoveProvider = transform.parent.GetComponent<ContinuousMoveProviderBase>();
+        continuousTurnProvider = transform.parent.GetComponent<ContinuousTurnProviderBase>();
+
+
     }
 
     public void Update()
     {
-        foreach (var item in animationInputs)
-        {
-            float actionValue = item.action.action.ReadValue<float>();
-            anim.SetFloat(item.animationPropertyName, actionValue);
-        }
+        HandAnimation();
     }
 
     protected override void OnEnable()
@@ -113,6 +114,8 @@ public class PlayerHealth : CreatureController
         avatarController.enabled = false;
         locomotionSystem.enabled = false;
         transform.position += new Vector3(0, 0.6f, 0);
+        continuousTurnProvider.enabled = false;
+        continuousMoveProvider.enabled = false;
         Debug.Log("DEAD ON");
         anim.SetTrigger("isDead");
     }
@@ -121,7 +124,7 @@ public class PlayerHealth : CreatureController
     {
         bool isMovingForward = move.action.ReadValue<Vector2>().y > 0;
         //Debug.Log("AnimateLegs On");
-        if (anim != null)
+        if (anim != null||!dead)
         {
             if (isMovingForward)
             {
@@ -148,4 +151,17 @@ public class PlayerHealth : CreatureController
         }
     }
 
+    public void HandAnimation()
+    {
+
+        if (!dead)
+        {
+            foreach (var item in animationInputs)
+            {
+                float actionValue = item.action.action.ReadValue<float>();
+                anim.SetFloat(item.animationPropertyName, actionValue);
+            }
+        }
+       
+    }
 }
