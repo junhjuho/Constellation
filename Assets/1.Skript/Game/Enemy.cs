@@ -31,6 +31,7 @@ public class Enemy : CreatureController
     private AudioSource audioPlayer; // 오디오 소스 컴포넌트
     public AudioClip hitClip; // 피격시 재생할 소리
     public AudioClip deathClip; // 사망시 재생할 소리
+    public AudioClip shieldClip;
     
     private Renderer skinRenderer; // 렌더러 컴포넌트
 
@@ -47,15 +48,18 @@ public class Enemy : CreatureController
     public float patrolSpeed = 3f;
     public CreatureController PlayertargetEntity; // 추적할 대상
 
-
     CreatureController targetEntity; // 추적할 대상
 
-    public LayerMask whatIsTarget; // 추적 대상 레이어
-
+    public LayerMask playerLayer; // 추적 대상 레이어
+    public LayerMask shieldLayer; // 추적 대상 레이어
+    LayerMask whatIsTarget;
 
     private RaycastHit[] hits = new RaycastHit[10];
     private List<CreatureController> lastAttackedTargets = new List<CreatureController>();
-    
+    private List<CreatureController> lastAttackedTShield = new List<CreatureController>();
+
+    private bool shieldHitRegistered = false;
+
     private bool hasTarget => targetEntity != null && !targetEntity.dead;
     private State previousState; // 피격 상태 전의 상태를 저장하는 변수
 
@@ -92,6 +96,7 @@ public class Enemy : CreatureController
         attackDistance = Vector3.Distance(attackRoot.position, attackPivot) + attackRadius * 2.0f;
         agent.stoppingDistance = attackDistance;
         agent.speed = patrolSpeed;
+        whatIsTarget = playerLayer | shieldLayer;
     }
 
     // 적 AI의 초기 스펙을 결정하는 셋업 메서드
@@ -150,38 +155,49 @@ public class Enemy : CreatureController
 
         if (state == State.Attacking)
         {
-            var direction = transform.forward;
             var deltaDistance = agent.velocity.magnitude * Time.deltaTime;
 
-            var size = Physics.SphereCastNonAlloc(attackRoot.position, attackRadius, direction, hits, deltaDistance, whatIsTarget);
+            var size = Physics.SphereCastNonAlloc(attackRoot.position, attackRadius, transform.forward, hits, deltaDistance, whatIsTarget);
 
-            for (var i = 0; i < size; i++)
+            /*for (var i = 0; i < size; i++)
             {
+                var hitCollider = hits[i].collider;
                 var attackTargetEntity = hits[i].collider.GetComponent<CreatureController>();
 
-                if (attackTargetEntity != null && !lastAttackedTargets.Contains(attackTargetEntity))
+                if ((shieldLayer.value & (1 << hitCollider.gameObject.layer)) != 0 && !lastAttackedTShield.Contains(attackTargetEntity))
                 {
-                    var message = new DamageMessage();
-                    message.amount = damage;
-                    message.damager = gameObject;
-
-                    if (hits[i].distance <= 0f)
-                    {
-                        message.hitPoint = attackRoot.position;
-                    }
-                    else
-                    {
-                        message.hitPoint = hits[i].point;
-                    }
-
-                    message.hitNormal = attackRoot.TransformDirection(hits[i].normal);
-
-                    attackTargetEntity.ApplyDamage(message);
-
-                    lastAttackedTargets.Add(attackTargetEntity);
-                    break;
+                    lastAttackedTShield.Add(attackTargetEntity);
+                    HandleShieldHit();
+                    break; // 추가 공격 처리 중단
                 }
-            }
+
+                else if (attackTargetEntity != null && !lastAttackedTargets.Contains(attackTargetEntity))
+                {
+                    lastAttackedTargets.Add(attackTargetEntity);
+                    if (lastAttackedTShield.Add(attackTargetEntity) > lastAttackedTargets.Add(attackTargetEntity){
+                        var message = new DamageMessage();
+                        message.amount = damage;
+                        message.damager = gameObject;
+
+                        if (hits[i].distance <= 0f)
+                        {
+                            message.hitPoint = attackRoot.position;
+                        }
+                        else
+                        {
+                            message.hitPoint = hits[i].point;
+                        }
+
+                        message.hitNormal = attackRoot.TransformDirection(hits[i].normal);
+
+                        attackTargetEntity.ApplyDamage(message);
+
+                        break;
+                    }
+
+
+                }
+            }*/
         }
     }
 
@@ -255,59 +271,13 @@ public class Enemy : CreatureController
         {
             targetEntity = PlayertargetEntity;
         }
-        //previousState = state;
-        //state = State.Hit;
 
         EffectManager.Instance.PlayHitEffect(damageMessage.hitPoint, damageMessage.hitNormal, transform, EffectManager.EffectType.Flesh);
         audioPlayer.PlayOneShot(hitClip);
-        
-        // 피격 애니메이션 재생
-        //anim.SetTrigger("Hit");
-        // 피격 상태 지속 시간 동안 대기하는 코루틴 시작
-        //StartCoroutine(RecoverFromHit());
 
         return true;
     }
 
-   /* private IEnumerator RecoverFromHit()
-    {
-        // 피격 상태에서 잠시 대기
-        yield return new WaitForSeconds(0.5f); // 피격 상태 지속 시간
-
-        // 피격 상태에서 회복 후 이전 상태로 돌아가기
-        if(state == State.Dead)
-        {
-            anim.SetTrigger("Die");
-        }
-        else
-        {
-            switch (previousState)
-            {
-                case State.Tracking:
-                    state = State.Tracking;
-                    anim.SetTrigger("Move");
-                    break;
-                case State.Patrol:
-                    state = State.Patrol;
-                    anim.SetTrigger("Idle");
-                    break;
-                case State.AttackBegin:
-                    state = State.AttackBegin;
-                    anim.SetTrigger("Attack");
-                    break;
-            }
-        }
-        
-        *//*if (hasTarget)
-        {
-            state = State.Tracking;
-        }
-        else
-        {
-            state = State.Patrol;
-        }*//*
-
-    }*/
 
     public void BeginAttack()
     {
@@ -386,5 +356,33 @@ public class Enemy : CreatureController
         
         // 사망 효과음 재생
         if (deathClip != null) audioPlayer.PlayOneShot(deathClip);
+    }
+
+    public void HandleShieldHit()
+    {
+        // 이미 방패에 히트한 경우 더 이상 처리하지 않음
+        if (shieldHitRegistered) return;
+
+        // 방패에 히트 처리를 했다는 표시
+        shieldHitRegistered = true;
+
+        // 오디오 재생
+        if (audioPlayer != null && shieldClip != null)
+        {
+            audioPlayer.PlayOneShot(shieldClip);
+        }
+        else
+        {
+            Debug.Log("audioSource or shieldClip is null");
+        }
+
+        // 일정 시간 후에 shieldHitRegistered를 다시 false로 설정
+        StartCoroutine(ResetShieldHit());
+    }
+    private IEnumerator ResetShieldHit()
+    {
+        yield return new WaitForSeconds(0.5f); // 쿨다운 시간
+        shieldHitRegistered = false;
+        lastAttackedTShield.Clear();
     }
 }

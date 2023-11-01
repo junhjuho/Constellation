@@ -5,13 +5,6 @@ using System;
 
 public class CreatureController : MonoBehaviour
 {
-
-    [SerializeField]
-    protected Vector3 _destPos;
-
-    [SerializeField]
-    protected GameObject _lockTarget;
-
     public float startingHealth = 100f; // 시작 체력
     public float health { get; protected set; } // 현재 체력
     public bool dead { get; protected set; } // 사망 상태
@@ -20,11 +13,6 @@ public class CreatureController : MonoBehaviour
 
     private const float minTimeBetDamaged = 0.1f;
     private float lastDamagedTime;
-
-    private void Start()
-    {
-
-    }
 
     protected bool IsInvulnerable
     {
