@@ -14,7 +14,6 @@ public class UIimageManager : MonoBehaviour
 
     public Transform g;
     
-
     GameObject viewer;
 
     public float rotSpeed = 1f; 
@@ -158,25 +157,19 @@ public class UIimageManager : MonoBehaviour
             {
                 if (constellationImages[i].activeSelf)
                 {
-                    constellationImages[i].SetActive(false);
+                    //constellationImages[i].SetActive(false);
                 }
                 else
                 {
-                    constellationImages[i].SetActive(true);
+                    //constellationImages[i].SetActive(true);
                     Arrow.transform.rotation = 
                         Quaternion.LookRotation(Arrow.transform.position - constellationImages[i].transform.position);
                 }
             }
             else
             {
-                constellationImages[i].SetActive(false);
+                // constellationImages[i].SetActive(false);
             }
         }
     }
-
-   
-    
-
-
-
 }
