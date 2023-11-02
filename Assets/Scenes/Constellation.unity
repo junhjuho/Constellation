@@ -267,9 +267,9 @@ RectTransform:
   - {fileID: 301179253}
   m_Father: {fileID: 2102899343}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 191.5, y: -16.85}
   m_SizeDelta: {x: 100, y: 33.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &25204880
@@ -644,8 +644,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 141548902}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0.36070484}
+  m_AnchorMax: {x: 1, y: 0.6392951}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1134,6 +1134,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1788119449}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &97035021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1205,9 +1217,9 @@ RectTransform:
   - {fileID: 832519653}
   m_Father: {fileID: 793788663}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 191.5, y: -320.15002}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 33.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &101462451
@@ -1399,6 +1411,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 123
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 936231550}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1818,6 +1842,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1074777877}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &119010480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2023,6 +2059,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 17
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 993233278}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2899,6 +2947,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1926221915}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &164558855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3576,6 +3636,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 457784687}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &202659861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3973,6 +4045,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 75
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 370620626}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4636,6 +4720,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2050420697}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &261035296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4712,9 +4808,9 @@ RectTransform:
   - {fileID: 566386096}
   m_Father: {fileID: 2102899343}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 191.5, y: -522.3501}
   m_SizeDelta: {x: 100, y: 33.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &271471864
@@ -4820,6 +4916,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 51
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 825074793}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6674,6 +6782,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 205989290}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &329398951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6905,6 +7025,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 495534022}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &332484078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7132,6 +7264,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 159
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1761922994}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7544,9 +7688,9 @@ RectTransform:
   - {fileID: 662453943}
   m_Father: {fileID: 2102899343}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 191.5, y: -117.950005}
   m_SizeDelta: {x: 100, y: 33.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &361483936
@@ -7652,6 +7796,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 143
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1781905378}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7939,9 +8095,9 @@ RectTransform:
   - {fileID: 1557891923}
   m_Father: {fileID: 793788663}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 191.5, y: -252.75}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 33.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &382990552
@@ -8111,6 +8267,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 117
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1195377658}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8542,9 +8710,9 @@ RectTransform:
   - {fileID: 1936349940}
   m_Father: {fileID: 793788663}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 191.5, y: -185.35}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 33.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &414434297
@@ -8769,7 +8937,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &431634798
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8936,6 +9104,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 203062230}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &445804463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9006,8 +9186,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 450304797}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.31798348}
-  m_AnchorMax: {x: 1, y: 0.682017}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -9399,6 +9579,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 606081546}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &484324687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9716,6 +9908,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 177493632}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &496593582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9862,6 +10066,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 13
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 648822701}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -11345,6 +11561,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1602246364}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &563665634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11486,6 +11714,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 79
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 929734953}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -11926,6 +12166,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2107046751}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &603523442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12146,6 +12398,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 53
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1488685446}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -12591,6 +12855,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1227729467}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &625628531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12745,9 +13021,9 @@ RectTransform:
   m_Father: {fileID: 1457559595}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -17, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &625924957
 MonoBehaviour:
@@ -12903,6 +13179,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 161
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1699059273}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -13441,6 +13729,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 232884155}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &662453945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13664,6 +13964,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1640091636}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &678056220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13737,9 +14049,9 @@ RectTransform:
   m_Father: {fileID: 771618124}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -17, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &678167806
 MonoBehaviour:
@@ -14697,6 +15009,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1746107602}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &718942288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15037,6 +15361,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1525722521}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &733879002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15189,9 +15525,9 @@ RectTransform:
   - {fileID: 863222180}
   m_Father: {fileID: 793788663}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 191.5, y: -219.05}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 33.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &737683003
@@ -15449,9 +15785,9 @@ RectTransform:
   - {fileID: 332484076}
   m_Father: {fileID: 793788663}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 191.5, y: -151.65001}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 33.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &753910664
@@ -15561,6 +15897,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1206197032}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &753910667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15616,7 +15964,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &754003586
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16319,9 +16667,9 @@ RectTransform:
   - {fileID: 164558853}
   m_Father: {fileID: 793788663}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 191.5, y: -387.55005}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 33.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &779872433
@@ -16660,7 +17008,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 383, y: 349.4001}
+  m_SizeDelta: {x: 383, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &793788664
 MonoBehaviour:
@@ -16810,6 +17158,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 169
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1153901370}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -17396,9 +17756,9 @@ RectTransform:
   - {fileID: 753910665}
   m_Father: {fileID: 793788663}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 191.5, y: -286.45}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 33.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &824396144
@@ -17504,6 +17864,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 155
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 54796796}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -17683,6 +18055,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 899955338}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &829837087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17824,6 +18208,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 139
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 690460886}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -17988,9 +18384,9 @@ RectTransform:
   - {fileID: 627869398}
   m_Father: {fileID: 793788663}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 191.5, y: -353.85004}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 33.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &844006844
@@ -18353,6 +18749,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1535369394}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &863222182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18494,6 +18902,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 105
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1749057479}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -19535,6 +19955,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 848787972}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &933726846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19812,9 +20244,9 @@ RectTransform:
   - {fileID: 329398949}
   m_Father: {fileID: 793788663}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 191.5, y: -50.550003}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 33.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &959854903 stripped
@@ -19925,6 +20357,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 57
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 829505271}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -20070,6 +20514,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 95
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2043727320}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -20581,6 +21037,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1189105584}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &978365811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20898,9 +21366,9 @@ RectTransform:
   - {fileID: 1498995933}
   m_Father: {fileID: 2102899343}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 191.5, y: -320.15002}
   m_SizeDelta: {x: 100, y: 33.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &986332865
@@ -21126,6 +21594,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 55
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1839406792}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -21990,9 +22470,9 @@ RectTransform:
   - {fileID: 2030192106}
   m_Father: {fileID: 2102899343}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 191.5, y: -219.05}
   m_SizeDelta: {x: 100, y: 33.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1045908367
@@ -22130,6 +22610,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 119
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 835961531}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -22307,6 +22799,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2038308802}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -22506,6 +23010,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 29
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 819940295}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -22958,6 +23474,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 263009914}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1127942670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23232,6 +23760,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 171
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 113929184}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -23624,6 +24164,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1964090651}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1168855854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23695,9 +24247,9 @@ RectTransform:
   - {fileID: 1080542525}
   m_Father: {fileID: 2102899343}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 191.5, y: -353.85004}
   m_SizeDelta: {x: 100, y: 33.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1183128796
@@ -23733,9 +24285,9 @@ RectTransform:
   - {fileID: 1350593514}
   m_Father: {fileID: 793788663}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 191.5, y: -84.25}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 33.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1185610648
@@ -24511,6 +25063,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1781987262}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1227035727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24748,6 +25312,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 93
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 302328674}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -25644,6 +26220,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 773446499}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1280546728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26408,9 +26996,9 @@ RectTransform:
   - {fileID: 970581602}
   m_Father: {fileID: 2102899343}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 191.5, y: -454.95007}
   m_SizeDelta: {x: 100, y: 33.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1324372011
@@ -26516,6 +27104,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 97
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 922529607}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -26661,6 +27261,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 39
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 94488608}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -26894,6 +27506,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1157684025}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1342010483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27118,6 +27742,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 104187361}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1350593516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27269,6 +27905,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 11
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 884690274}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -29083,9 +29731,9 @@ RectTransform:
   - {fileID: 484324685}
   m_Father: {fileID: 793788663}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 191.5, y: -117.950005}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 33.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1477085683
@@ -29281,9 +29929,9 @@ RectTransform:
   - {fileID: 1491229232}
   m_Father: {fileID: 793788663}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 191.5, y: -16.85}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 33.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1489582763
@@ -29389,6 +30037,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 153
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1009748745}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -29538,6 +30198,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1593539452}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1491229234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29609,9 +30281,9 @@ RectTransform:
   - {fileID: 1334806624}
   m_Father: {fileID: 2102899343}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 191.5, y: -252.75}
   m_SizeDelta: {x: 100, y: 33.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1498294475
@@ -29749,6 +30421,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 109
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 479948552}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -30027,6 +30711,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 47
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 532764121}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -30535,6 +31231,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 829607229}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1536522053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30935,6 +31643,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 680750177}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1557891925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31185,9 +31905,9 @@ RectTransform:
   - {fileID: 971213863}
   m_Father: {fileID: 2102899343}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 191.5, y: -488.6501}
   m_SizeDelta: {x: 100, y: 33.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1580540895
@@ -31653,6 +32373,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 149
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 984063316}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -32270,6 +33002,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 338165595}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1611320532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32420,9 +33164,9 @@ RectTransform:
   - {fileID: 1593789904}
   m_Father: {fileID: 2102899343}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 191.5, y: -151.65001}
   m_SizeDelta: {x: 100, y: 33.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1617169323
@@ -33010,9 +33754,9 @@ RectTransform:
   - {fileID: 563665632}
   m_Father: {fileID: 2102899343}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 191.5, y: -84.25}
   m_SizeDelta: {x: 100, y: 33.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1658903922
@@ -33342,9 +34086,9 @@ RectTransform:
   - {fileID: 511883080}
   m_Father: {fileID: 2102899343}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 191.5, y: -286.45}
   m_SizeDelta: {x: 100, y: 33.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1677671308
@@ -33537,9 +34281,9 @@ RectTransform:
   - {fileID: 2029683663}
   m_Father: {fileID: 2102899343}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 191.5, y: -50.550003}
   m_SizeDelta: {x: 100, y: 33.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1715866408
@@ -33939,6 +34683,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1208340766}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1738703427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34198,6 +34954,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 111
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1315668463}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -34719,6 +35487,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 643562460}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1756527571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34943,6 +35723,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 765703340}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1761315657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35018,9 +35810,9 @@ RectTransform:
   - {fileID: 824396145}
   m_Father: {fileID: 2102899343}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 191.5, y: -556.05005}
   m_SizeDelta: {x: 100, y: 33.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1770229669
@@ -35661,6 +36453,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 167
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1812566956}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -36524,6 +37328,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1376897172}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1900283415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36595,9 +37411,9 @@ RectTransform:
   - {fileID: 390820575}
   m_Father: {fileID: 2102899343}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 191.5, y: -185.35}
   m_SizeDelta: {x: 100, y: 33.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1903888671
@@ -37260,6 +38076,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 290545788}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1922807266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37438,6 +38266,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 87
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1943783032}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -37672,6 +38512,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 131
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 540299780}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -38090,6 +38942,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 65
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 319338737}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -38561,9 +39425,9 @@ RectTransform:
   - {fileID: 678056218}
   m_Father: {fileID: 2102899343}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 191.5, y: -387.55005}
   m_SizeDelta: {x: 100, y: 33.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1987035228
@@ -38701,6 +39565,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 141
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1365694108}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -39219,6 +40095,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 995246056}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2027370498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39290,9 +40178,9 @@ RectTransform:
   - {fileID: 1159077482}
   m_Father: {fileID: 2102899343}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 191.5, y: -421.25006}
   m_SizeDelta: {x: 100, y: 33.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2029313934
@@ -39398,6 +40286,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 37
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1253272657}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -39547,6 +40447,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1320182256}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2029683665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39692,6 +40604,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 894571514}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2030192108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39833,6 +40757,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 99
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1024601272}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -40192,6 +41128,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 939466508}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2049968126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40338,6 +41286,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 137
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 795667867}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -41061,6 +42021,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 368541892}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2091998151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41424,7 +42396,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 383, y: 0}
+  m_SizeDelta: {x: 383, y: 517.90015}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2102899344
 MonoBehaviour:
@@ -41765,6 +42737,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 25
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1263650725}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
