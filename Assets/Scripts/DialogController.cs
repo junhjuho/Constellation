@@ -9,6 +9,7 @@ public class DialogController : MonoBehaviour
     public GameObject ExitBtn;
     bool isTyping = false;
 
+    AudioSource audio;
     // Start is called before the first frame update
 
     void OnEnable()
@@ -18,6 +19,10 @@ public class DialogController : MonoBehaviour
         StartCoroutine(Typing(sampleText));
     }
 
+    private void Start()
+    {
+        audio = GetComponent<AudioSource>();
+    }
     // Update is called once per frame
     void Update() 
     {
