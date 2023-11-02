@@ -403,15 +403,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "Switch UI",
-                    "type": "Button",
-                    "id": "95bebd09-ce2e-4843-8b50-86273e262adc",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -621,17 +612,6 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "Aim Flags",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c659f31a-bfc2-4340-99eb-d61e237cd0cb",
-                    "path": "<XRController>{LeftHand}/primaryButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Switch UI",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
