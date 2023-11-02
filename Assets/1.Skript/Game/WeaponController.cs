@@ -16,10 +16,11 @@ public class WeaponController : MonoBehaviour
     public float distanceMultiplier = 2f; // 거리에 따른 데미지 배율
     public Transform attackRoot;
     public float WeaponLenth;
-    public TrailRenderer trailRenderer;
-    
+
     Rigidbody rb;
-    public AudioClip hitAudio;
+    public AudioClip hitClip;
+    public AudioClip swingClip;
+    TrailRenderer trailRenderer;
     AudioSource audioSource;
     private RaycastHit[] hits = new RaycastHit[10];
 
@@ -33,6 +34,7 @@ public class WeaponController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
         trailRenderer = GetComponentInChildren<TrailRenderer>();
+        audioSource.pitch = 1.5f;
     }
 
     private void Update()
@@ -59,9 +61,7 @@ public class WeaponController : MonoBehaviour
         {
             Debug.Log("audioSource is null");
         }
-
-        audioSource.pitch = 1.5f;
-        audioSource.PlayOneShot(hitAudio);
+        audioSource.PlayOneShot(hitClip);
     }
 
 
@@ -79,11 +79,13 @@ public class WeaponController : MonoBehaviour
         {
             trailRenderer.enabled = true;
             adjustDamage = damage * currentSpeed;
-            
-            RaycastHit hit;
+            audioSource.PlayOneShot(swingClip);
+            // RaycastNonAlloc 호출로 변경
+            int hitCount = Physics.RaycastNonAlloc(attackRoot.position, transform.up, hits, WeaponLenth, layer);
 
-            if (Physics.Raycast(attackRoot.position, transform.up, out hit, WeaponLenth, layer))
+            for (int i = 0; i < hitCount; i++)
             {
+                var hit = hits[i]; // 배열에서 hit 정보를 가져옴
                 var attackTargetEntity = hit.collider.GetComponent<CreatureController>();
 
                 if (attackTargetEntity != null && !lastAttackedTargets.Contains(attackTargetEntity))
@@ -101,8 +103,35 @@ public class WeaponController : MonoBehaviour
                     lastAttackedTargets.Add(attackTargetEntity);
 
                     StartCoroutine(AccessInfoAfterDelay());
+                    // 하나의 타겟에 히트한 후 바로 루프를 종료
+                    break;
                 }
             }
+
+            /*RaycastHit hit;
+
+            if (Physics.Raycast(attackRoot.position, transform.up, out hit, WeaponLenth, layer))
+            {
+                var attackTargetEntity = hit.collider.GetComponent<CreatureController>();
+
+                if (attackTargetEntity != null && !lastAttackedTargets.Contains(attackTargetEntity))
+                {
+                    var message = new DamageMessage();
+                    message.amount = adjustDamage;
+                    Debug.Log(adjustDamage);
+                    message.damager = gameObject;
+                    message.hitPoint = hit.point;
+                    message.hitNormal = attackRoot.TransformDirection(hit.normal);
+                    audioSource.PlayOneShot(swingClip);
+                    Manager.Haptic.Haptic(transform);
+                    HitCreatureEffect();
+
+                    attackTargetEntity.ApplyDamage(message);
+                    lastAttackedTargets.Add(attackTargetEntity);
+
+                    StartCoroutine(AccessInfoAfterDelay());
+                }
+            }*/
         }
         else
         {
