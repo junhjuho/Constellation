@@ -22,6 +22,7 @@ public class PlayerHealth : CreatureController
 
     public AudioClip deathClip; // 사망 소리
     public AudioClip hitClip; // 피격 소리
+    public UI_InteractionController UIcontroller;
 
     RigBuilder rigBuilder;
     LowerBodyAnimation lowerBodyAnimation;
@@ -116,8 +117,9 @@ public class PlayerHealth : CreatureController
         transform.position += new Vector3(0, 0.6f, 0);
         continuousTurnProvider.enabled = false;
         continuousMoveProvider.enabled = false;
-        Debug.Log("DEAD ON");
         anim.SetTrigger("isDead");
+        Manager.Instance.GameOver();
+        UIcontroller.GameOverText();
     }
 
     private void AnimateLegs(InputAction.CallbackContext obj)

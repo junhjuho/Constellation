@@ -5,6 +5,17 @@ using System;
 
 public class CreatureController : MonoBehaviour
 {
+    public enum State
+    {
+        Idle,
+        Patrol,
+        Tracking,
+        AttackBegin,
+        Attacking,
+        Hit,
+        Dead,
+    }
+
     public float startingHealth = 100f; // 시작 체력
     public float health { get; protected set; } // 현재 체력
     public bool dead { get; protected set; } // 사망 상태
@@ -13,7 +24,7 @@ public class CreatureController : MonoBehaviour
 
     private const float minTimeBetDamaged = 0.1f;
     private float lastDamagedTime;
-
+    public CreatureController PlayertargetEntity; // 추적할 대상
     protected bool IsInvulnerable
     {
         get

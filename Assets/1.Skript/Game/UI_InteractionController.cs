@@ -5,6 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
 using System;
+using UnityEngine.UI;
 
 public class UI_InteractionController : MonoBehaviour
 {
@@ -19,6 +20,10 @@ public class UI_InteractionController : MonoBehaviour
 
     [SerializeField]
     GameObject UICanvasGameobject;
+
+    public Text textBox;
+
+    bool isUICanvasActive = false;
 
   
     private void OnEnable()
@@ -52,43 +57,68 @@ public class UI_InteractionController : MonoBehaviour
     /// <param name="obj"></param>
     private void ActivateUIMode(InputAction.CallbackContext obj)
     {
-        /* if (!isUICanvasActive)
-         {
-             isUICanvasActive = true;
+        if (!isUICanvasActive)
+        {
+            isUICanvasActive = true;
 
-             //Activating UI Controller by enabling its XR Ray Interactor and XR Interactor Line Visual
-             UIController.GetComponent<XRRayInteractor>().enabled = true;
-             UIController.GetComponent<XRInteractorLineVisual>().enabled = true;
+            //Activating UI Controller by enabling its XR Ray Interactor and XR Interactor Line Visual
+            UIController.GetComponent<XRRayInteractor>().enabled = true;
+            UIController.GetComponent<XRInteractorLineVisual>().enabled = true;
 
-             //Deactivating Base Controller by disabling its XR Direct Interactor
-             BaseController.GetComponent<XRDirectInteractor>().enabled = false;
+            //Deactivating Base Controller by disabling its XR Direct Interactor
+            BaseController.GetComponent<XRDirectInteractor>().enabled = false;
 
 
 
-             //Activating the UI Canvas Gameobject
-             UICanvasGameobject.SetActive(true);
-         }
-         else
-         {
-             isUICanvasActive = false;
+            //Activating the UI Canvas Gameobject
+            UICanvasGameobject.SetActive(true);
+        }
+        else
+        {
+            isUICanvasActive = false;
 
-             //De-Activating UI Controller by enabling its XR Ray Interactor and XR Interactor Line Visual
-             UIController.GetComponent<XRRayInteractor>().enabled = false;
-             UIController.GetComponent<XRInteractorLineVisual>().enabled = false;
+            //De-Activating UI Controller by enabling its XR Ray Interactor and XR Interactor Line Visual
+            UIController.GetComponent<XRRayInteractor>().enabled = false;
+            UIController.GetComponent<XRInteractorLineVisual>().enabled = false;
 
-             //Activating Base Controller by disabling its XR Direct Interactor
-             BaseController.GetComponent<XRDirectInteractor>().enabled = true;
+            //Activating Base Controller by disabling its XR Direct Interactor
+            BaseController.GetComponent<XRDirectInteractor>().enabled = true;
 
-             //De-Activating the UI Canvas Gameobject
-             UICanvasGameobject.SetActive(false);
-         }*/
+            //De-Activating the UI Canvas Gameobject
+            UICanvasGameobject.SetActive(false);
+        }
         // XRRayInteractor의 enabled 상태를 토글
-        XRRayInteractor rayInteractor = UIController.GetComponent<XRRayInteractor>();
-        rayInteractor.enabled = !rayInteractor.enabled;
+        /* XRRayInteractor rayInteractor = UIController.GetComponent<XRRayInteractor>();
+         rayInteractor.enabled = !rayInteractor.enabled;
 
-        // XRInteractorLineVisual의 enabled 상태를 토글
-        XRInteractorLineVisual lineVisual = UIController.GetComponent<XRInteractorLineVisual>();
-        lineVisual.enabled = !lineVisual.enabled;
+         // XRInteractorLineVisual의 enabled 상태를 토글
+         XRInteractorLineVisual lineVisual = UIController.GetComponent<XRInteractorLineVisual>();
+         lineVisual.enabled = !lineVisual.enabled;*/
 
+    }
+
+    public void GameOverText()
+    {
+        if (!isUICanvasActive)
+        {
+            isUICanvasActive = true;
+
+            if(textBox != null)
+            {
+                textBox.text = "사망 하였습니다.";
+            }
+
+            //Activating UI Controller by enabling its XR Ray Interactor and XR Interactor Line Visual
+            UIController.GetComponent<XRRayInteractor>().enabled = true;
+            UIController.GetComponent<XRInteractorLineVisual>().enabled = true;
+
+            //Deactivating Base Controller by disabling its XR Direct Interactor
+            BaseController.GetComponent<XRDirectInteractor>().enabled = false;
+
+
+
+            //Activating the UI Canvas Gameobject
+            UICanvasGameobject.SetActive(true);
+        }
     }
 }

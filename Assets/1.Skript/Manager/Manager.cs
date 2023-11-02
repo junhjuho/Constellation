@@ -4,11 +4,17 @@ using System.Resources;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Manager : MonoBehaviour
 {
     static Manager s_instance;
-    static Manager Instance { get { Init(); return s_instance; } }
+    static public Manager Instance { get { Init(); return s_instance; } }
+
+    bool isGameOver = false;
+
+    public Text textBox;
+
 
     #region Core
     HapticController _haptic = new HapticController();
@@ -35,7 +41,6 @@ public class Manager : MonoBehaviour
                 go.AddComponent<Manager>();//매니저 스크립트를 추가함
             }
 
-            DontDestroyOnLoad(go);//씬이 바뀌어도 파괴하지 않고
             s_instance = go.GetComponent<Manager>();//인스텁스는 매니저 대입
         }
     }
@@ -43,4 +48,28 @@ public class Manager : MonoBehaviour
     {
         /*Scene.Clear();*/
     }
+
+    public void HomeScene()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void ObserveSecne()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void ReLoad()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void GameOver()
+    {
+        if (!isGameOver)
+        {
+            isGameOver = true;
+        }
+    }
+
 }

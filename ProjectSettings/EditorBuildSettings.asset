@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Constellation.unity
     guid: 7e2277bcb205cff428b5c93064e55802
+  - enabled: 1
+    path: Assets/Scenes/SandBox 1.unity
+    guid: 90e9d86a4dd985640bacdf2a2ac563f2
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 3127af56261bcab4981871ea729dd0e1, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: f809c2305e1348f41aff4ab4d413da01, type: 2}

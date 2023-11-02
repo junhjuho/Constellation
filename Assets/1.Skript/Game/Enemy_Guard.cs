@@ -9,27 +9,21 @@ using UnityEditor;
 
 public class Enemy_Guard : CreatureController
 {
-    private enum State
-    {
-        Patrol,
-        Tracking,
-        AttackBegin,
-        Attacking,
-        Hit,
-        Dead,
-    }
-
-    private State state;
+    private State state = State.Idle;
 
     private NavMeshAgent agent; // 경로계산 AI 에이전트
     private Animator anim; // 애니메이터 컴포넌트
 
     public Transform attackRoot;
     public Transform eyeTransform;
+    public float attackRange = 1.5f;
 
-    private AudioSource audioPlayer; // 오디오 소스 컴포넌트
+    private AudioSource audioSource; // 오디오 소스 컴포넌트
     public AudioClip hitClip; // 피격시 재생할 소리
     public AudioClip deathClip; // 사망시 재생할 소리
+    public AudioClip shieldClip;
+    public AudioClip swingVoice;
+    public AudioClip swingClip;
 
     private Renderer skinRenderer; // 렌더러 컴포넌트
 
@@ -44,16 +38,17 @@ public class Enemy_Guard : CreatureController
     public float fieldOfView = 50f;
     public float viewDistance = 10f;
     public float patrolSpeed = 3f;
-    public CreatureController PlayertargetEntity; // 추적할 대상
-
+    
 
     CreatureController targetEntity; // 추적할 대상
 
-    public LayerMask whatIsTarget; // 추적 대상 레이어
-
+    public LayerMask playerLayer; // 추적 대상 레이어
+    public LayerMask shieldLayer; // 추적 대상 레이어
+    LayerMask whatIsTarget;
 
     private RaycastHit[] hits = new RaycastHit[10];
-    private List<CreatureController> lastAttackedTargets = new List<CreatureController>();
+
+    private bool shieldHitRegistered = false;
 
     private bool hasTarget => targetEntity != null && !targetEntity.dead;
     private State previousState; // 피격 상태 전의 상태를 저장하는 변수
@@ -65,7 +60,7 @@ public class Enemy_Guard : CreatureController
         if (attackRoot != null)
         {
             Gizmos.color = new Color(1f, 0f, 0f, 0.5f);
-            Gizmos.DrawSphere(attackRoot.position, attackRadius);
+            Gizmos.DrawRay(attackRoot.position, transform.forward * attackRange);
         }
 
         if (eyeTransform != null)
@@ -83,14 +78,15 @@ public class Enemy_Guard : CreatureController
     {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
-        audioPlayer = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
         skinRenderer = GetComponentInChildren<Renderer>();
-
         var attackPivot = attackRoot.position;
         attackPivot.y = transform.position.y;
-        attackDistance = Vector3.Distance(attackRoot.position, attackPivot) + attackRadius * 2.0f;
+        attackDistance = Vector3.Distance(attackRoot.position, attackPivot) + attackRange * 0.5f;
         agent.stoppingDistance = attackDistance;
         agent.speed = patrolSpeed;
+        whatIsTarget = playerLayer | shieldLayer;
+        PlayertargetEntity = GameObject.Find("Player").GetComponent<CreatureController>();
     }
 
     // 적 AI의 초기 스펙을 결정하는 셋업 메서드
@@ -137,7 +133,7 @@ public class Enemy_Guard : CreatureController
     {
         if (dead) return;
 
-        if (state == State.AttackBegin || state == State.Attacking)
+        if ((state == State.AttackBegin || state == State.Attacking) && targetEntity != null)
         {
             var lookRotation =
                 Quaternion.LookRotation(targetEntity.transform.position - transform.position, Vector3.up);
@@ -145,42 +141,6 @@ public class Enemy_Guard : CreatureController
 
             transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngleY,
                                         ref turnSmoothVelocity, turnSmoothTime);
-        }
-
-        if (state == State.Attacking)
-        {
-            var direction = transform.forward;
-            var deltaDistance = agent.velocity.magnitude * Time.deltaTime;
-
-            var size = Physics.SphereCastNonAlloc(attackRoot.position, attackRadius, direction, hits, deltaDistance, whatIsTarget);
-
-            for (var i = 0; i < size; i++)
-            {
-                var attackTargetEntity = hits[i].collider.GetComponent<CreatureController>();
-
-                if (attackTargetEntity != null && !lastAttackedTargets.Contains(attackTargetEntity))
-                {
-                    var message = new DamageMessage();
-                    message.amount = damage;
-                    message.damager = gameObject;
-
-                    if (hits[i].distance <= 0f)
-                    {
-                        message.hitPoint = attackRoot.position;
-                    }
-                    else
-                    {
-                        message.hitPoint = hits[i].point;
-                    }
-
-                    message.hitNormal = attackRoot.TransformDirection(hits[i].normal);
-
-                    attackTargetEntity.ApplyDamage(message);
-
-                    lastAttackedTargets.Add(attackTargetEntity);
-                    break;
-                }
-            }
         }
     }
 
@@ -192,7 +152,7 @@ public class Enemy_Guard : CreatureController
         {
             if (hasTarget)
             {
-                if (state == State.Patrol)
+                if (state == State.Idle)
                 {
                     state = State.Tracking;
                     agent.speed = runSpeed;
@@ -202,38 +162,25 @@ public class Enemy_Guard : CreatureController
             }
             else
             {
-                if (targetEntity != null) targetEntity = null;
+                // 타겟이 없는 경우 Idle 상태를 유지하며 적 감지 로직만 수행
+                targetEntity = null;
 
-                if (state != State.Patrol)
+                if (state != State.Idle)
                 {
-                    state = State.Patrol;
-                    agent.speed = patrolSpeed;
+                    state = State.Idle;
+                    agent.isStopped = true; // 에이전트를 정지 상태로 만듬
                 }
 
-                if (agent.remainingDistance <= 2f)
-                {
-                    var patrolPosition = Utility.GetRandomPointOnNavMesh(transform.position, 20f, NavMesh.AllAreas);
-                    agent.SetDestination(patrolPosition);
-                }
-
-                // 20 유닛의 반지름을 가진 가상의 구를 그렸을때, 구와 겹치는 모든 콜라이더를 가져옴
-                // 단, whatIsTarget 레이어를 가진 콜라이더만 가져오도록 필터링
+                // 적 감지 로직
                 var colliders = Physics.OverlapSphere(eyeTransform.position, viewDistance, whatIsTarget);
-
-                // 모든 콜라이더들을 순회하면서, 살아있는 LivingEntity 찾기
                 foreach (var collider in colliders)
                 {
                     if (!IsTargetOnSight(collider.transform)) continue;
 
-                    var livingEntity = collider.GetComponent<CreatureController>();
-
-                    // LivingEntity 컴포넌트가 존재하며, 해당 LivingEntity가 살아있다면,
-                    if (livingEntity != null && !livingEntity.dead)
+                    var potentialTarget = collider.GetComponent<CreatureController>();
+                    if (potentialTarget != null && !potentialTarget.dead)
                     {
-                        // 추적 대상을 해당 LivingEntity로 설정
-                        targetEntity = livingEntity;
-
-                        // for문 루프 즉시 정지
+                        targetEntity = potentialTarget;
                         break;
                     }
                 }
@@ -253,10 +200,14 @@ public class Enemy_Guard : CreatureController
         if (targetEntity == null)
         {
             targetEntity = PlayertargetEntity;
+            if (targetEntity != null)
+            {
+                state = State.Tracking; // 추적 상태로 변경
+            }
         }
 
         EffectManager.Instance.PlayHitEffect(damageMessage.hitPoint, damageMessage.hitNormal, transform, EffectManager.EffectType.Flesh);
-        audioPlayer.PlayOneShot(hitClip);
+        audioSource.PlayOneShot(hitClip);
 
         return true;
     }
@@ -268,13 +219,38 @@ public class Enemy_Guard : CreatureController
 
         agent.isStopped = true;
         anim.SetTrigger("Attack");
+        audioSource.PlayOneShot(swingVoice);
     }
 
     public void EnableAttack()
     {
         state = State.Attacking;
 
-        lastAttackedTargets.Clear();
+        RaycastHit hit;
+
+        if (Physics.Raycast(attackRoot.position, transform.forward, out hit, attackRange, whatIsTarget))
+        {
+            var hitCollider = hit.collider;
+            var attackTargetEntity = hit.collider.GetComponent<CreatureController>();
+
+            if ((shieldLayer.value & (1 << hit.collider.gameObject.layer)) != 0)
+            {
+                HandleShieldHit();
+                return; // 추가 공격 처리 중단
+            }
+            else if (attackTargetEntity != null)
+            {
+                var message = new DamageMessage();
+                message.amount = damage;
+                message.damager = gameObject;
+                message.hitPoint = hit.point;
+                message.hitNormal = attackRoot.TransformDirection(hit.normal);
+                audioSource.PlayOneShot(swingClip);
+                Manager.Haptic.Haptic(transform);
+
+                attackTargetEntity.ApplyDamage(message);
+            }
+        }
     }
 
     public void DisableAttack()
@@ -292,7 +268,6 @@ public class Enemy_Guard : CreatureController
         {
             agent.isStopped = false;
         }
-
     }
 
     private bool IsTargetOnSight(Transform target)
@@ -338,6 +313,33 @@ public class Enemy_Guard : CreatureController
 
 
         // 사망 효과음 재생
-        if (deathClip != null) audioPlayer.PlayOneShot(deathClip);
+        if (deathClip != null) audioSource.PlayOneShot(deathClip);
+    }
+
+    public void HandleShieldHit()
+    {
+        // 이미 방패에 히트한 경우 더 이상 처리하지 않음
+        if (shieldHitRegistered) return;
+
+        // 방패에 히트 처리를 했다는 표시
+        shieldHitRegistered = true;
+
+        // 오디오 재생
+        if (audioSource != null && shieldClip != null)
+        {
+            audioSource.PlayOneShot(shieldClip);
+        }
+        else
+        {
+            Debug.Log("audioSource or shieldClip is null");
+        }
+
+        // 일정 시간 후에 shieldHitRegistered를 다시 false로 설정
+        StartCoroutine(ResetShieldHit());
+    }
+    private IEnumerator ResetShieldHit()
+    {
+        yield return new WaitForSeconds(0.5f); // 쿨다운 시간
+        shieldHitRegistered = false;
     }
 }

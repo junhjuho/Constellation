@@ -79,7 +79,7 @@ public class WeaponController : MonoBehaviour
         {
             trailRenderer.enabled = true;
             adjustDamage = damage * currentSpeed;
-            audioSource.PlayOneShot(swingClip);
+            
             // RaycastNonAlloc 호출로 변경
             int hitCount = Physics.RaycastNonAlloc(attackRoot.position, transform.up, hits, WeaponLenth, layer);
 
@@ -97,6 +97,7 @@ public class WeaponController : MonoBehaviour
                     message.hitPoint = hit.point;
                     message.hitNormal = attackRoot.TransformDirection(hit.normal);
                     Manager.Haptic.Haptic(transform);
+                    audioSource.PlayOneShot(swingClip);
                     HitCreatureEffect();
 
                     attackTargetEntity.ApplyDamage(message);
