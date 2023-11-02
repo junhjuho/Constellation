@@ -21,10 +21,10 @@ public class CreatureController : MonoBehaviour
     public bool dead { get; protected set; } // 사망 상태
 
     public event Action OnDeath; // 사망시 발동할 이벤트
-
+    public CreatureController PlayertargetEntity; // 추적할 대상
+    public AudioClip footStepClip;
     private const float minTimeBetDamaged = 0.1f;
     private float lastDamagedTime;
-    public CreatureController PlayertargetEntity; // 추적할 대상
     protected bool IsInvulnerable
     {
         get

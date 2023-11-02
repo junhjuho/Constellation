@@ -538,6 +538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 100
+  PlayertargetEntity: {fileID: 0}
   move: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   animationInputs:
   - animationPropertyName: Left Grab
@@ -594,6 +595,7 @@ MonoBehaviour:
       m_Reference: {fileID: 7904272356298805229, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   deathClip: {fileID: 8300000, guid: b8925166f0b850241a34674e18e221b3, type: 3}
   hitClip: {fileID: 8300000, guid: 010c2a0d580d20b43bab488dd877e476, type: 3}
+  UIcontroller: {fileID: 0}
 --- !u!82 &2417124067963928753
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3702,7 +3704,7 @@ Transform:
   m_GameObject: {fileID: 4779169258750190424}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7084408, z: -0, w: 0.7057703}
-  m_LocalPosition: {x: 46.467, y: 9.775, z: 15.474}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5181,6 +5183,7 @@ MonoBehaviour:
   BaseController: {fileID: 8056507021531796493}
   inputActionReference_UISwitcher: {fileID: -186646962671222261, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   UICanvasGameobject: {fileID: 0}
+  textBox: {fileID: 0}
 --- !u!1 &6841736919790645403
 GameObject:
   m_ObjectHideFlags: 0

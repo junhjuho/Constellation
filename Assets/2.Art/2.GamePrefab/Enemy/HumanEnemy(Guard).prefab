@@ -2491,7 +2491,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 3761609533972887945}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.3
   m_Speed: 4
   m_Acceleration: 6
   avoidancePriority: 50
@@ -2503,7 +2503,7 @@ NavMeshAgent:
   m_Height: 1.7
   m_BaseOffset: -0.1
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 3
+  m_ObstacleAvoidanceType: 4
 --- !u!54 &7183930665987777515
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2545,6 +2545,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 100
   PlayertargetEntity: {fileID: 0}
+  footStepClip: {fileID: 8300000, guid: 8f082907b3612c540b163e5ef0e15950, type: 3}
   attackRoot: {fileID: 2249875544316139783}
   eyeTransform: {fileID: 1931347321129056020}
   attackRange: 1.5
@@ -2555,10 +2556,10 @@ MonoBehaviour:
   swingClip: {fileID: 8300000, guid: 7da8d823a57cb1f49ad36d0e16a58b38, type: 3}
   runSpeed: 6
   turnSmoothTime: 0.219
-  damage: 30
+  damage: 15
   attackRadius: 2
   fieldOfView: 180
-  viewDistance: 10
+  viewDistance: 8
   patrolSpeed: 3
   playerLayer:
     serializedVersion: 2

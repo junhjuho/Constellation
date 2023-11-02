@@ -342,4 +342,12 @@ public class Enemy_Guard : CreatureController
         yield return new WaitForSeconds(0.5f); // Äð´Ù¿î ½Ã°£
         shieldHitRegistered = false;
     }
+
+    public void FootStep()
+    {
+        if (audioSource != null && footStepClip != null)
+        {
+            audioSource.PlayOneShot(footStepClip);
+        }
+    }
 }

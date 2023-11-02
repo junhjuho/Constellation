@@ -353,4 +353,12 @@ public class Enemy : CreatureController
         yield return new WaitForSeconds(0.5f); // 쿨다운 시간
         shieldHitRegistered = false;
     }
+
+    public void FootStep()
+    {
+        if (audioSource != null && footStepClip != null)
+        {
+            audioSource.PlayOneShot(footStepClip);
+        }
+    }
 }
