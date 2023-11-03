@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 
-public class HapticController : MonoBehaviour
+public class HapticController
 {
     public void Haptic(Transform transform)
     {

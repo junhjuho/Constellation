@@ -18,6 +18,7 @@ public class ArrowController : MonoBehaviour
         bowReleaseAudioSource.Play();
         midPointVisual.SetActive(false);
 
+        Manager.Haptic.VibrateBothControllers(HapticController.objectStrength, HapticController.objectDuration);
         GameObject arrow = Instantiate(arrowPrefab);
         arrow.transform.position = arrowSpawnPoint.transform.position;
         arrow.transform.rotation = midPointVisual.transform.rotation;

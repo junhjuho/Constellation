@@ -7,11 +7,15 @@ using UnityEngine.XR;
 public class WeaponController : MonoBehaviour
 {
     public LayerMask layer;
-    public float baseDamage = 10f; // ±âº» µ¥¹ÌÁö
-    public float distanceMultiplier = 2f; // °Å¸®¿¡ µû¸¥ µ¥¹ÌÁö ¹èÀ²
+    public float baseDamage = 10f; // ï¿½âº» ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    public float distanceMultiplier = 2f; // ï¿½Å¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    public Transform attackRoot;
+    public float WeaponLenth;
 
-    float adjustedDamage = 30f;
-    public AudioClip hitAudio;
+    Rigidbody rb;
+    public AudioClip hitClip;
+    public AudioClip swingClip;
+    TrailRenderer trailRenderer;
     AudioSource audioSource;
     private HapticController hapticController;
 
@@ -20,15 +24,17 @@ public class WeaponController : MonoBehaviour
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>(); 
-        hapticController = GetComponent<HapticController>();
+        rb = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
+        trailRenderer = GetComponentInChildren<TrailRenderer>();
+        audioSource.pitch = 1.5f;
     }
 
 
     public void OnTriggerEnter(Collider other)
     {
         Debug.Log($"{other} in");
-       
+
         if (other.tag == "Monster")
         {
             HitMonster(other);
@@ -45,7 +51,7 @@ public class WeaponController : MonoBehaviour
 
         Monster monster = other.gameObject.GetComponentInParent<Monster>();
 
-        if (monster != null) // Monster ÄÄÆ÷³ÍÆ®°¡ ÀÖ´ÂÁö È®ÀÎ
+        if (monster != null) // Monster ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ È®ï¿½ï¿½
         {
             monster.TakeDamage(adjustedDamage, other);
             hapticController.Haptic(transform);
@@ -60,13 +66,90 @@ public class WeaponController : MonoBehaviour
 
     public void HitCreatureEffect()
     {
-        Debug.Log("¼­°Æ");
-        if(audioSource == null)
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½");
+        if (audioSource == null)
         {
             Debug.Log("audioSource is null");
         }
-
-        audioSource.pitch = 1.5f;
-        audioSource.PlayOneShot(hitAudio);
+        audioSource.PlayOneShot(hitClip);
     }
+
+
+    IEnumerator AccessInfoAfterDelay()
+    {
+        yield return new WaitForSeconds(0.6f);
+        lastAttackedTargets.Clear();
+    }
+
+    void SwordRay()
+    {
+        float currentSpeed = (transform.position - prevPos).magnitude / Time.deltaTime;
+
+        if (currentSpeed > 5.5f)
+        {
+            trailRenderer.enabled = true;
+            adjustDamage = damage * currentSpeed;
+
+            // RaycastNonAlloc È£ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+            int hitCount = Physics.RaycastNonAlloc(attackRoot.position, transform.up, hits, WeaponLenth, layer);
+
+            for (int i = 0; i < hitCount; i++)
+            {
+                var hit = hits[i]; // ï¿½è¿­ï¿½ï¿½ï¿½ï¿½ hit ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+                var attackTargetEntity = hit.collider.GetComponent<CreatureController>();
+
+                if (attackTargetEntity != null && !lastAttackedTargets.Contains(attackTargetEntity))
+                {
+                    var message = new DamageMessage();
+                    message.amount = adjustDamage;
+                    Debug.Log(adjustDamage);
+                    message.damager = gameObject;
+                    message.hitPoint = hit.point;
+                    message.hitNormal = attackRoot.TransformDirection(hit.normal);
+                    Manager.Haptic.Haptic(transform);
+                    audioSource.PlayOneShot(swingClip);
+                    HitCreatureEffect();
+
+                    attackTargetEntity.ApplyDamage(message);
+                    lastAttackedTargets.Add(attackTargetEntity);
+
+                    StartCoroutine(AccessInfoAfterDelay());
+                    // ï¿½Ï³ï¿½ï¿½ï¿½ Å¸ï¿½Ù¿ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ ï¿½Ù·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+                    break;
+                }
+            }
+
+            /*RaycastHit hit;
+
+            if (Physics.Raycast(attackRoot.position, transform.up, out hit, WeaponLenth, layer))
+            {
+                var attackTargetEntity = hit.collider.GetComponent<CreatureController>();
+
+                if (attackTargetEntity != null && !lastAttackedTargets.Contains(attackTargetEntity))
+                {
+                    var message = new DamageMessage();
+                    message.amount = adjustDamage;
+                    Debug.Log(adjustDamage);
+                    message.damager = gameObject;
+                    message.hitPoint = hit.point;
+                    message.hitNormal = attackRoot.TransformDirection(hit.normal);
+                    audioSource.PlayOneShot(swingClip);
+                    Manager.Haptic.Haptic(transform);
+                    HitCreatureEffect();
+
+                    attackTargetEntity.ApplyDamage(message);
+                    lastAttackedTargets.Add(attackTargetEntity);
+
+                    StartCoroutine(AccessInfoAfterDelay());
+                }
+            }*/
+        }
+        else
+        {
+            trailRenderer.enabled = false;
+        }
+
+        prevPos = transform.position;
+    }
+
 }

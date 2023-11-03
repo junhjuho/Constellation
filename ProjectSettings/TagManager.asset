@@ -9,6 +9,8 @@ TagManager:
   - Monster
   - RightHand
   - LeftHand
+  - Arrow
+  - EndCube
   layers:
   - Default
   - TransparentFX
@@ -20,9 +22,9 @@ TagManager:
   - Interactable
   - XRRig
   - Monster
-  - 
-  - 
-  - 
+  - Unvisible
+  - ' Shield'
+  - Cube
   - 
   - 
   - 

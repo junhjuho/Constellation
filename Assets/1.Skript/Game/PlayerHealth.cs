@@ -17,11 +17,12 @@ public class PlayerHealth : CreatureController
 {
     [SerializeField] private InputActionReference move;
     private Animator anim;
-    private AudioSource playerAudioPlayer; // 플레이어 소리 재생기
+    private AudioSource audioSource; // 플레이어 소리 재생기
     public List<AnimationInput> animationInputs;
 
     public AudioClip deathClip; // 사망 소리
     public AudioClip hitClip; // 피격 소리
+    public UI_InteractionController UIcontroller;
 
     RigBuilder rigBuilder;
     LowerBodyAnimation lowerBodyAnimation;
@@ -33,7 +34,7 @@ public class PlayerHealth : CreatureController
     private void Awake()
     {
         // 사용할 컴포넌트를 가져오기
-        playerAudioPlayer = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
         move.action.started += AnimateLegs;
         move.action.canceled += StopAnimation;
@@ -42,7 +43,8 @@ public class PlayerHealth : CreatureController
         avatarController = GetComponent<AvatarController>();
         characterController = transform.parent.GetComponent<CharacterController>();
         locomotionSystem = transform.parent.GetComponent<LocomotionSystem>();
-        
+        continuousMoveProvider = transform.parent.GetComponent<ContinuousMoveProviderBase>();
+        continuousTurnProvider = transform.parent.GetComponent<ContinuousTurnProviderBase>();
     }
 
     public void Update()
@@ -84,7 +86,7 @@ public class PlayerHealth : CreatureController
         
         if (hitClip != null)
         {
-            playerAudioPlayer.PlayOneShot(hitClip);
+            audioSource.PlayOneShot(hitClip);
         }
 
         // LivingEntity의 OnDamage() 실행(데미지 적용)
@@ -104,7 +106,7 @@ public class PlayerHealth : CreatureController
         // 사망음 재생
         if (deathClip != null)
         {
-            playerAudioPlayer.PlayOneShot(deathClip);
+            audioSource.PlayOneShot(deathClip);
         }
         // 애니메이터의 Die 트리거를 발동시켜 사망 애니메이션 재생
         lowerBodyAnimation.enabled = false;
@@ -113,15 +115,18 @@ public class PlayerHealth : CreatureController
         avatarController.enabled = false;
         locomotionSystem.enabled = false;
         transform.position += new Vector3(0, 0.6f, 0);
-        Debug.Log("DEAD ON");
+        continuousTurnProvider.enabled = false;
+        continuousMoveProvider.enabled = false;
         anim.SetTrigger("isDead");
+        Manager.Instance.GameOver();
+        UIcontroller.GameOverText();
     }
 
     private void AnimateLegs(InputAction.CallbackContext obj)
     {
         bool isMovingForward = move.action.ReadValue<Vector2>().y > 0;
         //Debug.Log("AnimateLegs On");
-        if (anim != null)
+        if (anim != null && !dead)
         {
             if (isMovingForward)
             {
@@ -136,7 +141,6 @@ public class PlayerHealth : CreatureController
                 anim.SetFloat("animSpeed", -2f);
             }
         }
-
     }
 
     private void StopAnimation(InputAction.CallbackContext obj)
@@ -148,4 +152,50 @@ public class PlayerHealth : CreatureController
         }
     }
 
+    public void HandAnimation()
+    {
+
+        if (!dead)
+        {
+            foreach (var item in animationInputs)
+            {
+                float actionValue = item.action.action.ReadValue<float>();
+                anim.SetFloat(item.animationPropertyName, actionValue);
+            }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        // 'other'가 플레이어인지 확인합니다.
+        if (other.CompareTag("EndCube"))
+        {
+            // 게임 클리어 로직을 여기에 작성합니다.
+            // 예를 들어, 랭크를 결정하고 저장하는 코드 등이 될 수 있습니다.
+            float playerHealthPoints = health; // 플레이어의 현재 체력을 가져옵니다.
+            int rank = DetermineRank(playerHealthPoints); // 랭크를 결정하는 함수를 호출합니다.
+
+            // 랭크를 텍스트로 출력하는 로직은 별도로 구현하시면 됩니다.
+            // 예: someUITextElement.text = "Your rank: " + rank;
+            UIcontroller.WinText(rank);
+        }
+    }
+
+    // 플레이어의 체력 점수에 따라 랭크를 결정하는 메소드입니다.
+    private int DetermineRank(float health)
+    {
+        if (health >= 80) return 3;
+
+        if (health >= 60) return 2;
+
+        return 1;
+    }
+
+    public void FootStep()
+    {
+        if (audioSource != null && footStepClip != null)
+        {
+            audioSource.PlayOneShot(footStepClip);
+        }
+    }
 }

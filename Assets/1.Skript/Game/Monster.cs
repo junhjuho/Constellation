@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 
 public class Monster : CreatureController
 {
-    public GameObject target;
+    /*public GameObject target;
     [SerializeField]
     int _attack = 50;
     [SerializeField]
@@ -30,7 +30,6 @@ public class Monster : CreatureController
 
     CapsuleCollider bodyCol;
     SphereCollider headCol;
-    bool isDamaged = false;
     bool isDead = false;
     bool isAttack = false;
     NavMeshAgent agent;
@@ -159,15 +158,6 @@ public class Monster : CreatureController
 
 
     #region Hit
-    public void SetDamageFlag()
-    {
-        isDamaged = true;
-    }
-
-    public void ResetDamageFlag()
-    {
-        isDamaged = false;
-    }
 
     public void TakeDamage(float damage, Collider hitBox)
     {
@@ -181,8 +171,6 @@ public class Monster : CreatureController
             //state = States.Die;
         }
 
-
-        SetDamageFlag();
         hitBox.enabled = false;
         StartCoroutine(ResetDamageFlagCoroutine(hitBox));
 
@@ -202,8 +190,7 @@ public class Monster : CreatureController
     {
         yield return new WaitForSeconds(1.5f);
         hitBox.enabled = true;
-        ResetDamageFlag();
     }
 
-    #endregion
+    #endregion*/
 }

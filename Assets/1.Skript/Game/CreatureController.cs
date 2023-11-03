@@ -5,33 +5,26 @@ using System;
 
 public class CreatureController : MonoBehaviour
 {
-
-    [SerializeField]
-    protected Vector3 _destPos;
-
-    [SerializeField]
-    protected GameObject _lockTarget;
-
-    public float startingHealth = 100f; // ½ÃÀÛ Ã¼·Â
-    public float health { get; protected set; } // ÇöÀç Ã¼·Â
-    public bool dead { get; protected set; } // »ç¸Á »óÅÂ
-
-    public event Action OnDeath; // »ç¸Á½Ã ¹ßµ¿ÇÒ ÀÌº¥Æ®
-
-    private const float minTimeBetDamaged = 0.1f;
-    private float lastDamagedTime;
-
-    private void Start()
+    public enum State
     {
-
+        Idle,
+        Patrol,
+        Tracking,
+        AttackBegin,
+        Attacking,
+        Hit,
+        Dead,
     }
 
-    protected virtual void UpdateDie() { }
-    protected virtual void UpdateMoving() { }
-    protected virtual void UpdateIdle() { }
-    protected virtual void UpdateAttack() { }
-    protected virtual void UpdateDamaged() { }
+    public float startingHealth = 100f; // ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½
+    public float health { get; protected set; } // ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½
+    public bool dead { get; protected set; } // ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
+    public event Action OnDeath; // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ßµï¿½ï¿½ï¿½ ï¿½Ìºï¿½Æ®
+    public CreatureController PlayertargetEntity; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+    public AudioClip footStepClip;
+    private const float minTimeBetDamaged = 0.1f;
+    private float lastDamagedTime;
     protected bool IsInvulnerable
     {
         get
@@ -42,47 +35,47 @@ public class CreatureController : MonoBehaviour
         }
     }
 
-    // »ý¸íÃ¼°¡ È°¼ºÈ­µÉ¶§ »óÅÂ¸¦ ¸®¼Â
+    // ï¿½ï¿½ï¿½ï¿½Ã¼ï¿½ï¿½ È°ï¿½ï¿½È­ï¿½É¶ï¿½ ï¿½ï¿½ï¿½Â¸ï¿½ ï¿½ï¿½ï¿½ï¿½
     protected virtual void OnEnable()
     {
-        // »ç¸ÁÇÏÁö ¾ÊÀº »óÅÂ·Î ½ÃÀÛ
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â·ï¿½ ï¿½ï¿½ï¿½ï¿½
         dead = false;
-        // Ã¼·ÂÀ» ½ÃÀÛ Ã¼·ÂÀ¸·Î ÃÊ±âÈ­
+        // Ã¼ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
         health = startingHealth;
     }
 
-    // µ¥¹ÌÁö¸¦ ÀÔ´Â ±â´É
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô´ï¿½ ï¿½ï¿½ï¿½
     public virtual bool ApplyDamage(DamageMessage damageMessage)
     {
         if (IsInvulnerable || damageMessage.damager == gameObject || dead) return false;
 
         lastDamagedTime = Time.time;
 
-        // µ¥¹ÌÁö¸¸Å­ Ã¼·Â °¨¼Ò
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å­ Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         health -= damageMessage.amount;
 
-        // Ã¼·ÂÀÌ 0 ÀÌÇÏ && ¾ÆÁ÷ Á×Áö ¾Ê¾Ò´Ù¸é »ç¸Á Ã³¸® ½ÇÇà
+        // Ã¼ï¿½ï¿½ï¿½ï¿½ 0 ï¿½ï¿½ï¿½ï¿½ && ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¾Ò´Ù¸ï¿½ ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (health <= 0) Die();
 
         return true;
     }
 
-    // Ã¼·ÂÀ» È¸º¹ÇÏ´Â ±â´É
+    // Ã¼ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½
     public virtual void RestoreHealth(float newHealth)
     {
         if (dead) return;
 
-        // Ã¼·Â Ãß°¡
+        // Ã¼ï¿½ï¿½ ï¿½ß°ï¿½
         health += newHealth;
     }
 
-    // »ç¸Á Ã³¸®
+    // ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
     public virtual void Die()
     {
-        // onDeath ÀÌº¥Æ®¿¡ µî·ÏµÈ ¸Þ¼­µå°¡ ÀÖ´Ù¸é ½ÇÇà
+        // onDeath ï¿½Ìºï¿½Æ®ï¿½ï¿½ ï¿½ï¿½Ïµï¿½ ï¿½Þ¼ï¿½ï¿½å°¡ ï¿½Ö´Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (OnDeath != null) OnDeath();
 
-        // »ç¸Á »óÅÂ¸¦ ÂüÀ¸·Î º¯°æ
+        // ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         dead = true;
     }
 }
