@@ -14,7 +14,7 @@ public class TutorialManager : MonoBehaviour
     public GameObject HandMenu;
     public GameObject ReduceBtn;
 
-    AudioSource audio;
+    AudioSource Typingaudio;
 
     bool isTyping = false;
     string[] sentences = {
@@ -45,7 +45,7 @@ public class TutorialManager : MonoBehaviour
 
     void Start()
     {
-        audio = GetComponent<AudioSource>();    
+        Typingaudio = GetComponent<AudioSource>();    
     }
 
     void Update()
@@ -85,7 +85,6 @@ public class TutorialManager : MonoBehaviour
     {
         if (clickCount < sentences.Length - 1 && !isTyping)
         {
-            audio.Play();
             clickCount++;
             ShowCurrentSentence();
             StartCoroutine(Typing(sentences[clickCount]));
@@ -97,7 +96,6 @@ public class TutorialManager : MonoBehaviour
     {
         if (clickCount > 0 && !isTyping)
         {
-            audio.Play();
             clickCount--;
             ShowCurrentSentence();
             StartCoroutine(Typing(sentences[clickCount]));
@@ -117,7 +115,11 @@ public class TutorialManager : MonoBehaviour
         foreach (char letter in text.ToCharArray())
         {
             dialogText.text += letter;
-            yield return new WaitForSeconds(0.01f);
+            if (Typingaudio != null && Typingaudio.clip != null)
+            {
+                Typingaudio.PlayOneShot(Typingaudio.clip);
+            }
+            yield return new WaitForSeconds(0.05f);
         }
         isTyping = false;
     }
