@@ -539,6 +539,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 100
   PlayertargetEntity: {fileID: 0}
+  footStepClip: {fileID: 0}
   move: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   animationInputs:
   - animationPropertyName: Left Grab
@@ -3703,7 +3704,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4779169258750190424}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7084408, z: -0, w: 0.7057703}
+  m_LocalRotation: {x: 0, y: 0.70843834, z: 0, w: 0.70577276}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5181,8 +5182,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIController: {fileID: 7418554194484796745}
   BaseController: {fileID: 8056507021531796493}
-  inputActionReference_UISwitcher: {fileID: -186646962671222261, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  inputActionReference_UISwitcher: {fileID: 5270475668036739131, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   UICanvasGameobject: {fileID: 0}
+  ThreeStar: {fileID: 0}
+  TwoStar: {fileID: 0}
+  unoStar: {fileID: 0}
+  bgm: {fileID: 0}
+  victoryClip: {fileID: 0}
   textBox: {fileID: 0}
 --- !u!1 &6841736919790645403
 GameObject:
