@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,17 +17,12 @@ public class StellaImageManager : MonoBehaviour
     private Dictionary<string, List<Material>> groupMaterials = new Dictionary<string, List<Material>>();
     public float fadeDuration = 2.5f;
 
-    [SerializeField] private GameObject activeImage;
-    [SerializeField] private List<GameObject> activeGroup;
-    [SerializeField] private Material activeMaterial;
-    [SerializeField] private List<Material> activeGroupMaterials;
-
-    [SerializeField] private GameObject pastImage;
-    [SerializeField] private List<GameObject> pastGroup;
-    [SerializeField] private Material pastMaterial;
-    [SerializeField] private List<Material> pastGroupMaterials;
+    private List<GameObject> activeQuads = new List<GameObject>();
+    private List<Material> activeMaterials = new List<Material>();
 
     [SerializeField] private Button[] allButtons;
+
+    private Coroutine currentFadeCoroutine;
 
     void Start()
     {
@@ -58,170 +54,87 @@ public class StellaImageManager : MonoBehaviour
 
     public void SetActiveImage(GameObject image)
     {
-        if (activeImage != image)
-        {
-            MoveActiveToPast();
-
-            activeImage = image;
-            activeMaterial = activeImage.GetComponent<Renderer>().material;
-
-            activeImage.SetActive(true);
-            SetMaterialAlpha(activeMaterial, 0f);
-
-            StartCoroutine(FadeInMaterial(activeMaterial));
-        }
-        else
-        {
-            MoveActiveToPast();
-            StartCoroutine(FadeOutMaterial(activeMaterial));
-        }
+        SetActiveQuads(new List<GameObject> { image });
     }
 
     public void ActivateGroup(string groupName)
     {
         if (groupMaterials.ContainsKey(groupName))
         {
-            if (activeGroup != null && AreGroupsEqual(groupMaterials[groupName], activeGroupMaterials))
-            {
-                MoveActiveGroupToPast();
-                StartCoroutine(FadeOutGroup(activeGroupMaterials));
-            }
-            else
-            {
-                MoveActiveGroupToPast();
-
-                ImageGroup foundGroup = imageGroups.Find(group => group.groupName == groupName);
-                if (foundGroup != null)
-                {
-                    activeGroup = new List<GameObject>(foundGroup.quads);
-                    activeGroupMaterials = groupMaterials[groupName];
-
-                    foreach (var quad in activeGroup)
-                    {
-                        quad.SetActive(true);
-                        SetMaterialAlpha(quad.GetComponent<Renderer>().material, 0f);
-                    }
-
-                    StartCoroutine(FadeInGroup(activeGroupMaterials));
-                }
-            }
+            ImageGroup foundGroup = imageGroups.Find(group => group.groupName == groupName);
+            SetActiveQuads(foundGroup?.quads);
         }
-        else
+    }
+
+    private void SetActiveQuads(List<GameObject> newQuads)
+    {
+        // 현재 활성화된 쿼드 중에서 새로운 쿼드 리스트에 없는 것들을 페이드 아웃시킵니다.
+        var quadsToFadeOut = activeQuads.Where(aq => !newQuads.Contains(aq)).ToList();
+        var materialsToFadeOut = quadsToFadeOut.Select(q => q.GetComponent<Renderer>().material).ToList();
+
+        // 현재 활성화된 쿼드를 페이드 아웃시키는 코루틴을 시작합니다.
+        if (quadsToFadeOut.Any())
         {
-            MoveActiveGroupToPast();
-            StartCoroutine(FadeOutGroup(activeGroupMaterials));
+            StartCoroutine(FadeQuads(quadsToFadeOut, materialsToFadeOut, 0f));
         }
-    }
 
-    private bool AreGroupsEqual(List<Material> groupA, List<Material> groupB)
-    {
-        if (groupA == null || groupB == null) return false;
-        if (groupA.Count != groupB.Count) return false;
+        // 새로 활성화할 쿼드 중에서 현재 비활성화된 것들만 페이드 인시킵니다.
+        var quadsToFadeIn = newQuads.Except(activeQuads).ToList();
+        var materialsToFadeIn = quadsToFadeIn.Select(q => q.GetComponent<Renderer>().material).ToList();
 
-        for (int i = 0; i < groupA.Count; i++)
+        // 새로운 쿼드를 활성화 상태로 설정합니다.
+        foreach (var quad in quadsToFadeIn)
         {
-            if (groupA[i] != groupB[i])
-                return false;
+            quad.SetActive(true);
+            SetMaterialAlpha(quad.GetComponent<Renderer>().material, 0f); // 초기 알파값을 0으로 설정합니다.
         }
-        return true;
-    }
 
-    private void MoveActiveToPast()
-    {
-        pastImage = activeImage;
-        pastMaterial = activeMaterial;
-        activeImage = null;
-        activeMaterial = null;
-        StartCoroutine(FadeOutMaterial(pastMaterial));
-    }
+        // 새로운 쿼드를 페이드 인시키는 코루틴을 시작합니다.
+        if (quadsToFadeIn.Any())
+        {
+            StartCoroutine(FadeQuads(quadsToFadeIn, materialsToFadeIn, 1f));
+        }
 
-    private void MoveActiveGroupToPast()
-    {
-        pastGroup = activeGroup;
-        pastGroupMaterials = activeGroupMaterials;
-        activeGroup = null;
-        activeGroupMaterials = null;
-        StartCoroutine(FadeOutGroup(pastGroupMaterials));
+        // 현재 활성화된 쿼드 리스트를 업데이트합니다.
+        activeQuads = newQuads;
+        activeMaterials = newQuads.Select(q => q.GetComponent<Renderer>().material).ToList();
     }
+    
 
-    private IEnumerator FadeInMaterial(Material material)
+    private IEnumerator FadeQuads(List<GameObject> quads, List<Material> materials, float targetAlpha)
     {
         SetButtonsInteractable(false);
+
         float fadeTime = 0f;
+        float startAlpha = targetAlpha == 0f ? 1f : 0f;
+
         while (fadeTime < fadeDuration)
         {
-            float alpha = fadeTime / fadeDuration;
-            SetMaterialAlpha(material, alpha);
             fadeTime += Time.deltaTime;
-            yield return null;
-        }
-        SetMaterialAlpha(material, 1f);
-        SetButtonsInteractable(true);
-    }
+            float alpha = Mathf.Lerp(startAlpha, targetAlpha, fadeTime / fadeDuration);
 
-    private IEnumerator FadeOutMaterial(Material material)
-    {
-        SetButtonsInteractable(false);
-        float fadeOutTime = 0f;
-        while (fadeOutTime < fadeDuration)
-        {
-            float alpha = 1f - (fadeOutTime / fadeDuration);
-            SetMaterialAlpha(material, alpha);
-            fadeOutTime += Time.deltaTime;
-            yield return null;
-        }
-        if (material == pastMaterial)
-        {
-            pastImage.SetActive(false);
-            pastImage = null;
-            pastMaterial = null;
-        }
-        SetButtonsInteractable(true);
-    }
-
-    private IEnumerator FadeInGroup(List<Material> materials)
-    {
-        SetButtonsInteractable(false);
-        float fadeTime = 0f;
-        while (fadeTime < fadeDuration)
-        {
-            float alpha = fadeTime / fadeDuration;
             foreach (var mat in materials)
             {
                 SetMaterialAlpha(mat, alpha);
             }
-            fadeTime += Time.deltaTime;
+
             yield return null;
         }
+
+
         foreach (var mat in materials)
         {
-            SetMaterialAlpha(mat, 1f);
+            SetMaterialAlpha(mat, targetAlpha);
         }
-        SetButtonsInteractable(true);
-    }
 
-    private IEnumerator FadeOutGroup(List<Material> materials)
-    {
-        SetButtonsInteractable(false);
-        float fadeOutTime = 0f;
-        while (fadeOutTime < fadeDuration)
+        if (targetAlpha <= 0f)
         {
-            float alpha = 1f - (fadeOutTime / fadeDuration);
-            foreach (var mat in materials)
+            foreach (var quad in quads)
             {
-                SetMaterialAlpha(mat, alpha);
+                quad.SetActive(false);
             }
-            fadeOutTime += Time.deltaTime;
-            yield return null;
         }
 
-        foreach (var quad in pastGroup)
-        {
-            quad.SetActive(false);
-        }
-
-        pastGroup = null;
-        pastGroupMaterials = null;
         SetButtonsInteractable(true);
     }
 
@@ -232,4 +145,5 @@ public class StellaImageManager : MonoBehaviour
             button.interactable = interactable;
         }
     }
+    
 }

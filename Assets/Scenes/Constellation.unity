@@ -860,6 +860,7 @@ RectTransform:
   - {fileID: 754003586}
   - {fileID: 431634798}
   - {fileID: 233269075}
+  - {fileID: 1523710539}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2649,6 +2650,85 @@ Transform:
   m_Children: []
   m_Father: {fileID: 233269075}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &145912835
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 145912836}
+  - component: {fileID: 145912838}
+  - component: {fileID: 145912837}
+  m_Layer: 5
+  m_Name: Text (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &145912836
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145912835}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 384213135}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &145912837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145912835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Button
+--- !u!222 &145912838
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145912835}
+  m_CullTransparentMesh: 1
 --- !u!114 &149537879 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2802540170484608036, guid: fe2638d7e8cea724fa67bcdc269d6eb3, type: 3}
@@ -5712,6 +5792,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1523710538}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &293744922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6624,16 +6716,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 917283126}
-        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
-        m_MethodName: AutumnImage
-        m_Mode: 1
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: ActivateGroup
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Northern/Autumn
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &328429101
@@ -7481,16 +7573,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 917283126}
-        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
-        m_MethodName: NorthernImage
-        m_Mode: 1
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: ActivateGroup
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Southern
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &345120973
@@ -8131,6 +8223,139 @@ Transform:
   - {fileID: 390444304}
   m_Father: {fileID: 1951549647}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &384213134
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 384213135}
+  - component: {fileID: 384213138}
+  - component: {fileID: 384213137}
+  - component: {fileID: 384213136}
+  m_Layer: 5
+  m_Name: Button (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &384213135
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384213134}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 145912836}
+  m_Father: {fileID: 1752437188}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 549, y: -132}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &384213136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384213134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 384213137}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: DeactivateGroup
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: All
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &384213137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384213134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &384213138
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384213134}
+  m_CullTransparentMesh: 1
 --- !u!1 &390444303
 GameObject:
   m_ObjectHideFlags: 0
@@ -9709,6 +9934,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6764e567a41ac574ca723e4f5c76a914, type: 3}
+--- !u!1 &485443039 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5934407767908330069, guid: 6764e567a41ac574ca723e4f5c76a914, type: 3}
+  m_PrefabInstance: {fileID: 2004169045}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &485443040 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2130450727549894793, guid: 6764e567a41ac574ca723e4f5c76a914, type: 3}
+  m_PrefabInstance: {fileID: 2004169045}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &488627334
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12124,6 +12359,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1523710538}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &601089596
 MonoBehaviour:
@@ -16484,18 +16731,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 917283126}
-        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
-        m_MethodName: SummerImage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1892176778}
         m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
         m_MethodName: ActivateGroup
@@ -17411,16 +17646,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 917283126}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: NorthernImage
-        m_Mode: 1
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: ActivateGroup
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Northern
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &797678293
@@ -25904,6 +26139,7 @@ Transform:
   - {fileID: 466642263}
   - {fileID: 1658908042}
   - {fileID: 1504428144}
+  - {fileID: 485443040}
   - {fileID: 1240315865}
   m_Father: {fileID: 975651569}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -30711,18 +30947,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 917283126}
-        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
-        m_MethodName: SpringImage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1892176778}
         m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
         m_MethodName: ActivateGroup
@@ -31082,6 +31306,138 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1519394686}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1523710538
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1523710539}
+  - component: {fileID: 1523710542}
+  - component: {fileID: 1523710541}
+  - component: {fileID: 1523710540}
+  m_Layer: 5
+  m_Name: Close
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1523710539
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523710538}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.31973, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 72147361}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 163.5, y: 101.4}
+  m_SizeDelta: {x: 100, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1523710540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523710538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1523710541}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: SetActiveImage
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 485443039}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1523710541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523710538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: d5ad855c08e83c3409a8053c8f886d54, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1523710542
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523710538}
+  m_CullTransparentMesh: 1
 --- !u!1 &1523818976
 GameObject:
   m_ObjectHideFlags: 0
@@ -35439,6 +35795,7 @@ RectTransform:
   m_Children:
   - {fileID: 1596336433}
   - {fileID: 1457559595}
+  - {fileID: 384213135}
   m_Father: {fileID: 1363721473}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -36165,6 +36522,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1523710538}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1780608071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36823,6 +37192,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1523710538}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1826498707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37371,21 +37752,243 @@ MonoBehaviour:
   imageGroups:
   - groupName: Northern/Spring
     quads:
-    - {fileID: 870760219}
+    - {fileID: 829607229}
     - {fileID: 1263650725}
+    - {fileID: 894571514}
+    - {fileID: 302328674}
+    - {fileID: 2050420697}
+    - {fileID: 993233278}
+    - {fileID: 1488685446}
+    - {fileID: 113929184}
+    - {fileID: 1839406792}
+    - {fileID: 347351432}
+    - {fileID: 939466508}
+    - {fileID: 1009748745}
+    - {fileID: 829505271}
+    - {fileID: 922529607}
   - groupName: Northern/Summer
     quads:
     - {fileID: 232884155}
     - {fileID: 368541892}
-  fadeDuration: 2.5
-  activeImage: {fileID: 0}
-  activeGroup: []
-  activeMaterial: {fileID: 0}
-  activeGroupMaterials: []
-  pastImage: {fileID: 0}
-  pastGroup: []
-  pastMaterial: {fileID: 0}
-  pastGroupMaterials: []
+    - {fileID: 2145231265}
+    - {fileID: 1365694108}
+    - {fileID: 984063316}
+    - {fileID: 1576937780}
+    - {fileID: 929734953}
+    - {fileID: 1746107602}
+    - {fileID: 1195377658}
+    - {fileID: 1964090651}
+    - {fileID: 1781905378}
+    - {fileID: 1640091636}
+  - groupName: Northern/Autumn
+    quads:
+    - {fileID: 936231550}
+    - {fileID: 2038308802}
+    - {fileID: 1074777877}
+    - {fileID: 1602246364}
+    - {fileID: 1761922994}
+    - {fileID: 648822701}
+    - {fileID: 540299780}
+    - {fileID: 1525722521}
+    - {fileID: 1376897172}
+    - {fileID: 1350687707}
+    - {fileID: 765703340}
+    - {fileID: 773446499}
+  - groupName: Northern/Winter
+    quads:
+    - {fileID: 835961531}
+    - {fileID: 848787972}
+    - {fileID: 819940295}
+    - {fileID: 2043727320}
+    - {fileID: 1157684025}
+    - {fileID: 54796796}
+    - {fileID: 370620626}
+    - {fileID: 479948552}
+    - {fileID: 708558182}
+    - {fileID: 870760219}
+  - groupName: Northern
+    quads:
+    - {fileID: 2038308802}
+    - {fileID: 1350687707}
+    - {fileID: 232884155}
+    - {fileID: 648822701}
+    - {fileID: 708558182}
+    - {fileID: 993233278}
+    - {fileID: 1320182256}
+    - {fileID: 870760219}
+    - {fileID: 1263650725}
+    - {fileID: 848787972}
+    - {fileID: 819940295}
+    - {fileID: 765703340}
+    - {fileID: 1781987262}
+    - {fileID: 94488608}
+    - {fileID: 773446499}
+    - {fileID: 347351432}
+    - {fileID: 1488685446}
+    - {fileID: 1839406792}
+    - {fileID: 829505271}
+    - {fileID: 368541892}
+    - {fileID: 1576937780}
+    - {fileID: 1208340766}
+    - {fileID: 1525722521}
+    - {fileID: 1157684025}
+    - {fileID: 370620626}
+    - {fileID: 929734953}
+    - {fileID: 939466508}
+    - {fileID: 1602246364}
+    - {fileID: 894571514}
+    - {fileID: 302328674}
+    - {fileID: 2043727320}
+    - {fileID: 922529607}
+    - {fileID: 2050420697}
+    - {fileID: 2145231265}
+    - {fileID: 479948552}
+    - {fileID: 1195377658}
+    - {fileID: 835961531}
+    - {fileID: 936231550}
+    - {fileID: 1074777877}
+    - {fileID: 540299780}
+    - {fileID: 1376897172}
+    - {fileID: 1365694108}
+    - {fileID: 1781905378}
+    - {fileID: 1746107602}
+    - {fileID: 984063316}
+    - {fileID: 1964090651}
+    - {fileID: 1009748745}
+    - {fileID: 54796796}
+    - {fileID: 1761922994}
+    - {fileID: 829607229}
+    - {fileID: 1812566956}
+    - {fileID: 113929184}
+    - {fileID: 1640091636}
+  - groupName: Southern
+    quads:
+    - {fileID: 1227729467}
+    - {fileID: 1593539452}
+    - {fileID: 884690274}
+    - {fileID: 2107046751}
+    - {fileID: 205989290}
+    - {fileID: 1253272657}
+    - {fileID: 1189105584}
+    - {fileID: 104187361}
+    - {fileID: 532764121}
+    - {fileID: 825074793}
+    - {fileID: 606081546}
+    - {fileID: 319338737}
+    - {fileID: 643562460}
+    - {fileID: 495534022}
+    - {fileID: 1788119449}
+    - {fileID: 203062230}
+    - {fileID: 1943783032}
+    - {fileID: 1024601272}
+    - {fileID: 1749057479}
+    - {fileID: 1535369394}
+    - {fileID: 1315668463}
+    - {fileID: 995246056}
+    - {fileID: 680750177}
+    - {fileID: 457784687}
+    - {fileID: 263009914}
+    - {fileID: 1206197032}
+    - {fileID: 899955338}
+    - {fileID: 795667867}
+    - {fileID: 690460886}
+    - {fileID: 290545788}
+    - {fileID: 338165595}
+    - {fileID: 1699059273}
+    - {fileID: 177493632}
+    - {fileID: 1153901370}
+    - {fileID: 1926221915}
+  - groupName: All
+    quads:
+    - {fileID: 2038308802}
+    - {fileID: 1227729467}
+    - {fileID: 1593539452}
+    - {fileID: 1350687707}
+    - {fileID: 232884155}
+    - {fileID: 884690274}
+    - {fileID: 648822701}
+    - {fileID: 708558182}
+    - {fileID: 993233278}
+    - {fileID: 2107046751}
+    - {fileID: 1320182256}
+    - {fileID: 870760219}
+    - {fileID: 1263650725}
+    - {fileID: 848787972}
+    - {fileID: 819940295}
+    - {fileID: 765703340}
+    - {fileID: 205989290}
+    - {fileID: 1781987262}
+    - {fileID: 1253272657}
+    - {fileID: 94488608}
+    - {fileID: 773446499}
+    - {fileID: 1189105584}
+    - {fileID: 104187361}
+    - {fileID: 532764121}
+    - {fileID: 347351432}
+    - {fileID: 825074793}
+    - {fileID: 1488685446}
+    - {fileID: 1839406792}
+    - {fileID: 829505271}
+    - {fileID: 606081546}
+    - {fileID: 368541892}
+    - {fileID: 1576937780}
+    - {fileID: 319338737}
+    - {fileID: 1208340766}
+    - {fileID: 1525722521}
+    - {fileID: 1157684025}
+    - {fileID: 643562460}
+    - {fileID: 370620626}
+    - {fileID: 495534022}
+    - {fileID: 929734953}
+    - {fileID: 1788119449}
+    - {fileID: 939466508}
+    - {fileID: 203062230}
+    - {fileID: 1943783032}
+    - {fileID: 1602246364}
+    - {fileID: 894571514}
+    - {fileID: 302328674}
+    - {fileID: 2043727320}
+    - {fileID: 922529607}
+    - {fileID: 1024601272}
+    - {fileID: 2050420697}
+    - {fileID: 2145231265}
+    - {fileID: 1749057479}
+    - {fileID: 1535369394}
+    - {fileID: 479948552}
+    - {fileID: 1315668463}
+    - {fileID: 995246056}
+    - {fileID: 680750177}
+    - {fileID: 1195377658}
+    - {fileID: 835961531}
+    - {fileID: 457784687}
+    - {fileID: 936231550}
+    - {fileID: 1074777877}
+    - {fileID: 263009914}
+    - {fileID: 1206197032}
+    - {fileID: 540299780}
+    - {fileID: 1376897172}
+    - {fileID: 899955338}
+    - {fileID: 795667867}
+    - {fileID: 690460886}
+    - {fileID: 1365694108}
+    - {fileID: 1781905378}
+    - {fileID: 1746107602}
+    - {fileID: 290545788}
+    - {fileID: 984063316}
+    - {fileID: 1964090651}
+    - {fileID: 1009748745}
+    - {fileID: 54796796}
+    - {fileID: 338165595}
+    - {fileID: 1761922994}
+    - {fileID: 1699059273}
+    - {fileID: 177493632}
+    - {fileID: 829607229}
+    - {fileID: 1812566956}
+    - {fileID: 1153901370}
+    - {fileID: 113929184}
+    - {fileID: 1926221915}
+    - {fileID: 1640091636}
+  fadeDuration: 2
   allButtons:
   - {fileID: 1826498706}
   - {fileID: 293744921}
@@ -39356,16 +39959,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 917283126}
-        m_TargetAssemblyTypeName: UIimageManager, Assembly-CSharp
-        m_MethodName: WinterImage
-        m_Mode: 1
+      - m_Target: {fileID: 1892176778}
+        m_TargetAssemblyTypeName: StellaImageManager, Assembly-CSharp
+        m_MethodName: ActivateGroup
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Northern/Winter
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1958390870
@@ -40073,6 +40676,91 @@ Transform:
   - {fileID: 2054349553}
   m_Father: {fileID: 123876016}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2004169045
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1258311529}
+    m_Modifications:
+    - target: {fileID: 168191147041309182, guid: 6764e567a41ac574ca723e4f5c76a914, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -9011824819663326732, guid: 1359904e24cad844f97817f3d3be0fdc, type: 3}
+    - target: {fileID: 2130450727549894793, guid: 6764e567a41ac574ca723e4f5c76a914, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 2130450727549894793, guid: 6764e567a41ac574ca723e4f5c76a914, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 2130450727549894793, guid: 6764e567a41ac574ca723e4f5c76a914, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 2130450727549894793, guid: 6764e567a41ac574ca723e4f5c76a914, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.32125998
+      objectReference: {fileID: 0}
+    - target: {fileID: 2130450727549894793, guid: 6764e567a41ac574ca723e4f5c76a914, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.38077
+      objectReference: {fileID: 0}
+    - target: {fileID: 2130450727549894793, guid: 6764e567a41ac574ca723e4f5c76a914, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.09621999
+      objectReference: {fileID: 0}
+    - target: {fileID: 2130450727549894793, guid: 6764e567a41ac574ca723e4f5c76a914, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.40951183
+      objectReference: {fileID: 0}
+    - target: {fileID: 2130450727549894793, guid: 6764e567a41ac574ca723e4f5c76a914, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7741617
+      objectReference: {fileID: 0}
+    - target: {fileID: 2130450727549894793, guid: 6764e567a41ac574ca723e4f5c76a914, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.09693052
+      objectReference: {fileID: 0}
+    - target: {fileID: 2130450727549894793, guid: 6764e567a41ac574ca723e4f5c76a914, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.4728405
+      objectReference: {fileID: 0}
+    - target: {fileID: 2130450727549894793, guid: 6764e567a41ac574ca723e4f5c76a914, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2130450727549894793, guid: 6764e567a41ac574ca723e4f5c76a914, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2130450727549894793, guid: 6764e567a41ac574ca723e4f5c76a914, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2577745255848920968, guid: 6764e567a41ac574ca723e4f5c76a914, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -2044557002902666853, guid: 2d7d7611c829f824dbf13a542c5ff138, type: 3}
+    - target: {fileID: 3007109473327652442, guid: 6764e567a41ac574ca723e4f5c76a914, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5934407767908330069, guid: 6764e567a41ac574ca723e4f5c76a914, type: 3}
+      propertyPath: m_Name
+      value: Close
+      objectReference: {fileID: 0}
+    - target: {fileID: 5934407767908330069, guid: 6764e567a41ac574ca723e4f5c76a914, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6764e567a41ac574ca723e4f5c76a914, type: 3}
 --- !u!1 &2019816975
 GameObject:
   m_ObjectHideFlags: 0
