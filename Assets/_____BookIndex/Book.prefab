@@ -850,7 +850,7 @@ MonoBehaviour:
   - material: {fileID: 2100000, guid: 647c895987e3fcf4e9929252aea2c94d, type: 2}
   - material: {fileID: 2100000, guid: aee16fff2c8f04d4faed1d50eb85a012, type: 2}
   - material: {fileID: 2100000, guid: 5e8a98c71c5ed104388541d460a2ce96, type: 2}
-  - material: {fileID: 2100000, guid: 469e3ed21acbce34095268f71af69388, type: 2}
+  - material: {fileID: 2100000, guid: 782aab97d69ac6f4c9a248186f583bf7, type: 2}
   - material: {fileID: 2100000, guid: 0693770beb6c9f44782734988247b8d0, type: 2}
   - material: {fileID: 2100000, guid: 0d5da666552b41d499b32555f22928bb, type: 2}
   - material: {fileID: 2100000, guid: c7ef9ab3990ff2b498de9f79d88008d7, type: 2}

@@ -14,6 +14,7 @@ public class TalkManager : MonoBehaviour
     public GameObject ChangeSceneBtn;
     public GameObject RemainBtn;
 
+    AudioSource audio;
     bool isTyping = false;
     string[] sentences = {
         "어서 오게! 나는 올림포스의 12신 중 하나이자 신들의 왕인 제우스라고 하네",
@@ -35,6 +36,10 @@ public class TalkManager : MonoBehaviour
         StartCoroutine(Typing(sentences[clickCount])); // 첫 번째 문장에 대한 코루틴 시작
     }
 
+    private void Start()
+    {
+        audio = GetComponent<AudioSource>();
+    }
     void Update()
     {
         if (isTyping)
@@ -97,6 +102,10 @@ public class TalkManager : MonoBehaviour
         foreach (char letter in text.ToCharArray())
         {
             dialogText.text += letter;
+            if (audio != null && audio.clip != null)
+            {
+                audio.PlayOneShot(audio.clip);
+            }
             yield return new WaitForSeconds(0.01f);
         }
         isTyping = false;
