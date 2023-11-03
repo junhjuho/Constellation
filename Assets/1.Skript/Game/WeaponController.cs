@@ -4,11 +4,16 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 public class WeaponController : MonoBehaviour
 {
     public LayerMask layer;
-    public float baseDamage = 10f; // �⺻ ������
-    public float distanceMultiplier = 2f; // �Ÿ��� ���� ������ ����
+    public float damage = 10f; // 기본 데미지
+    public float adjustDamage = 10f; // 기본 데미지
+    public float distanceMultiplier = 2f; // 거리에 따른 데미지 배율
     public Transform attackRoot;
     public float WeaponLenth;
 
@@ -17,7 +22,9 @@ public class WeaponController : MonoBehaviour
     public AudioClip swingClip;
     TrailRenderer trailRenderer;
     AudioSource audioSource;
-    private HapticController hapticController;
+    private RaycastHit[] hits = new RaycastHit[10];
+
+    private List<CreatureController> lastAttackedTargets = new List<CreatureController>();
 
     Vector3 prevPos;
 
@@ -30,43 +37,26 @@ public class WeaponController : MonoBehaviour
         audioSource.pitch = 1.5f;
     }
 
-
-    public void OnTriggerEnter(Collider other)
+    private void Update()
     {
-        Debug.Log($"{other} in");
+        SwordRay();
+    }
 
-        if (other.tag == "Monster")
+#if UNITY_EDITOR
+
+    private void OnDrawGizmosSelected()
+    {
+        if (attackRoot != null)
         {
-            HitMonster(other);
+            Gizmos.color = new Color(1f, 0f, 0f, 0.5f);
+            Gizmos.DrawRay(attackRoot.position, transform.up * WeaponLenth);
         }
     }
 
-    public void OnTriggerExit(Collider other)
-    {
-        Debug.Log($"{other} out");
-    }
-
-    public void HitMonster(Collider other)
-    {
-
-        Monster monster = other.gameObject.GetComponentInParent<Monster>();
-
-        if (monster != null) // Monster ������Ʈ�� �ִ��� Ȯ��
-        {
-            monster.TakeDamage(adjustedDamage, other);
-            hapticController.Haptic(transform);
-            HitCreatureEffect();
-            Debug.Log("monster Entered!");
-        }
-        else
-        {
-            Debug.Log($"{other}Componentis null");
-        }
-    }
+#endif
 
     public void HitCreatureEffect()
     {
-        Debug.Log("����");
         if (audioSource == null)
         {
             Debug.Log("audioSource is null");
@@ -90,12 +80,12 @@ public class WeaponController : MonoBehaviour
             trailRenderer.enabled = true;
             adjustDamage = damage * currentSpeed;
 
-            // RaycastNonAlloc ȣ��� ����
+            // RaycastNonAlloc 호출로 변경
             int hitCount = Physics.RaycastNonAlloc(attackRoot.position, transform.up, hits, WeaponLenth, layer);
 
             for (int i = 0; i < hitCount; i++)
             {
-                var hit = hits[i]; // �迭���� hit ������ ������
+                var hit = hits[i]; // 배열에서 hit 정보를 가져옴
                 var attackTargetEntity = hit.collider.GetComponent<CreatureController>();
 
                 if (attackTargetEntity != null && !lastAttackedTargets.Contains(attackTargetEntity))
@@ -114,7 +104,7 @@ public class WeaponController : MonoBehaviour
                     lastAttackedTargets.Add(attackTargetEntity);
 
                     StartCoroutine(AccessInfoAfterDelay());
-                    // �ϳ��� Ÿ�ٿ� ��Ʈ�� �� �ٷ� ������ ����
+                    // 하나의 타겟에 히트한 후 바로 루프를 종료
                     break;
                 }
             }

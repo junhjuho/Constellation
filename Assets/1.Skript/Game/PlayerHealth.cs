@@ -29,6 +29,8 @@ public class PlayerHealth : CreatureController
     CharacterController characterController;
     AvatarController avatarController;
     LocomotionSystem locomotionSystem;
+    ContinuousMoveProviderBase continuousMoveProvider;
+    ContinuousTurnProviderBase continuousTurnProvider;
 
 
     private void Awake()
@@ -49,11 +51,7 @@ public class PlayerHealth : CreatureController
 
     public void Update()
     {
-        foreach (var item in animationInputs)
-        {
-            float actionValue = item.action.action.ReadValue<float>();
-            anim.SetFloat(item.animationPropertyName, actionValue);
-        }
+        HandAnimation();
     }
 
     protected override void OnEnable()
@@ -81,9 +79,9 @@ public class PlayerHealth : CreatureController
     public override bool ApplyDamage(DamageMessage damageMessage)
     {
         if (!base.ApplyDamage(damageMessage)) return false;
-        
+
         EffectManager.Instance.PlayHitEffect(damageMessage.hitPoint, damageMessage.hitNormal, transform, EffectManager.EffectType.Flesh);
-        
+
         if (hitClip != null)
         {
             audioSource.PlayOneShot(hitClip);
