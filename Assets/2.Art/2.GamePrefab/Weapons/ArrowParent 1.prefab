@@ -96,7 +96,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   attackRoot: {fileID: 1564157844963164098}
   WeaponLenth: 0.1
-  damage: 45
+  damage: 51
   hitAudio: {fileID: 8300000, guid: 39f2230ff0919d643b1daa7b7214f55b, type: 3}
 --- !u!82 &3775534451361361631
 AudioSource:

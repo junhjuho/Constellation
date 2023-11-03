@@ -124,7 +124,7 @@ public class PlayerHealth : CreatureController
     {
         bool isMovingForward = move.action.ReadValue<Vector2>().y > 0;
         //Debug.Log("AnimateLegs On");
-        if (anim != null||!dead)
+        if (anim != null && !dead)
         {
             if (isMovingForward)
             {
@@ -139,7 +139,6 @@ public class PlayerHealth : CreatureController
                 anim.SetFloat("animSpeed", -2f);
             }
         }
-
     }
 
     private void StopAnimation(InputAction.CallbackContext obj)
@@ -176,7 +175,6 @@ public class PlayerHealth : CreatureController
 
             // 랭크를 텍스트로 출력하는 로직은 별도로 구현하시면 됩니다.
             // 예: someUITextElement.text = "Your rank: " + rank;
-            Debug.Log("Your rank: " + rank); // 콘솔에 랭크를 출력합니다.
             UIcontroller.WinText(rank);
         }
     }

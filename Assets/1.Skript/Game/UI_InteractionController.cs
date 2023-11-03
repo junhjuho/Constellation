@@ -26,6 +26,11 @@ public class UI_InteractionController : MonoBehaviour
     GameObject TwoStar;
     [SerializeField]
     GameObject unoStar;
+    [SerializeField]
+    GameObject bgm;
+    [SerializeField]
+    AudioClip victoryClip;
+    AudioSource audioSource;
 
     public Text textBox;
 
@@ -65,7 +70,7 @@ public class UI_InteractionController : MonoBehaviour
         {
             unoStar.SetActive(false);
         }
-
+        audioSource = GetComponent<AudioSource>();
         //Deactivating UI Controller by default
         UIController.GetComponent<XRRayInteractor>().enabled = false;
         UIController.GetComponent<XRInteractorLineVisual>().enabled = false;
@@ -175,17 +180,24 @@ public class UI_InteractionController : MonoBehaviour
                 unoStar.SetActive(true);
             }
         }
+
+        if(bgm != null)
+        {
+            bgm.SetActive(false);
+        }
+
+        if(audioSource != null)
+        {
+            if(victoryClip != null)
+            {
+                audioSource.PlayOneShot(victoryClip);
+            }
+        }
         //Activating UI Controller by enabling its XR Ray Interactor and XR Interactor Line Visual
         UIController.GetComponent<XRRayInteractor>().enabled = true;
         UIController.GetComponent<XRInteractorLineVisual>().enabled = true;
 
         //Deactivating Base Controller by disabling its XR Direct Interactor
         BaseController.GetComponent<XRDirectInteractor>().enabled = false;
-
-
-
-        //Activating the UI Canvas Gameobject
-        UICanvasGameobject.SetActive(true);
-
     }
 }
