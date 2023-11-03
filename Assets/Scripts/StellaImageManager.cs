@@ -1,110 +1,235 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StellaImageManager : MonoBehaviour
 {
-    public GameObject activeImage;
-    public GameObject pastImage;
+    [System.Serializable]
+    public class ImageGroup
+    {
+        public string groupName;
+        public List<GameObject> quads;
+    }
+
+    public List<ImageGroup> imageGroups;
+    private Dictionary<string, List<Material>> groupMaterials = new Dictionary<string, List<Material>>();
     public float fadeDuration = 2.5f;
-    private Material activeMaterial;
-    private Material pastMaterial;
-    private float fadeTime;
-    private float fadeOutTime;
 
-    void Update()
+    [SerializeField] private GameObject activeImage;
+    [SerializeField] private List<GameObject> activeGroup;
+    [SerializeField] private Material activeMaterial;
+    [SerializeField] private List<Material> activeGroupMaterials;
+
+    [SerializeField] private GameObject pastImage;
+    [SerializeField] private List<GameObject> pastGroup;
+    [SerializeField] private Material pastMaterial;
+    [SerializeField] private List<Material> pastGroupMaterials;
+
+    [SerializeField] private Button[] allButtons;
+
+    void Start()
     {
-        if (activeImage != null && activeMaterial != null)
-        {
-            FadeInImage();
-        }
+        InitializeGroups();
+    }
 
-        if (pastImage != null && pastMaterial != null)
+    private void InitializeGroups()
+    {
+        foreach (var group in imageGroups)
         {
-            FadeOutImage();
+            List<Material> materials = new List<Material>();
+            foreach (var quad in group.quads)
+            {
+                quad.SetActive(false);
+                var mat = quad.GetComponent<Renderer>().material;
+                materials.Add(mat);
+                SetMaterialAlpha(mat, 0f);
+            }
+            groupMaterials.Add(group.groupName, materials);
         }
     }
 
-    public void SetActiveImage(GameObject quad)
+    private void SetMaterialAlpha(Material material, float alpha)
     {
-        StartCoroutine(SetActiveImageCoroutine(quad));
+        Color color = material.color;
+        color.a = alpha;
+        material.color = color;
     }
 
-    private IEnumerator SetActiveImageCoroutine(GameObject quad)
+    public void SetActiveImage(GameObject image)
     {
-        if (activeImage == quad)
+        if (activeImage != image)
         {
-            pastImage = activeImage;
-            pastMaterial = activeMaterial;
-            fadeOutTime = 0;
+            MoveActiveToPast();
 
-            yield return StartCoroutine(FadeOutImage());
+            activeImage = image;
+            activeMaterial = activeImage.GetComponent<Renderer>().material;
 
-            activeImage.SetActive(false);
-            activeImage = null;
-            activeMaterial = null;
+            activeImage.SetActive(true);
+            SetMaterialAlpha(activeMaterial, 0f);
+
+            StartCoroutine(FadeInMaterial(activeMaterial));
         }
         else
         {
-            if (activeImage != null)
+            MoveActiveToPast();
+            StartCoroutine(FadeOutMaterial(activeMaterial));
+        }
+    }
+
+    public void ActivateGroup(string groupName)
+    {
+        if (groupMaterials.ContainsKey(groupName))
+        {
+            if (activeGroup != null && AreGroupsEqual(groupMaterials[groupName], activeGroupMaterials))
             {
-                pastImage = activeImage;
-                pastMaterial = activeMaterial;
-                fadeOutTime = 0;
-
-                StartCoroutine(FadeOutImage());
+                MoveActiveGroupToPast();
+                StartCoroutine(FadeOutGroup(activeGroupMaterials));
             }
+            else
+            {
+                MoveActiveGroupToPast();
 
-            activeImage = quad;
-            activeImage.SetActive(true);
-            activeMaterial = activeImage.GetComponent<Renderer>().material;
+                ImageGroup foundGroup = imageGroups.Find(group => group.groupName == groupName);
+                if (foundGroup != null)
+                {
+                    activeGroup = new List<GameObject>(foundGroup.quads);
+                    activeGroupMaterials = groupMaterials[groupName];
 
-            Color color = activeMaterial.color;
-            color.a = 0;
-            activeMaterial.color = color;
+                    foreach (var quad in activeGroup)
+                    {
+                        quad.SetActive(true);
+                        SetMaterialAlpha(quad.GetComponent<Renderer>().material, 0f);
+                    }
 
-            fadeTime = 0;
-
-            yield return StartCoroutine(FadeInImage());
+                    StartCoroutine(FadeInGroup(activeGroupMaterials));
+                }
+            }
+        }
+        else
+        {
+            MoveActiveGroupToPast();
+            StartCoroutine(FadeOutGroup(activeGroupMaterials));
         }
     }
 
-    private IEnumerator FadeInImage()
+    private bool AreGroupsEqual(List<Material> groupA, List<Material> groupB)
     {
-        while (activeMaterial.color.a < 1)
+        if (groupA == null || groupB == null) return false;
+        if (groupA.Count != groupB.Count) return false;
+
+        for (int i = 0; i < groupA.Count; i++)
         {
-            fadeTime += Time.deltaTime / fadeDuration;
-            float alpha = Mathf.Clamp(fadeTime, 0, 1);
-
-            Color color = activeMaterial.color;
-            color.a = alpha;
-            activeMaterial.color = color;
-
-            yield return null;
+            if (groupA[i] != groupB[i])
+                return false;
         }
+        return true;
     }
 
-    private IEnumerator FadeOutImage()
+    private void MoveActiveToPast()
     {
-        if (pastImage == null || pastMaterial == null)
+        pastImage = activeImage;
+        pastMaterial = activeMaterial;
+        activeImage = null;
+        activeMaterial = null;
+        StartCoroutine(FadeOutMaterial(pastMaterial));
+    }
+
+    private void MoveActiveGroupToPast()
+    {
+        pastGroup = activeGroup;
+        pastGroupMaterials = activeGroupMaterials;
+        activeGroup = null;
+        activeGroupMaterials = null;
+        StartCoroutine(FadeOutGroup(pastGroupMaterials));
+    }
+
+    private IEnumerator FadeInMaterial(Material material)
+    {
+        SetButtonsInteractable(false);
+        float fadeTime = 0f;
+        while (fadeTime < fadeDuration)
         {
-            yield break;
+            float alpha = fadeTime / fadeDuration;
+            SetMaterialAlpha(material, alpha);
+            fadeTime += Time.deltaTime;
+            yield return null;
         }
+        SetMaterialAlpha(material, 1f);
+        SetButtonsInteractable(true);
+    }
 
-        while (pastMaterial.color.a > 0)
+    private IEnumerator FadeOutMaterial(Material material)
+    {
+        SetButtonsInteractable(false);
+        float fadeOutTime = 0f;
+        while (fadeOutTime < fadeDuration)
         {
-            fadeOutTime += Time.deltaTime / fadeDuration;
-            float alpha = 1 - Mathf.Clamp(fadeOutTime, 0, 1);
+            float alpha = 1f - (fadeOutTime / fadeDuration);
+            SetMaterialAlpha(material, alpha);
+            fadeOutTime += Time.deltaTime;
+            yield return null;
+        }
+        if (material == pastMaterial)
+        {
+            pastImage.SetActive(false);
+            pastImage = null;
+            pastMaterial = null;
+        }
+        SetButtonsInteractable(true);
+    }
 
-            Color color = pastMaterial.color;
-            color.a = alpha;
-            pastMaterial.color = color;
+    private IEnumerator FadeInGroup(List<Material> materials)
+    {
+        SetButtonsInteractable(false);
+        float fadeTime = 0f;
+        while (fadeTime < fadeDuration)
+        {
+            float alpha = fadeTime / fadeDuration;
+            foreach (var mat in materials)
+            {
+                SetMaterialAlpha(mat, alpha);
+            }
+            fadeTime += Time.deltaTime;
+            yield return null;
+        }
+        foreach (var mat in materials)
+        {
+            SetMaterialAlpha(mat, 1f);
+        }
+        SetButtonsInteractable(true);
+    }
 
+    private IEnumerator FadeOutGroup(List<Material> materials)
+    {
+        SetButtonsInteractable(false);
+        float fadeOutTime = 0f;
+        while (fadeOutTime < fadeDuration)
+        {
+            float alpha = 1f - (fadeOutTime / fadeDuration);
+            foreach (var mat in materials)
+            {
+                SetMaterialAlpha(mat, alpha);
+            }
+            fadeOutTime += Time.deltaTime;
             yield return null;
         }
 
-        pastImage.SetActive(false);
-        pastImage = null;
-        pastMaterial = null;
+        foreach (var quad in pastGroup)
+        {
+            quad.SetActive(false);
+        }
+
+        pastGroup = null;
+        pastGroupMaterials = null;
+        SetButtonsInteractable(true);
+    }
+
+    private void SetButtonsInteractable(bool interactable)
+    {
+        foreach (var button in allButtons)
+        {
+            button.interactable = interactable;
+        }
     }
 }
