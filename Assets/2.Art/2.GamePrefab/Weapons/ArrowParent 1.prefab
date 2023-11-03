@@ -90,7 +90,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 3887146855413105299}
   myCollider: {fileID: 2638678694783495515, guid: ae75179165c8e854fa9af578948a1009, type: 3}
-  stickingArrow: {fileID: 2996214539690317587, guid: 35d0d665029da484db1fbd876a055d49, type: 3}
+  stickingArrow: {fileID: 3028156234059058463, guid: 09983da14ae861a439d065679f832e10, type: 3}
   layer:
     serializedVersion: 2
     m_Bits: 4294967295
