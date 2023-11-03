@@ -12,7 +12,6 @@ public class TalkManager : MonoBehaviour
     public GameObject prevBtn;
     public GameObject ExitBtn;
     public GameObject ChangeSceneBtn;
-    public GameObject RemainBtn;
 
     AudioSource audio;
     bool isTyping = false;
@@ -31,7 +30,6 @@ public class TalkManager : MonoBehaviour
     {
         ExitBtn.SetActive(false);
         ChangeSceneBtn.SetActive(false);
-        RemainBtn.SetActive(false);
         ShowCurrentSentence();
         StartCoroutine(Typing(sentences[clickCount])); // 첫 번째 문장에 대한 코루틴 시작
     }
@@ -65,7 +63,6 @@ public class TalkManager : MonoBehaviour
             {
                 nextBtn.SetActive(false);
                 ChangeSceneBtn.SetActive(true);
-                RemainBtn.SetActive(true);
             }
         }
     }

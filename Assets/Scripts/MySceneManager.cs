@@ -102,5 +102,4 @@ public class MySceneManager : MonoBehaviour
             StartCoroutine("LoadScene", sceneName); /// 씬 로드 코루틴 실행 ///
         });
     }
-
 }
