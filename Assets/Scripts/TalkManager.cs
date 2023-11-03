@@ -58,6 +58,7 @@ public class TalkManager : MonoBehaviour
             }
             if(clickCount > 6)
             {
+                nextBtn.SetActive(false);
                 ChangeSceneBtn.SetActive(true);
                 RemainBtn.SetActive(true);
             }

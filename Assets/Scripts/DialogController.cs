@@ -42,7 +42,11 @@ public class DialogController : MonoBehaviour
         foreach (char letter in text.ToCharArray())
         {
             dialogText.text += letter;
-            yield return new WaitForSeconds(0.01f);
+            if (audio != null && audio.clip != null)
+            {
+                audio.PlayOneShot(audio.clip);
+            }
+            yield return new WaitForSeconds(0.05f);
         }
         isTyping=false;
     }
