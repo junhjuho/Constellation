@@ -171,6 +171,5 @@ public class UIimageManager : MonoBehaviour
                 // constellationImages[i].SetActive(false);
             }
         }
-    }
-    
+    }    
 }
