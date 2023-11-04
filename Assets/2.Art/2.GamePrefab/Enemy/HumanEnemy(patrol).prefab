@@ -964,7 +964,7 @@ Transform:
   m_GameObject: {fileID: 1912992872519882547}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.954, z: 0.144}
+  m_LocalPosition: {x: 0, y: 1.121, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4284,7 +4284,7 @@ MonoBehaviour:
   footStepClip: {fileID: 8300000, guid: 7c1c55816e3375440a617c8f9057c5f3, type: 3}
   attackRoot: {fileID: 7683098357629915810}
   eyeTransform: {fileID: 5889986857757852762}
-  attackRange: 1.8
+  attackRange: 1.2
   hitClip: {fileID: 8300000, guid: fc403ac911e7a51468c864c05a1d6859, type: 3}
   deathClip: {fileID: 8300000, guid: e482b557fdfb72543a8c951f6cd0fbf8, type: 3}
   shieldClip: {fileID: 8300000, guid: 8d30caa660ee4d043b9819212b5a01f8, type: 3}

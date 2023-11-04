@@ -21,12 +21,12 @@ public class WeaponController : MonoBehaviour
     public AudioClip hitClip;
     public AudioClip swingClip;
     TrailRenderer trailRenderer;
-    AudioSource audioSource;
+    protected AudioSource audioSource;
     private RaycastHit[] hits = new RaycastHit[10];
 
-    private List<CreatureController> lastAttackedTargets = new List<CreatureController>();
+    protected List<CreatureController> lastAttackedTargets = new List<CreatureController>();
 
-    Vector3 prevPos;
+    protected Vector3 prevPos;
 
 
     void Start()
@@ -39,12 +39,12 @@ public class WeaponController : MonoBehaviour
 
     private void Update()
     {
-        SwordRay();
+        WeaponRay();
     }
 
 #if UNITY_EDITOR
 
-    private void OnDrawGizmosSelected()
+    protected virtual void OnDrawGizmosSelected()
     {
         if (attackRoot != null)
         {
@@ -55,7 +55,7 @@ public class WeaponController : MonoBehaviour
 
 #endif
 
-    public void HitCreatureEffect()
+    public virtual void HitCreatureEffect()
     {
         if (audioSource == null)
         {
@@ -65,13 +65,13 @@ public class WeaponController : MonoBehaviour
     }
 
 
-    IEnumerator AccessInfoAfterDelay()
+    protected IEnumerator AccessInfoAfterDelay()
     {
         yield return new WaitForSeconds(0.6f);
         lastAttackedTargets.Clear();
     }
 
-    void SwordRay()
+    public virtual void WeaponRay()
     {
         float currentSpeed = (transform.position - prevPos).magnitude / Time.deltaTime;
 

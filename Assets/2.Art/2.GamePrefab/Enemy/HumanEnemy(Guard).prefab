@@ -1072,7 +1072,7 @@ Transform:
   m_GameObject: {fileID: 1502707497699604044}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.954, z: 0.144}
+  m_LocalPosition: {x: 0, y: 1.118, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2548,11 +2548,11 @@ MonoBehaviour:
   footStepClip: {fileID: 8300000, guid: 8f082907b3612c540b163e5ef0e15950, type: 3}
   attackRoot: {fileID: 2249875544316139783}
   eyeTransform: {fileID: 1931347321129056020}
-  attackRange: 1.5
+  attackRange: 1.2
   hitClip: {fileID: 8300000, guid: fc403ac911e7a51468c864c05a1d6859, type: 3}
   deathClip: {fileID: 8300000, guid: e482b557fdfb72543a8c951f6cd0fbf8, type: 3}
-  shieldClip: {fileID: 8300000, guid: f8cd2b09a32e5f44297cac6513303c19, type: 3}
-  swingVoice: {fileID: 8300000, guid: 3b7f9157849c5ba4aa1c30645aef7858, type: 3}
+  shieldClip: {fileID: 8300000, guid: 8d30caa660ee4d043b9819212b5a01f8, type: 3}
+  swingVoice: {fileID: 8300000, guid: 03bed6ff426d2304db19278a3744a356, type: 3}
   swingClip: {fileID: 8300000, guid: 7da8d823a57cb1f49ad36d0e16a58b38, type: 3}
   runSpeed: 6
   turnSmoothTime: 0.219
