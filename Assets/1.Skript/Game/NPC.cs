@@ -19,7 +19,7 @@ public class NPC : MonoBehaviour
             talkBox.SetActive(false);
 
         }
-        Invoke("Talk1", 1.5f);
+        Invoke("Talk1", 5f);
         audioSource = GetComponent<AudioSource>();
     }
 
