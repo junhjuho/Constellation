@@ -10,9 +10,7 @@ public class TutorialManager : MonoBehaviour
     int clickCount = 0;
     public GameObject nextBtn;
     public GameObject prevBtn;
-    public GameObject ExitBtn;
     public GameObject HandMenu;
-    public GameObject ReduceBtn;
 
     AudioSource Typingaudio;
 
@@ -35,8 +33,6 @@ public class TutorialManager : MonoBehaviour
 
     void OnEnable()
     {
-        ReduceBtn.SetActive(false);
-        ExitBtn.SetActive(false);
         ShowCurrentSentence();
         StartCoroutine(Typing(sentences[clickCount])); // 첫 번째 문장에 대한 코루틴 시작
     }
@@ -73,7 +69,6 @@ public class TutorialManager : MonoBehaviour
             }
             if(clickCount > 10)
             {
-                ReduceBtn.SetActive(true);
                 nextBtn.SetActive(false);
             }
         }
