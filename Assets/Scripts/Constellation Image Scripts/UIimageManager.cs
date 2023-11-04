@@ -148,6 +148,22 @@ public class UIimageManager : MonoBehaviour
     {
         northRotating = true;
     }
+    public void SpringRot()
+    {
+        springRotating = true;
+    }
+    public void SummerRot()
+    {
+        summerRotating = true;
+    }
+    public void AutumnRot()
+    {
+        autumnRotating = true;
+    }
+    public void WinterRot()
+    {
+        winterRotating=true;
+    }
 
     public void ConstellationImage(int index)
     {
