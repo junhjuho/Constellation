@@ -19,7 +19,7 @@ public class NPC : MonoBehaviour
             talkBox.SetActive(false);
 
         }
-        Invoke("Talk1", 1.5f);
+        Invoke("Talk1", 5f);
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -32,7 +32,7 @@ public class NPC : MonoBehaviour
 
     public void Talk2()
     {
-        talkText.text = " 우선 성에서 빠져 나가게나";
+        talkText.text = " 경비병들이 오고 있으니 우선 성에서 빠져 나가게나";
         Invoke("Talk3", delay);
         audioSource.Play();
     }
@@ -46,7 +46,7 @@ public class NPC : MonoBehaviour
 
     public void Talk4()
     {
-        talkText.text = "아마존의 여전사들이 쉽게 보내 주지 않을테니";
+        talkText.text = "아마존의 전사들이 쉽게 보내 주지 않을테니";
         Invoke("Disapear", delay);
         audioSource.Play();
     }
