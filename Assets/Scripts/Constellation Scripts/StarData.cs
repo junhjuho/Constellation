@@ -15,5 +15,4 @@ public class StarData : CsvData
         ApparentMagnitude = float.Parse(data[7]);
         ColorType = data[13].Substring(0, 1);
     }
-
 }

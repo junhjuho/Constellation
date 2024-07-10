@@ -32,7 +32,6 @@ public class ConstellationViewer : MonoBehaviour
 
     void Start()
     {
-
         // CSV 데이터 읽기
         LoadCSV();
 
